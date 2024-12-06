@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #00063b;
+  color: #e8e8e8;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+  gap: 20px;
+  position: relative;
+}
+form #password {
+  height: 30px;
+  font-size: large;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: none;
+}
+form #password:focus {
+  outline: 2px solid #00ff00;
+}
+form #login {
+  width: 30%;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #0084ff;
+  color: #e8e8e8;
+}
+form #login:hover {
+  background-color: #0369c9;
+}
