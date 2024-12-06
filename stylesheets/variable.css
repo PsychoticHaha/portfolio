@@ -1,0 +1,10 @@
+:root {
+    --container-max: 1440px;
+    --logo-image: url("./../images/raf_logo.png");
+    --main-text-color: #1d1d1d;
+}
+
+:root.dark {
+    --logo-image: url("./../images/raf_logo_white.png");
+    --main-text-color: #f8f7f7;
+}

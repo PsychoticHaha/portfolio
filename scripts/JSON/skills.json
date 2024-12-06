@@ -1,0 +1,132 @@
+{
+  "categories": [
+    {
+      "name": "Markup Languages and Preprocessors",
+      "items": [
+        {
+          "name": "HTML",
+          "icon_path": "/images/skills/html.svg"
+        },
+        {
+          "name": "CSS",
+          "icon_path": "/images/skills/css.svg"
+        },
+        {
+          "name":"Sass",
+          "icon_path":"/images/skills/sass.svg"
+        }
+      ]
+    },
+    {
+      "name": "Programming Languages",
+      "items": [
+        {
+          "name": "JavaScript",
+          "icon_path": "/images/skills/javascript.svg"
+        },
+        {
+          "name": "PHP",
+          "icon_path": "/images/skills/php.svg"
+        }
+      ]
+    },
+    {
+      "name": "Database Management Systems (DBMS)",
+      "items": [
+        {
+          "name": "MySQL",
+          "icon_path": "/images/skills/mysql.svg"
+        },
+        {
+          "name": "SQLite",
+          "icon_path": "/images/skills/sqlite.svg"
+        },
+        {
+          "name": "MongoDB",
+          "icon_path": "/images/skills/mongodb.svg"
+        }
+      ]
+    },
+    {
+      "name": "Frameworks and libraries",
+      "items": [
+        {
+          "name":"Vite",
+          "icon_path":"/images/skills/vite.svg"
+        },
+        {
+          "name": "ReactJS",
+          "icon_path": "/images/skills/reactjs.svg"
+        },
+        {
+          "name":"jQuery",
+          "icon_path":"/images/skills/jquery.svg"          
+        },
+        {
+          "name": "Laravel",
+          "icon_path": "/images/skills/laravel.svg"
+        }
+      ]
+    },
+    {
+      "name": "Content Managing System (CMS)",
+      "items": [
+        {
+          "name": "Wordpress",
+          "icon_path": "/images/skills/wordpress.svg"
+        }
+      ]
+    },
+    {
+      "name": "Development Tools",
+      "items": [
+        {
+          "name": "Git",
+          "icon_path": "/images/skills/git.svg"
+        },
+        {
+          "name": "Github",
+          "icon_path": "/images/skills/github.svg"
+        },
+        {
+          "name": "VS Code",
+          "icon_path": "/images/skills/vscode.svg"
+        },
+        {
+          "name":"Postman",
+          "icon_path":"/images/skills/postman.svg"
+        }
+      ]
+    },
+    {
+      "name": "Design Tools",
+      "items": [
+        {
+          "name": "Krita",
+          "icon_path": "/images/skills/krita.svg"
+        },
+        {
+          "name": "Axure RP",
+          "icon_path": "/images/skills/axure9.svg"
+        },
+        {
+          "name": "Adobe XD",
+          "icon_path": "/images/skills/adobexd.svg"
+        }
+      ]
+    },
+    {
+      "name": "Package Managers",
+      "items": [
+        {
+          "name": "NPM",
+          "icon_path": "/images/skills/npm.svg"
+        },
+        {
+          "name": "Composer",
+          "icon_path": "/images/skills/composer.svg"
+        }
+      ]
+    }
+  ]
+}

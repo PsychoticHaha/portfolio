@@ -1,0 +1,126 @@
+{
+  "works": [
+    {
+      "id": "1",
+      "title": "Files Shares",
+      "thumbnail_path": "/images/works/file_shares.webp",
+      "description": "Files Shares is a local project for local file sharing.",
+      "techno": [
+        "PHP",
+        "Javascript",
+        "CSS",
+        "Sass"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    },
+    {
+      "id": "2",
+      "title": "Lycée Privé Mon Espoir",
+      "thumbnail_path": "/images/works/espoir.webp",
+      "description": "A school full managing platform.",
+      "techno": [
+        "ReactJS",
+        "Laravel",
+        "MySQL",
+        "Sass"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": "<p>This project was built with ReactJS, Laravel, MySQL and Sass.</p> <p>The real challenge is to create a full Web Application that is secured and have roles managing via RESTful API.</p>"
+    },
+    {
+      "id": "3",
+      "title": "Chronometer",
+      "thumbnail_path": "/images/works/2016_chrono.webp",
+      "description": "A simple Chronometer Fabulous Design.",
+      "techno": [
+        "ReactJS",
+        "Laravel",
+        "MySQL",
+        "Sass"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    },
+    {
+      "id": "4",
+      "title": "OS App UI Design",
+      "thumbnail_path": "/images/works/App_UI.webp",
+      "description": "A beautiful UI front-end design for an OS App.",
+      "techno": [
+        "Javascript",
+        "HTML",
+        "CSS"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    },
+    {
+      "id": "5",
+      "title": "MG Chat",
+      "thumbnail_path": "/images/works/mgChat.webp",
+      "description": "A chat platform project.",
+      "techno": [
+        "ReactJS",
+        "Laravel",
+        "MongoDB",
+        "Sass"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    },
+    {
+      "id": "6",
+      "title": "Notes App v1",
+      "thumbnail_path": "/images/works/notes_v1.webp",
+      "description": "A notes App for the Web to take Notes everywhere.",
+      "techno": [
+        "Javascript",
+        "HTML",
+        "PHP",
+        "MySQL"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    },
+    {
+      "id": "7",
+      "title": "Pharmacy Management Design",
+      "thumbnail_path": "/images/works/pharmacy_design.webp",
+      "description": "A medecin store full managing platform.",
+      "techno": [
+        "Axure RP"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    },
+    {
+      "id": "8",
+      "title": "Camera Shop Web App",
+      "thumbnail_path": "/images/works/shopping_app.webp",
+      "description": "A camera store online shop.",
+      "techno": [
+        "ReactJS",
+        "Sass"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    }
+  ]
+}

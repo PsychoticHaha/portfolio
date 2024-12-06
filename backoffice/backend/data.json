@@ -1,0 +1,29 @@
+[
+  {
+    "title": "messages",
+    "data": [
+      {
+        "id": 1,
+        "fullname": "John Doe",
+        "email": "johndoe@example.com",
+        "messages": "blablabla",
+        "date": "21-12-2024"
+      },
+      {
+        "id": 2,
+        "fullname": "Jane Doe",
+        "email": "janedoe@example.com",
+        "messages": "blablabla",
+        "date": "21-12-2024"
+      }
+    ]
+  },
+  {
+    "title": "reactions",
+    "data": []
+  },
+  {
+    "title": "usage",
+    "data": []
+  }
+]
