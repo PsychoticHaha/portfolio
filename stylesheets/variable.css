@@ -1,10 +1,23 @@
 :root {
     --container-max: 1440px;
+    --header-height: 100px;
+
+    --light-bg-accent: #eee;
+    --main-bg: #fdfdfdf1;
     --logo-image: url("./../images/raf_logo.png");
-    --main-text-color: #1d1d1d;
+    --text-high-contrast: #1d1d1d;
+    --text-high-contrast-inverted: #f8f7f7;
+
+    --handshake-icon-white: url("./../images/handshake.svg");
+    --handshake-icon-black: url("./../images/handshake-black.svg");
+    --arrow-down-white: url("./../images/svg/arr-down.svg");;
+    --arrow-down-black: url("./../images/svg/arr-down-black.svg");;
 }
 
 :root.dark {
+    --light-bg-accent: #020611ce;
+    --main-bg: #020216;
     --logo-image: url("./../images/raf_logo_white.png");
-    --main-text-color: #f8f7f7;
+    --text-high-contrast: #e8e8e8;
+    --text-high-contrast-inverted: #1d1d1d;
 }

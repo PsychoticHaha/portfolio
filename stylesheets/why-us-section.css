@@ -1,0 +1,232 @@
+.why-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px 0
+}
+
+.why-us .text {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px
+}
+
+.why-us .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    width: 100%
+}
+
+.why-us .container .items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.why-us .container .item {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #00acfc;
+    border-radius: 10px;
+    gap: 10px;
+    transition: .2s
+}
+
+.why-us .container .item.item2,
+.why-us .container .item.item3,
+.why-us .container .item.item6 {
+    background-color: rgba(139, 0, 139, .6);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px)
+}
+
+.why-us .container .item h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%
+}
+
+.why-us .container .item h3 .icon {
+    height: 30px;
+    background-size: 80%;
+    filter: brightness(110%)
+}
+
+.why-us .container .item h3 .icon.code {
+    background-image: url("./../images/svg/code-chevron-white.svg")
+}
+
+.why-us .container .item h3 .icon.comments {
+    background-image: url("./../images/svg/comments-white.svg")
+}
+
+.why-us .container .item h3 .icon.brush {
+    background-image: url("./../images/svg/paint-brush-white.svg")
+}
+
+.why-us .container .item h3 .icon.clock {
+    background-image: url("./../images/svg/clock-white.svg")
+}
+
+.why-us .container .item h3 .icon.lightbulb {
+    background-size: 50%;
+    background-image: url("./../images/svg/lightbulb-white.svg")
+}
+
+.why-us .container .item h3 .icon.shield {
+    background-image: url("./../images/svg/shield-check-white.svg")
+}
+
+.why-us .container .item .text {
+    font-weight: 500;
+    width: 85%;
+    word-spacing: 5px;
+    line-height: 25px
+}
+
+.why-us .container .item:hover {
+    transition: .2s;
+    transform: scale(1.05)
+}
+
+.why-us .box {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%
+}
+
+.why-us .box .scrolling-content {
+    width: 100vw;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative
+}
+
+.why-us .box .scrolling-content .wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: start;
+    transition: 2.5s linear;
+}
+
+.why-us .box .scrolling-content .overlay {
+    width: 30vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(267deg, transparent 10%, rgba(240, 240, 240, .6), #f0f0f0, #f0f0f0)
+}
+
+.why-us .box .scrolling-content .overlay.left {
+    left: 0
+}
+
+.why-us .box .scrolling-content .overlay.right {
+    right: 0;
+    transform: rotate(180deg)
+}
+
+.why-us .box .scrolling-content .element {
+    min-width: 225px;
+    height: 80px;
+    background-color: #5dc4ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 10px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    transition: 2.5s linear
+}
+
+.why-us .box .scrolling-content .element .icon {
+    height: 100%;
+    width: 35%;
+    max-width: 70px;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center
+}
+
+.why-us .box .scrolling-content .element .icon.mobile {
+    background-image: url("./../images/svg/phone-portrait.svg")
+}
+
+.why-us .box .scrolling-content .element .icon.rocket {
+    background-image: url("./../images/svg/rocket.svg")
+}
+
+.why-us .box .scrolling-content .element .icon.phone-pc-link {
+    background-image: url("./../images/svg/phone-pc-link.svg")
+}
+
+.why-us .box .scrolling-content .element .icon.structure {
+    background-image: url("./../images/svg/structure.svg")
+}
+
+.why-us .box .scrolling-content .element .icon.search-engin {
+    background-image: url("./../images/svg/searchengin.svg")
+}
+
+.why-us .box .scrolling-content .element .icon.bug {
+    background-image: url("./../images/svg/debug-console.svg")
+}
+
+.why-us .box .scrolling-content .element .icon.users {
+    background-image: url("./../images/svg/users.svg")
+}
+
+.why-us .box .scrolling-content .element .text {
+    flex: 1;
+    justify-content: start;
+    text-align: left
+}
+
+@media(max-width: 700px) {
+
+    main .why-us .container .item.item1,
+    main .why-us .container .item.item2,
+    main .why-us .container .item.item3,
+    main .why-us .container .item.item4,
+    main .why-us .container .item.item5,
+    main .why-us .container .item.item6 {
+        background-color: #01b7ee
+    }
+
+    main .why-us .container .item.item2,
+    main .why-us .container .item.item4,
+    main .why-us .container .item.item6 {
+        background-color: #e000e0
+    }
+
+    body.dark main .why-us .container .item .text,
+    main .why-us .container .item .text {
+        text-align: left;
+        line-height: 20px
+    }
+
+    main .why-us .box .scrolling-content {
+        width: 90%
+    }
+}

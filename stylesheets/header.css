@@ -1,25 +1,39 @@
+div.header-container {
+    position: fixed;
+    top: 0;
+    height: var(--header-height);
+    width: 100%;
+    z-index: 100;
+    background: var(--light-bg-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #eee;
     width: 100%;
-    height: 60px;
-    top: 0;
-    z-index: 999;
+    max-width: 1440px;
+    height: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    transition: .3s
+    transition: .3s;
+    position: absolute;
+    top: 0;
 }
 
 .header a .logo {
     width: 80px;
     height: 100%;
     background-image: var(--logo-image);
-    background-size: 45%;
+    background-size: 70%;
     position: absolute;
-    left: 0
+    left: 0;
+    border: 1px dashed purple;
 }
 
 .header a.logo-link {
@@ -30,7 +44,8 @@
     max-width: 100px;
     height: 90%;
     text-decoration: none;
-    color: transparent
+    color: transparent;
+    position: relative;
 }
 
 .header nav a.active {
@@ -113,7 +128,7 @@ header .right {
 header .right .theme-toggle-btn {
     display: flex;
     width: 50px;
-    height: 60%;
+    height: 32px;
     border: 1px solid #e8e8e8;
     background-color: #000;
     overflow: hidden;

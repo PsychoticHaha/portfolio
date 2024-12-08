@@ -1,0 +1,198 @@
+body.dark .mouse-cursor {
+    mix-blend-mode: lighten;
+    background: radial-gradient(#1b3c8a, 10%, #000041, #000041, #0000006e, #020216be)
+}
+
+body.dark {
+    background-color: #020216;
+    background-image: url("./../images/sands.png");
+    background-size: 50%;
+    background-repeat: repeat;
+    color: #e8e8e8
+}
+
+body.dark .contact-me .text .round,
+body.dark .my-skills .intro-text .round,
+body.dark .my-works .text .round,
+body.dark .text .round {
+    background-color: rgba(238, 255, 0, .8352941176)
+}
+
+body.dark .bottom-info,
+body.dark .why-us .box .scrolling-content,
+body.dark main {
+    background-color: rgba(2, 2, 22, .7450980392)
+}
+
+body.dark header.header {
+    background-color: rgba(2, 6, 17, .8078431373)
+}
+
+body.dark header.header nav.desktop-menu .links a.link {
+    color: #e8e8e8
+}
+
+body.dark header.header .hamburger-menu div {
+    background-color: #fff
+}
+
+
+body.dark main .hero .mouse::before {
+    background-color: #e4e4e4
+}
+
+body.dark main .hero .right .intro-text .post-text .effect-wrapper {
+    border-right: 2px solid #e8e8e8;
+    animation: .75s step-end infinite blink_dark
+}
+
+body.dark main .hero .right .cta a.item {
+    color: var(--text-high-contrast);
+}
+
+body.dark main .hero .right .cta a.item.hire:hover div.icon.partner {
+    background-image: var(--handshake-icon-white);
+}
+
+body.dark main .hero .right .cta a.item.resume:hover .icon.download {
+    background-image: var(--arrow-down-white);
+}
+
+body.dark section.about-me .btn-container .more-less-btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #06063a;
+    border: 1px solid #00acfc;
+    transition: .2s
+}
+
+body.dark .why-us .container .item {
+    background-color: #023a54
+}
+
+body.dark .why-us .container .item.item2,
+body.dark .why-us .container .item.item3,
+body.dark .why-us .container .item.item6 {
+    background-color: rgba(128, 0, 128, .337254902)
+}
+
+body.dark .why-us .container .item h3 .icon.code {
+    background-image: url("./../images/svg/code-chevron.svg")
+}
+
+body.dark .why-us .container .item h3 .icon.comments {
+    background-image: url("./../images/svg/comments.svg")
+}
+
+body.dark .why-us .container .item h3 .icon.brush {
+    background-image: url("./../images/svg/paint-brush.svg")
+}
+
+body.dark .why-us .container .item h3 .icon.clock {
+    background-image: url("./../images/svg/clock.svg")
+}
+
+body.dark .why-us .container .item h3 .icon.lightbulb {
+    background-size: 50%;
+    background-image: url("./../images/svg/lightbulb.svg")
+}
+
+body.dark .why-us .container .item h3 .icon.shield {
+    background-image: url("./../images/svg/shield-check.svg")
+}
+
+body.dark .why-us .container .item .text {
+    font-weight: 400
+}
+
+body.dark .why-us .box .scrolling-content .overlay {
+    background: linear-gradient(267deg, transparent 10%, rgba(2, 9, 59, .9098039216), rgba(0, 0, 39, .9490196078), rgba(2, 2, 22, .9882352941));
+    width: 25vw
+}
+
+body.dark .why-us .box .scrolling-content .element {
+    border: none;
+    background-color: #1a55ff
+}
+
+body.dark .my-skills .skills-container div.category {
+    background-color: rgba(32, 32, 32, .2588235294);
+    border: 1px solid #333
+}
+
+body.dark .my-skills .skills-container div.category ul.category-items li:hover {
+    background-color: rgba(0, 225, 255, .3843137255)
+}
+
+body.dark .my-works .works-container .single-work {
+    background-color: rgba(32, 32, 32, .2588235294);
+    border-color: #444;
+    transition: background-color .3s ease-in-out, border .3s linear
+}
+
+body.dark .my-works .works-container .single-work:hover {
+    background-color: rgba(32, 32, 32, .5137254902);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 217, 255, .768627451);
+    box-shadow: none
+}
+
+body.dark .contact-me .wrapper .left form input,
+body.dark .contact-me .wrapper .left form textarea {
+    border: 1px solid #363636;
+    background-color: rgba(2, 2, 22, .5960784314);
+    color: #e8e8e8
+}
+
+body.dark .contact-me .wrapper .right .container {
+    border-color: #003a7c;
+    background-color: rgba(2, 2, 22, .7450980392)
+}
+
+body.dark .contact-me .wrapper .right .container .reactions .icon.love {
+    background-image: url("./../images/svg/heart-white.svg")
+}
+
+body.dark .contact-me .wrapper .right .container .reactions .icon.love.clicked {
+    background-image: url("./../images/svg/heart-white-clicked.svg")
+}
+
+body.dark .contact-me .wrapper .right .container .reactions .icon.dislike,
+body.dark .contact-me .wrapper .right .container .reactions .icon.like {
+    background-image: url("./../images/svg/like-white.svg")
+}
+
+body.dark .contact-me .wrapper .right .container .reactions .icon.dislike.clicked,
+body.dark .contact-me .wrapper .right .container .reactions .icon.like.clicked {
+    background-image: url("./../images/svg/like-white-clicked.svg")
+}
+
+body.dark footer {
+    background-color: #303
+}
+
+body.dark footer .container {
+    background-color: #002753
+}
+
+@media (max-width: 700px) {
+
+    body.dark main .why-us .container .item.item1,
+    body.dark main .why-us .container .item.item2,
+    body.dark main .why-us .container .item.item3,
+    body.dark main .why-us .container .item.item4,
+    body.dark main .why-us .container .item.item5,
+    body.dark main .why-us .container .item.item6 {
+        background-color: #008ab4
+    }
+
+    body.dark main .why-us .container .item.item2,
+    body.dark main .why-us .container .item.item4,
+    body.dark main .why-us .container .item.item6 {
+        background-color: purple
+    }
+}
