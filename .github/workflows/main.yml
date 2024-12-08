@@ -16,8 +16,10 @@ jobs:
     - name: Deploy files via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        ftp-server: ftpupload.net:21
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: ftpupload.net:21
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./ # Change this to the directory containing the static files
-        server-dir: /path/to/deployment/directory # Change this to your target directory on the server
+        server-dir: /htdocs/ # Change this to your target directory on the server
+        port: 21
+        protocol: ftp
