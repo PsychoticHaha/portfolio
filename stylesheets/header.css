@@ -24,6 +24,7 @@ div.header-container {
     transition: .3s;
     position: absolute;
     top: 0;
+    border-radius: 500px;
 }
 
 .header a .logo {
@@ -33,7 +34,6 @@ div.header-container {
     background-size: 70%;
     position: absolute;
     left: 0;
-    border: 1px dashed purple;
 }
 
 .header a.logo-link {
@@ -104,15 +104,15 @@ div.header-container {
 
 .header nav.desktop-menu .links a.link .border-span {
     width: 0;
-    height: 3px;
+    height: 2px;
     transition: .3s;
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 1
+    z-index: 1;
 }
 
-.header nav.desktop-menu .links a.link:hover .border-span {
+.header nav.desktop-menu .links a.link:not(.active):hover .border-span {
     background-color: #2b8eff;
     width: 100%
 }
@@ -240,7 +240,7 @@ header .mobile-menu {
     width: 100%;
     background-color: #040c25;
     transition: .3s;
-    transform: translate(-120%)
+    transform: translate(-100vw);
 }
 
 header .mobile-menu a.link {

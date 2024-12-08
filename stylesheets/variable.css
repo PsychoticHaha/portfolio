@@ -1,17 +1,25 @@
 :root {
     --container-max: 1440px;
     --header-height: 100px;
+    --global-radius: 30px;
 
     --light-bg-accent: #eee;
     --main-bg: #fdfdfdf1;
     --logo-image: url("./../images/raf_logo.png");
     --text-high-contrast: #1d1d1d;
     --text-high-contrast-inverted: #f8f7f7;
+    --scrollbar-color: #008ab4;
+    --linear-loading-gradient: linear-gradient(90deg,
+            #e0e0e0 25%,
+            #f0f0f0 50%,
+            #e0e0e0 75%);
+
 
     --handshake-icon-white: url("./../images/handshake.svg");
     --handshake-icon-black: url("./../images/handshake-black.svg");
-    --arrow-down-white: url("./../images/svg/arr-down.svg");;
-    --arrow-down-black: url("./../images/svg/arr-down-black.svg");;
+    --arrow-down-white: url("./../images/svg/arr-down.svg");
+    ;
+    --arrow-down-black: url("./../images/svg/arr-down-black.svg");
 }
 
 :root.dark {
@@ -20,4 +28,9 @@
     --logo-image: url("./../images/raf_logo_white.png");
     --text-high-contrast: #e8e8e8;
     --text-high-contrast-inverted: #1d1d1d;
+    --scrollbar-color: #0a1a52;
+    --linear-loading-gradient: linear-gradient(90deg,
+            #010b25 25%,
+            #0f1f41 50%,
+            #010b25 75%);
 }

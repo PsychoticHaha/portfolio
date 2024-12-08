@@ -3,6 +3,7 @@ main .hero {
     width: 100%;
     position: relative;
     padding-top: 0;
+    min-height: 700px;
 }
 
 main .hero .section-wrapper {
@@ -12,6 +13,13 @@ main .hero .section-wrapper {
     height: 100%;
     margin: auto;
     position: relative;
+}
+
+main .hero .section-wrapper .content-container {
+    height: fit-content;
+    position: relative;
+    display: flex;
+    width: 100%;
 }
 
 main .hero .mouse-container {
@@ -52,22 +60,38 @@ main .hero .mouse-container .mouse::before {
     }
 }
 
-main .hero .left {
-    width: 40%;
-}
-
 main .hero .left .rounded-border {
-    max-width: 500px;
+    width: fit-content;
     height: -moz-fit-content;
-    height: fit-content;
+    height: 100%;
     border: 1px solid rgba(255, 255, 255, .4784313725);
-    /* border-radius: 500px; */
+    border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: end;
     background-color: #010b25;
     overflow: hidden;
-    position: relative
+    position: relative;
+
+    background: var(--linear-loading-gradient);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+
+    @media (min-width: 1200px) {
+        min-width: 512px;
+        min-height: 512px;
+    }
+}
+
+/* Keyframes pour le mouvement */
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
 }
 
 main .hero .left .rounded-border span.square-form {
@@ -85,9 +109,10 @@ main .hero .left .rounded-border span.square-form {
 }
 
 main .hero .left .rounded-border img.profile-picture {
-    width: 100%;
+    width: auto;
     z-index: 0;
-    transition: .1s ease-in-out
+    transition: .1s ease-in-out;
+    height: 100%;
 }
 
 main .hero .left .rounded-border:hover span.square-form {
@@ -118,42 +143,87 @@ main .hero .left .rounded-border:hover span.square-form::after {
 
 main .hero .right {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: start;
-    gap: 50px;
-    min-width: 300px;
-    width: 60%;
+    justify-content: center;
     flex: 1;
-    padding-left: 130px;
+}
 
+main .hero .right .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    gap: 50px;
 }
 
 main .hero .right .intro-text {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    height: 400px;
-    gap: 95px;
+    height: fit-content;
+    justify-content: space-between;
 }
 
 main .hero .right .intro-text h1 {
-    font-size: max(3em, 40px);
+    font-size: max(3vw, 40px);
 }
 
 main .hero .right .intro-text h1 span.small {
     font-weight: 500;
+    font-size: 30px;
+}
+
+main .hero .right .intro-text h1 div span.small {
+    font-size: 30px;
 }
 
 main .hero .right .intro-text h1 span.big {
-    font-size: 2em;
+    font-size: 50px;
 }
 
 main .hero .right .intro-text h1 .f-letter {
     color: transparent;
     background: linear-gradient(25deg, #00b7ff, #ba3de0, #a70101);
     -webkit-background-clip: text;
-    background-clip: text
+    background-clip: text;
+    animation: bg-move 2s ease-in-out infinite alternate-reverse;
+}
+
+main .hero .right .intro-text h1 img {
+    width: 50px;
+    position: relative;
+    top: 6px;
+    margin-left: 10px;
+    transform: rotate(-25deg);
+    animation: hello 2s 2 linear reverse;
+    transform-origin: bottom;
+    user-select: none;
+    transition: .5s;
+}
+
+main .hero .right .intro-text h1 img:hover {
+    animation: hello .7s 2 ease-in-out alternate-reverse;
+}
+
+@keyframes hello {
+    from {
+        transform: rotate(-20deg);
+    }
+
+    to {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes bg-move {
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 300%;
+    }
 }
 
 .contact-me .wrapper .left form button:focus,
@@ -162,7 +232,7 @@ main .hero .right .intro-text h1 .f-letter {
     box-shadow: 0 2px 10px 0 #00fcac
 }
 
-main .hero .right .intro-text .post-text {
+main .hero .right .post-text {
     display: flex;
     align-items: end;
     height: -moz-fit-content;
@@ -173,7 +243,7 @@ main .hero .right .intro-text .post-text {
     font-family: "Open Sans", Helvetica, Roboto, Arial, sans-serif;
 }
 
-main .hero .right .intro-text .post-text .effect-wrapper {
+main .hero .right .post-text .effect-wrapper {
     display: flex;
     gap: 5px;
     height: -moz-fit-content;
@@ -181,7 +251,8 @@ main .hero .right .intro-text .post-text .effect-wrapper {
     min-height: 30px;
     border: none;
     border-right: 2px solid #020216;
-    animation: .75s step-end infinite blink
+    animation: .75s step-end infinite blink;
+    margin-left: 5px;
 }
 
 @keyframes blink {
@@ -196,14 +267,14 @@ main .hero .right .intro-text .post-text .effect-wrapper {
     }
 }
 
-main .hero .right .intro-text .line-container {
+main .hero .right .line-container {
     gap: 10px;
     align-items: center;
     height: 100%;
     display: flex;
 }
 
-main .hero .right .intro-text .line-container span.line {
+main .hero .right .line-container span.line {
     display: inline-block;
     width: 15px;
     height: 15px;
@@ -223,9 +294,8 @@ main .hero .right .intro-text p#text {
 
 main .hero .right .cta {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
-    gap: 50px;
     width: 100%;
     position: relative;
     z-index: 998;
@@ -236,7 +306,7 @@ main .hero .right .cta .item {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    min-width: 300px;
+    min-width: 45%;
     padding: 7px 10px;
     height: 70px;
     cursor: pointer;
@@ -246,6 +316,7 @@ main .hero .right .cta .item {
     color: var(--text-high-contrast-inverted);
     text-decoration: none;
     background-repeat: no-repeat;
+    font-weight: 600;
 }
 
 main .hero .right .cta .item:hover {
@@ -256,6 +327,7 @@ main .hero .right .cta .item:hover {
 
 main .hero .right .cta .item.hire {
     background-color: purple;
+    /* background: red; */
 }
 
 main .hero .right .cta .item .icon.partner {

@@ -8,7 +8,7 @@ if (file_exists($jsonFilePath)) {
       $details_link = $single_work['details_link'].''.$single_work['id'];
 echo '<div class="single-work">
         <div class="thumbnail">';
-     echo "<img src={$single_work['thumbnail_path']} loading='lazy' alt={$single_work['title']} width='250'>";
+     echo "<img src='' data-img={$single_work['thumbnail_path']} loading='lazy' alt={$single_work['title']} width='250'>";
    echo'</div>
         <div class="bottom">
           <h3 class="title">';

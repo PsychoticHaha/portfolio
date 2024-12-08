@@ -6,7 +6,7 @@
     </div>
     <div class=container>
         <div class=footer-section>
-            <img src=./images/raf_logo_white.png alt="RAF Logo" width=50>
+            <img src="./images/raf_logo_white.png" data-img="/images/raf_logo_white.png" alt="RAF Logo" width=50>
             <div class=quote>
                 "Great results comes along with a great work."
             </div>

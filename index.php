@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang=fr>
 <?php require_once 'components/head-tag.php'; ?>
+<link rel="stylesheet" href="./stylesheets/style.css">
 
 <body class=dark onload="">
   <div class=mouse-cursor aria-hidden=true></div>
@@ -25,8 +26,9 @@
     </div>
     <?php require_once 'components/footer.php' ?>
   </main>
-  <link rel=stylesheet href=./stylesheets/style.css>
-  <script src=./scripts/index.js type=module></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./scripts/index.js" type="module"></script>
+  <script src="./scripts/modules/isotope.js" type="module"></script>
 </body>
 
 </html>

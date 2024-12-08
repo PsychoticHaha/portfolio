@@ -1,6 +1,6 @@
 <section class=why-us id=why-us-section>
   <div class="section-wrapper">
-    <h2>Why Choose to Work with RAF ?</h2>
+    <h2>Why Choose to Work with Fanasina ?</h2>
     <div class=text>
       <div class=round></div>
       <p>There are six main reasons :</p>
@@ -72,42 +72,18 @@
     </div>
   </div>
   <div class="box other-reasons">
-    <div class=text>
-      <div class=round></div>
-      <p> Other reasons that may be interesting : </p>
+    <div class="section-wrapper">
+      <div class=text>
+        <div class=round></div>
+        <p> Other reasons that are also interesting : </p>
+      </div>
     </div>
-    <div class=scrolling-content>
+    <div class="scrolling-content swiper-container">
       <div class="overlay left"></div>
       <div class="overlay right"></div>
-      <div class="wrapper">
-        <div class="element element1">
-          <div class="icon mobile"></div>
-          <div class=text>Mobile-friendy Design</div>
-        </div>
-        <div class="element element2">
-          <div class="icon rocket"></div>
-          <div class=text>Performance Optimization</div>
-        </div>
-        <div class="element element3">
-          <div class="icon phone-pc-link"></div>
-          <div class=text>Responsive Design</div>
-        </div>
-        <div class="element element4">
-          <div class="icon structure"></div>
-          <div class=text>Well Structured Codes and Folders</div>
-        </div>
-        <div class="element element4">
-          <div class="icon search-engin"></div>
-          <div class=text>SEO Optimization</div>
-        </div>
-        <div class="element element5">
-          <div class="icon bug"></div>
-          <div class=text>Test and debugging</div>
-        </div>
-        <div class="element element6">
-          <div class="icon users"></div>
-          <div class=text>User-Centered Design</div>
-        </div>
+      <div class="wrapper swiper-wrapper">
+        <?php require('slides.php') ?>
+        <?php require('slides.php') ?>
       </div>
     </div>
   </div>

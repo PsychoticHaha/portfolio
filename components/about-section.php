@@ -1,24 +1,40 @@
-<section class=about-me id=about-me-section>
-  <div class="section-wrapper">
-    <h2 class=whois>Who is RAF ?</h2>
-    <div class=text id=about-paragraph>
-      <p class=full-text>
-        RAF, a talented self-taught web developer who embarked on his coding journey in 2016. Despite taking a hiatus
-        between 2018 and 2022, his passion for programming and development has remained unwavering. Always on the
-        lookout for fresh challenges, RAF specializes in frontend development with a mastery of React JS.
-      </p>
-      <p class=full-text>
-        In the dynamic world of web development, RAF stands out as an individual who not only embraces challenges but
-        thrives on them. His journey showcases resilience and a continuous pursuit of excellence, evident in his
-        commitment to honing his skills.
-      </p>
-      <p>
-        P.S : My initials, RAF, stand for Ramalandimanana Antso Fanasina.
-      </p>
-      <div class=source></div>
+<section class="about-me-section" id=about-me-section>
+  <div class="section-wrapper whoami">
+    <div class="left-content">
+      <h2 class="whois">Who am I ?</h2>
+      <div class="text " id="about-paragraph">
+        <p class="full-text">
+          I am a self-taught web developer who began my coding journey in 2016. With three years of professional
+          experience, I have
+          successfully completed over thirty projects, ranging from personal projects to impactful contributions for
+          businesses.
+
+          <br>
+          <br>
+
+          Throughout my career, I have demonstrated an exceptional ability to adapt and innovate, always pushing the
+          boundaries of frontend development with a strong focus on React JS. My dedication and hands-on approach have
+          not only sharpened my technical expertise but also earned me a reputation as a reliable and creative problem
+          solver.
+
+          <br>
+          <br>
+
+          In the ever-evolving world of web development, my journey exemplifies resilience, passion, and a relentless
+          drive to deliver excellence.
+        </p>
+        <p>
+          P.S : My initials, RAF, stand for Ramalandimanana Antso Fanasina.
+        </p>
+        <div class=source></div>
+      </div>
+      <div class="btn-container">
+        <div class="more-less-btn" id="read-more-about-me">Read less</div>
+      </div>
     </div>
-    <div class=btn-container>
-      <div class=more-less-btn id=read-more-about-me>Read less</div>
+    <div class="right-content">
+      <img src="/images/who-am-i.webp" data-img="/images/who-am-i.webp" alt="">
     </div>
   </div>
 </section>
+<?php require 'separator-line.php' ?>

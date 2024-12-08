@@ -16,8 +16,6 @@ hamburger_menu.addEventListener('click', closeCurrentTab);
 // THEME TOGGLING
 const themeBtn = document.querySelector('.theme-toggle-btn');
 themeBtn.addEventListener('click', () => {
-  const scrollBarStyleElement = document.getElementById('scrollbar-style');
-
   setTimeout(() => {
     themeBtn.firstElementChild.classList.toggle('dark');
   }, 400);

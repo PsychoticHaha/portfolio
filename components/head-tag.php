@@ -19,13 +19,16 @@
         content="Web Developer, Developer, Madagascar, Freelance, Fullstack, English, Javascript Developper, Front-End Developer">
     <base href= />
     <meta name=viewport content="width=device-width,initial-scale=1">
-    <script src=/scripts/checkUserPreferences.js async></script>
     <title>RAF | Web Developer</title>
     <link rel="shortcut icon" href=./images/favicon.png type=image/x-icon>
-    <style id=scrollbar-style>
-        ::-webkit-scrollbar-thumb {
-            background-color: #0a1a52;
-            border-radius: 20px
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script> -->
 </head>

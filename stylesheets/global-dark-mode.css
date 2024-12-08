@@ -5,7 +5,7 @@ body.dark .mouse-cursor {
 
 body.dark {
     background-color: #020216;
-    background-image: url("./../images/sands.png");
+    background-image: url("./../images/sands.webp");
     background-size: 50%;
     background-repeat: repeat;
     color: #e8e8e8
@@ -41,7 +41,7 @@ body.dark main .hero .mouse::before {
     background-color: #e4e4e4
 }
 
-body.dark main .hero .right .intro-text .post-text .effect-wrapper {
+body.dark main .hero .right .post-text .effect-wrapper {
     border-right: 2px solid #e8e8e8;
     animation: .75s step-end infinite blink_dark
 }
@@ -151,24 +151,6 @@ body.dark .contact-me .wrapper .left form textarea {
 body.dark .contact-me .wrapper .right .container {
     border-color: #003a7c;
     background-color: rgba(2, 2, 22, .7450980392)
-}
-
-body.dark .contact-me .wrapper .right .container .reactions .icon.love {
-    background-image: url("./../images/svg/heart-white.svg")
-}
-
-body.dark .contact-me .wrapper .right .container .reactions .icon.love.clicked {
-    background-image: url("./../images/svg/heart-white-clicked.svg")
-}
-
-body.dark .contact-me .wrapper .right .container .reactions .icon.dislike,
-body.dark .contact-me .wrapper .right .container .reactions .icon.like {
-    background-image: url("./../images/svg/like-white.svg")
-}
-
-body.dark .contact-me .wrapper .right .container .reactions .icon.dislike.clicked,
-body.dark .contact-me .wrapper .right .container .reactions .icon.like.clicked {
-    background-image: url("./../images/svg/like-white-clicked.svg")
 }
 
 body.dark footer {

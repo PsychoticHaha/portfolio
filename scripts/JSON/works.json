@@ -96,6 +96,21 @@
       "about": ""
     },
     {
+      "id": "6",
+      "title": "Portfolio Website v1",
+      "thumbnail_path": "/images/works/portfolio-v1.png",
+      "description": "The first version of my Portfolio Website.",
+      "techno": [
+        "Javascript",
+        "PHP",
+        "MySQL"
+      ],
+      "github_link": "https://github.com/PsychoticHaha/",
+      "details_link": "/project/",
+      "deployed_link": "#",
+      "about": ""
+    },
+    {
       "id": "7",
       "title": "Pharmacy Management Design",
       "thumbnail_path": "/images/works/pharmacy_design.webp",
