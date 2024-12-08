@@ -1,0 +1,26 @@
+name: Deploy Portfolio via FTP
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Deploy files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ftpupload.net
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./ # Change this to the directory containing the static files
+        server-dir: /htdocs/ # Change this to your target directory on the server
+        port: 21
+        protocol: ftp
+        dangerous-clean-slate: true # Clean the folder before upload
