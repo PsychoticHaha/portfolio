@@ -12,8 +12,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 2 # Récupère les 2 derniers commits pour comparaison
+      # with:
+      #   fetch-depth: 2 # Récupère les 2 derniers commits pour comparaison
 
     # - name: Get Changed Files
     #   id: get-changes
@@ -45,8 +45,8 @@ jobs:
         server-dir: /htdocs/ # Répertoire distant
         port: 21
         protocol: ftp
-        exclude: |
-          **/*
-          !.ftp-deploy-sync-state.json # Toujours garder le fichier de synchronisation
-        include: |
-          ${{ steps.get-changes.outputs.changed_files }}
+        # exclude: |
+        #   **/*
+        #   !.ftp-deploy-sync-state.json # Toujours garder le fichier de synchronisation
+        # include: |
+        #   ${{ steps.get-changes.outputs.changed_files }}
