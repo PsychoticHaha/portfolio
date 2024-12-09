@@ -15,25 +15,25 @@ jobs:
       with:
         fetch-depth: 2 # Récupère les 2 derniers commits pour comparaison
 
-    - name: Get Changed Files
-      id: get-changes
-      run: |
-        if git rev-parse HEAD~1 >/dev/null 2>&1; then
-          # Comparaison si un commit parent existe
-          git diff --name-only HEAD~1 HEAD > changes.txt || echo "No changes detected"
-        else
-          # Si pas de parent, lister tous les fichiers
-          git ls-files > changes.txt
-        fi
+    # - name: Get Changed Files
+    #   id: get-changes
+    #   run: |
+    #     if git rev-parse HEAD~1 >/dev/null 2>&1; then
+    #       # Comparaison si un commit parent existe
+    #       git diff --name-only HEAD~1 HEAD > changes.txt || echo "No changes detected"
+    #     else
+    #       # Si pas de parent, lister tous les fichiers
+    #       git ls-files > changes.txt
+    #     fi
 
-        if [ -s changes.txt ]; then
-          echo "::set-output name=changed_files::$(cat changes.txt | tr '\n' ' ')"
-          echo "Changes detected:"
-          cat changes.txt
-        else
-          echo "::set-output name=changed_files::''"
-          echo "No changes detected"
-        fi
+    #     if [ -s changes.txt ]; then
+    #       echo "::set-output name=changed_files::$(cat changes.txt | tr '\n' ' ')"
+    #       echo "Changes detected:"
+    #       cat changes.txt
+    #     else
+    #       echo "::set-output name=changed_files::''"
+    #       echo "No changes detected"
+    #     fi
 
     - name: Deploy files via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
