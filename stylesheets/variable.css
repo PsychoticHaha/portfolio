@@ -18,8 +18,11 @@
     --handshake-icon-white: url("./../images/handshake.svg");
     --handshake-icon-black: url("./../images/handshake-black.svg");
     --arrow-down-white: url("./../images/svg/arr-down.svg");
-    ;
     --arrow-down-black: url("./../images/svg/arr-down-black.svg");
+
+    @media(max-width: 700px) {
+        --header-height: 60px;
+    }
 }
 
 :root.dark {

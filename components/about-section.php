@@ -28,9 +28,6 @@
         </p>
         <div class=source></div>
       </div>
-      <div class="btn-container">
-        <div class="more-less-btn" id="read-more-about-me">Read less</div>
-      </div>
     </div>
     <div class="right-content">
       <img src="/images/who-am-i.webp" data-img="/images/who-am-i.webp" alt="">

@@ -50,11 +50,13 @@
             </div>
           </div>
         </div>
-        <div class=tell-me-why>
-          <div class=close>❌</div>
-          <h3>Can you tell me why, please ?</h3>
-          <textarea id=feedback-message placeholder="e.g : It's very hard to for me to read texts inside."></textarea>
-          <button>Send feedback <span class=angry-emoji> 😇</span></button>
+        <div class="popup-wrapper">
+          <div class=tell-me-why>
+            <div class=close>❌</div>
+            <h3>Can you tell me why, please ?</h3>
+            <textarea id=feedback-message placeholder="e.g : It's very hard to for me to read texts inside."></textarea>
+            <button>Send feedback <span class=angry-emoji> 😇</span></button>
+          </div>
         </div>
       </div>
     </div>

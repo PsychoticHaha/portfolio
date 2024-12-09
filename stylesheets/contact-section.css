@@ -280,6 +280,20 @@
     transform-origin: right;
 }
 
+.contact-me .popup-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000000cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    transform: translate(100vw);
+    transition: .5s ease-out;
+}
 .contact-me .wrapper .right .tell-me-why {
     min-width: 300px;
     width: 100%;
@@ -294,12 +308,10 @@
     top: 20%;
     z-index: 4545;
     overflow: hidden;
-    transform: translate(100vw);
-    transition: .5s ease-out
 }
 
-.contact-me .wrapper .right .tell-me-why.show {
-    transform: translate(0)
+.contact-me .wrapper .right .popup-wrapper.show {
+    transform: translate(0);
 }
 
 .contact-me .wrapper .right .tell-me-why .close {

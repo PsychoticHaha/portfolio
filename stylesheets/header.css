@@ -184,12 +184,11 @@ header .right .theme-toggle-btn:hover {
 }
 
 .hamburger-menu {
-    height: 80%;
+    height: 40px;
     width: 40px;
     flex-direction: column;
     justify-content: center;
     gap: 7px;
-    overflow: hidden;
     transition: .3s;
     cursor: pointer;
     margin-right: 10px;
@@ -209,11 +208,12 @@ header .right .theme-toggle-btn:hover {
 }
 
 .hamburger-menu.clicked div.top {
-    justify-self: center;
-    width: 95%;
-    transform: rotate(44deg);
-    transform-origin: left;
-    margin-left: 7px
+    width: 100%;
+    transform: rotate(43deg);
+    transform-origin: left top;
+    position: absolute;
+    top: 5px;
+    right: 0;
 }
 
 .hamburger-menu.clicked div.middle {
@@ -222,12 +222,12 @@ header .right .theme-toggle-btn:hover {
 }
 
 .hamburger-menu.clicked div.bottom {
-    width: 90%;
+    width: 100%;
     transform: rotate(-43deg);
-    transform-origin: left;
-    justify-self: center;
-    align-self: start;
-    margin-left: 5px
+    transform-origin: left bottom;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
 }
 
 header .mobile-menu {
@@ -238,7 +238,7 @@ header .mobile-menu {
     z-index: 999;
     height: 100vh;
     width: 100%;
-    background-color: #040c25;
+    background-color: var(--main-bg);
     transition: .3s;
     transform: translate(-100vw);
 }
@@ -249,7 +249,7 @@ header .mobile-menu a.link {
     background-color: rgba(255, 255, 255, .8156862745);
     width: 100%;
     display: flex;
-    justify-content: center;
+    padding-left: 20px;
     align-items: center;
     text-decoration: none;
     font-weight: 600;

@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const likeIcon = document.querySelector(".reactions .icon.like"),
     dislikeIcon = document.querySelector(".reactions .icon.dislike"),
     loveIcon = document.querySelector(".reactions .icon.love");
-  const feedbackForm = document.querySelector(".tell-me-why");
+  const feedbackForm = document.querySelector(".popup-wrapper");
 
   if (reaction) {
     switch (reaction) {
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Hide the feedback form when the user clicks anywhere outside of it
-  feedbackForm.addEventListener('click', (event) => {
+  feedbackForm.querySelector('.close').addEventListener('click', (event) => {
     // Prevent the event from propagating to the document
     event.stopPropagation();
     feedbackForm.classList.remove('show');
@@ -246,9 +246,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // Curseur personnalisé
 let customCursor = document.querySelector(".mouse-cursor");
 document.addEventListener("mousemove", event => {
-  let cursorSize = { width: customCursor.offsetWidth, height: customCursor.offsetHeight };
-  customCursor.style.left = `${event.clientX - cursorSize.width / 2}px`;
-  customCursor.style.top = `${event.clientY - cursorSize.height / 2}px`;
+  const isTouchDevice = 'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    window.matchMedia('(pointer: coarse)').matches;
+
+  if (window.innerWidth > 700 && !isTouchDevice) {
+    let cursorSize = { width: customCursor.offsetWidth, height: customCursor.offsetHeight };
+    customCursor.style.left = `${event.clientX - cursorSize.width / 2}px`;
+    customCursor.style.top = `${event.clientY - cursorSize.height / 2}px`;
+  }
 });
 
 // Gestion du bouton "Lire plus sur moi"

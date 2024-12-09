@@ -4,7 +4,7 @@
     header nav.desktop-menu .links,
     header.header nav.desktop-menu,
     main .about-me .btn-container,
-    main .hero .left .rounded-border img.profile-picture,
+    /* main .hero .left .rounded-border img.profile-picture, */
     main .horizontal-line,
     main .why-us .box .scrolling-content .overlay {
         display: none
@@ -15,8 +15,13 @@
         gap: 10px
     }
 
+    header.header a div.logo {
+        background-size: 40px;
+    }
+
     .hamburger-menu {
-        display: flex
+        display: flex;
+        position: relative;
     }
 
     .mobile-menu.show {
@@ -29,9 +34,14 @@
         padding: 60px 0
     }
 
-    section {
-        padding-top: 0 !important;
+    main section {
+        padding: 25px 0 !important;
         width: 100vw !important;
+        min-height: 600px !important;
+    }
+
+    section .section-wrapper h2 {
+        text-align: center;
     }
 
     header.header {
@@ -40,7 +50,8 @@
 
     main .mouse-container .mouse {
         border-radius: 5px !important;
-        transform: rotate(180deg)
+        transform: rotate(180deg);
+        display: none;
     }
 
     main .hero .section-wrapper .content-container {
@@ -52,7 +63,6 @@
     }
 
     main .hero .left {
-        width: 80%;
         height: 300px;
         display: flex;
         align-self: center;
@@ -71,14 +81,9 @@
     }
 
     main .hero .left .rounded-border {
-        border-radius: 50%;
-        height: 60%;
+        border-radius: 500px;
         width: 250px;
-        min-height: 250px;
-        background-image: url("./../images/no_bg_avatar.webp");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center 0
+        height: 250px;
     }
 
     main .hero .left .rounded-border:hover span.square-form::after {
@@ -126,7 +131,8 @@
 
     main .hero .right .post-text {
         width: 100%;
-        align-items: center
+        align-items: center;
+        margin-left: 11%;
     }
 
     main .hero .right .post-text .line-container {
@@ -151,16 +157,32 @@
         justify-content: center
     }
 
+    main .about-me-section .section-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    main .about-me-section .section-wrapper.whoami div.left-content {
+        width: 100%;
+    }
+
+    main .about-me-section .section-wrapper.whoami div.right-content {
+        width: 250px;
+        align-self: center;
+    }
+
+    main .why-us .section-wrapper .container {
+        flex-direction: column;
+    }
+
     body.dark main .why-us .container,
     main .why-us .container {
         align-items: center
     }
 
-    body.dark main .why-us .container .item,
     main .why-us .container .item {
         align-self: center;
         justify-self: center;
-        width: 85%
+        width: 100%;
     }
 
     main .my-skills {
@@ -203,28 +225,48 @@
     .contact-me .wrapper .left,
     .contact-me .wrapper .right,
     footer .container .footer-section {
-        width: 100%
+        width: 100% !important;
     }
 
     .contact-me .wrapper .left form {
         min-width: unset !important;
-        width: 90%;
+        width: 99%;
         align-items: center;
-        justify-content: center
+        justify-content: center;
+        height: unset;
     }
 
     .contact-me .wrapper .right .container {
         width: 95%;
-        padding: 10px 5px !important
+        padding: 10px 5px !important;
+    }
+
+    .contact-me .wrapper .right .container h3 {
+        font-size: 17px;
+    }
+
+    .socials {
+        padding-left: 15px;
     }
 
     footer {
-        height: 600px
+        height: unset !important;
+        margin-top: 20px;
     }
 
     footer .container {
         flex-direction: column-reverse;
-        justify-content: space-between
+        justify-content: space-between !important;
+        gap: 15px;
+    }
+
+    footer .container > div {
+        height: unset !important;
+        padding: 15px 0;
+    }
+
+    footer .container .footer-section .quote {
+        width: calc(100% - 30px);
     }
 
     footer .container .footer-section.middle {
