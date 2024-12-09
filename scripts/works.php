@@ -38,4 +38,3 @@ echo '<div class="single-work">
 } else {
   echo "JSON file doesn't exist.";
 }
-

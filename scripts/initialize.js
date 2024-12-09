@@ -6,4 +6,3 @@ const iso = new Isotope( elem, {
   itemSelector: '.single-work',
   layoutMode: 'fitRows'
 });
-
