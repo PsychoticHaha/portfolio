@@ -12,15 +12,29 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 2 # Récupère les 2 derniers commits pour permettre la comparaison
+
+    - name: Get Changed Files
+      id: get-changes
+      run: |
+        git diff --name-only HEAD~1 HEAD > changes.txt || echo "No changes detected"
+        if [ -s changes.txt ]; then
+          echo "::set-output name=changed_files::$(cat changes.txt | tr '\n' ' ')"
+        else
+          echo "::set-output name=changed_files::''"
+        fi
 
     - name: Deploy files via FTP
+      if: steps.get-changes.outputs.changed_files != ''
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftpupload.net
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./ # Change this to the directory containing the static files
-        server-dir: /htdocs/ # Change this to your target directory on the server
+        local-dir: ./ # Répertoire local
+        server-dir: /htdocs/ # Répertoire distant
         port: 21
         protocol: ftp
-        dangerous-clean-slate: true # Clean the folder before upload
+        exclude: "**/*" # Exclure tout par défaut
+        include: "${{ steps.get-changes.outputs.changed_files }}" # Inclure uniquement les fichiers modifiés ou ajoutés
