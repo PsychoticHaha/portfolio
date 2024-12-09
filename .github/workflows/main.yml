@@ -13,12 +13,19 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
       with:
-        fetch-depth: 2 # Récupère les 2 derniers commits pour permettre la comparaison
+        fetch-depth: 2 # Récupère les 2 derniers commits
 
     - name: Get Changed Files
       id: get-changes
       run: |
-        git diff --name-only HEAD~1 HEAD > changes.txt || echo "No changes detected"
+        if git rev-parse HEAD~1 >/dev/null 2>&1; then
+          # Comparaison si un commit parent existe
+          git diff --name-only HEAD~1 HEAD > changes.txt || echo "No changes detected"
+        else
+          # Si pas de parent, lister tous les fichiers
+          git ls-files > changes.txt
+        fi
+
         if [ -s changes.txt ]; then
           echo "::set-output name=changed_files::$(cat changes.txt | tr '\n' ' ')"
         else
