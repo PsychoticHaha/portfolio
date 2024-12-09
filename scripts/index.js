@@ -258,36 +258,36 @@ document.addEventListener("mousemove", event => {
 });
 
 // Gestion du bouton "Lire plus sur moi"
-let readMoreAboutBtn = document.getElementById("read-more-about-me"),
-  aboutMeParagraph = document.getElementById("about-paragraph");
+// let readMoreAboutBtn = document.getElementById("read-more-about-me"),
+//   aboutMeParagraph = document.getElementById("about-paragraph");
 
 
-function toggleText() {
-  aboutMeParagraph.classList.contains("less") ? (aboutMeParagraph.classList.remove("less"), readMoreAboutBtn.innerHTML = "Read less", aboutMeParagraph.innerHTML = `
-    <p class="full-text">
-      RAF, a talented self-taught web developer who embarked on his coding journey in 2016. Despite taking a
-      hiatus
-      between 2018 and 2022, his passion for programming and development has remained unwavering. Always on the
-      lookout for fresh challenges, RAF specializes in frontend development with a mastery of React JS.
-    </p>
-    <p class="full-text">
-      In the dynamic world of web development, RAF stands out as an individual who not only embraces challenges
-      but thrives on them. His journey showcases resilience and a continuous pursuit of excellence, evident in
-      his
-      commitment to honing his skills.
-    </p>
-    <p>
-      P.S : My initials, RAF, stand for Ramalandimanana Antso Fanasina.
-    </p>
-    <div class="source"></div>`) : (aboutMeParagraph.classList.add("less"), readMoreAboutBtn.innerHTML = "Read more", aboutMeParagraph.innerHTML = `
-    <p class="full-text">
-      RAF, a talented self-taught web developer who ...
-    </p>`)
-};
+// function toggleText() {
+//   aboutMeParagraph.classList.contains("less") ? (aboutMeParagraph.classList.remove("less"), readMoreAboutBtn.innerHTML = "Read less", aboutMeParagraph.innerHTML = `
+//     <p class="full-text">
+//       RAF, a talented self-taught web developer who embarked on his coding journey in 2016. Despite taking a
+//       hiatus
+//       between 2018 and 2022, his passion for programming and development has remained unwavering. Always on the
+//       lookout for fresh challenges, RAF specializes in frontend development with a mastery of React JS.
+//     </p>
+//     <p class="full-text">
+//       In the dynamic world of web development, RAF stands out as an individual who not only embraces challenges
+//       but thrives on them. His journey showcases resilience and a continuous pursuit of excellence, evident in
+//       his
+//       commitment to honing his skills.
+//     </p>
+//     <p>
+//       P.S : My initials, RAF, stand for Ramalandimanana Antso Fanasina.
+//     </p>
+//     <div class="source"></div>`) : (aboutMeParagraph.classList.add("less"), readMoreAboutBtn.innerHTML = "Read more", aboutMeParagraph.innerHTML = `
+//     <p class="full-text">
+//       RAF, a talented self-taught web developer who ...
+//     </p>`)
+// };
 // DOMContentLoaded pour gérer les interactions après le chargement de la page
 document.addEventListener("DOMContentLoaded", () => {
   // Bouton "Lire plus" : ajouter un gestionnaire d'événements
-  readMoreAboutBtn.addEventListener("click", toggleText);
+  // readMoreAboutBtn.addEventListener("click", toggleText);
 
   // Gestion du défilement dans les sections pour mettre à jour la navigation active
   let sections = document.querySelectorAll("section");
