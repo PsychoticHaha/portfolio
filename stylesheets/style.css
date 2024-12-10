@@ -51,11 +51,11 @@ main {
 
 /* Global container limits */
 .section-wrapper {
-    max-width: 1434px;
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
 
-    @media (max-width: 1400px) {
+    @media (max-width: 1500px) {
         max-width: calc(100% - 60px);
     }
 

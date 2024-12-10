@@ -81,7 +81,6 @@
     }
 
     main .hero .left .rounded-border {
-        border-radius: 500px;
         width: 250px;
         height: 250px;
     }

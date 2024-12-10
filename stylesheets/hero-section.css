@@ -83,6 +83,63 @@ main .hero .left .rounded-border {
     }
 }
 
+@media(min-width: 768px) and (max-width: 1200px) {
+    main section.hero .left {
+        flex-shrink: 1;
+        width: 45%;
+    }
+
+    main section.hero .left .rounded-border {
+        min-width: unset;
+        min-height: unset;
+    }
+
+    body main section.hero .left .rounded-border img.profile-picture {
+        width: 100%;
+        height: auto;
+    }
+
+    main section.hero .right {
+        flex-grow: 1;
+        padding-left: 15px;
+    }
+
+    main section.hero .right .intro-text h1 span.small {
+        display: block;
+    }
+
+    main section.hero .right .post-text {
+        font-size: 25px;
+        align-items: center;
+    }
+}
+
+@media(max-width: 880px) and (min-width: 700px) {
+    main section#home.hero .section-wrapper {
+        padding: 30px 0;
+        min-height: 760px;
+    }
+
+    main section#home.hero .section-wrapper .content-container {
+        flex-direction: column;
+        align-items: center;
+        min-height: 700px;
+        gap: 30px;
+    }
+
+    main section#home.hero .section-wrapper .content-container .left {
+        width: 75%;
+    }
+
+    main section#home.hero .section-wrapper .content-container .right {
+        width: 75%;
+    }
+
+    main section.hero .right .post-text {
+        align-items: center;
+    }
+}
+
 /* Keyframes pour le mouvement */
 @keyframes shimmer {
     0% {
@@ -146,6 +203,10 @@ main .hero .right {
     align-items: center;
     justify-content: center;
     flex: 1;
+
+    @media(min-width: 1000px) {
+        padding-left: 30px;
+    }
 }
 
 main .hero .right .content {
