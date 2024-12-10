@@ -205,6 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     localStorage.setItem('reaction', btnEl.classList[1]);
+    const url = new URL(window.location.href);
+    console.log('URL', url);
+
   }
 
   // Hide the feedback form when the user clicks anywhere outside of it

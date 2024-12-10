@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="./stylesheets/style.css">
 
 <body class=dark onload="">
+  <?php require_once 'loadEnv.php'?>
+  <?php require_once 'backend/test-home.php'?>
   <div class=mouse-cursor aria-hidden=true></div>
 <?php require_once 'components/loading-layer.php'; ?>
   <?php require_once 'components/top-scripts.php'; ?>
