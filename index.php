@@ -1,7 +1,7 @@
 <?php 
 require_once 'loadEnv.php';
 // require 'backend/test-home.php';
-require 'backend/get-client-headers.php'; 
+// require 'backend/get-client-headers.php'; 
 ?>
 
 <!doctype html>
