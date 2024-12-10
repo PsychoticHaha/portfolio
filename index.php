@@ -1,13 +1,13 @@
+<?php require_once 'loadEnv.php';
+require_once 'backend/get-client-headers.php'; ?>
 <!doctype html>
 <html lang=fr>
 <?php require_once 'components/head-tag.php'; ?>
 <link rel="stylesheet" href="./stylesheets/style.css">
 
 <body class=dark onload="">
-  <?php require_once 'loadEnv.php'?>
-  <?php require_once 'backend/get-client-headers.php'; ?>
   <div class=mouse-cursor aria-hidden=true></div>
-<?php require_once 'components/loading-layer.php'; ?>
+  <?php require_once 'components/loading-layer.php'; ?>
   <?php require_once 'components/top-scripts.php'; ?>
   <div class=bottom-info></div>
   <div class="header-container">
