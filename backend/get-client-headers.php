@@ -2,7 +2,7 @@
 
 // URL de l'API "WhatIsMyBrowser"
 $url = "https://api.whatismybrowser.com/api/v3/detect";
-$api_key = ""; // Ajoute ici ta clé API
+$api_key = $_ENV['WHAT_IS_MY_BROWSER_API_KEY'];
 
 // Définir les headers pour activer les Client Hints
 header("accept-ch: Sec-Ch-Ua,Sec-Ch-Ua-Full-Version,Sec-Ch-Ua-Platform,Sec-Ch-Ua-Platform-Version,Sec-Ch-Ua-Arch,Sec-Ch-Bitness,Sec-Ch-Ua-Model,Sec-Ch-Ua-Mobile,Device-Memory,Dpr,Viewport-Width,Downlink,Ect,Rtt,Save-Data,Sec-Ch-Prefers-Color-Scheme,Sec-Ch-Prefers-Reduced-Motion,Sec-Ch-Prefers-Contrast,Sec-Ch-Prefers-Reduced-Data,Sec-Ch-Forced-Colors");
