@@ -58,7 +58,7 @@ $result_json['metadata'] = [
 ];
 
 // Endpoint personnel pour stocker les données
-$personal_endpoint = "https://mon-backend-personnel.com/store-data";
+$personal_endpoint = "/backend/save-logs.php";
 
 // Envoyer la réponse JSON vers le backend personnel
 $ch = curl_init();
@@ -78,4 +78,5 @@ if ($response === false) {
 }
 
 // Aucune sortie vers le client
-http_response_code(204); // Réponse HTTP vide (No Content)
+// http_response_code(204); // Réponse HTTP vide (No Content)
+?>

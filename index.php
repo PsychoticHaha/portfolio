@@ -1,5 +1,9 @@
-<?php require_once 'loadEnv.php';
-require_once 'backend/get-client-headers.php'; ?>
+<?php 
+require_once 'loadEnv.php';
+// require 'backend/test-home.php';
+require 'backend/get-client-headers.php'; 
+?>
+
 <!doctype html>
 <html lang=fr>
 <?php require_once 'components/head-tag.php'; ?>

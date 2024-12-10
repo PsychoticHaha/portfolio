@@ -24,3 +24,5 @@ function loadEnv($filePath = '.env') {
 
 // Appeler la fonction
 loadEnv();
+
+?>
