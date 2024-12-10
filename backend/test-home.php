@@ -1,7 +1,8 @@
 <?php
-$dbHost = getenv('DB_HOST');
-$dbUser = getenv('DB_USER');
-$dbPass = getenv('DB_PASS');
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $api_key = getenv('WHAT_IS_MY_BROWSER_API_KEY');
 
 // # This will output debug info into the http response, and is just meant to give an idea of how to call the API.
@@ -34,16 +35,23 @@ $post_data = array(
 
 echo '<script>console.log("JSONNN: ", ' . json_encode($post_data) . ')</script>';
 // # -- Create a CURL handle containing the settings & data
-try {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-} catch(Exception $err) {
-    echo $err;
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+if (!$ch) {
+    die('Erreur d\'initialisation de cURL');
 }
+
+$result = curl_exec($ch);
+
+if ($result === false) {
+    die('Erreur cURL : ' . curl_error($ch));
+}
+
 
 // # -- Make the request
 $result = curl_exec($ch);
