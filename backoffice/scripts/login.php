@@ -1,6 +1,6 @@
 <?php
 session_start();
-$password = "$2y$10\$MA02Rkz/vBNVa3QOItTY6eJAcwRT4pmVQM0Y9llvAi8oKHNncI1vq";
+$password = "$2y$10$T4krFdzm8H0ELN8FqJx.AOWO1IsDhTBPVyQXMue3SXoRXbcCOJElC";
 $csrf = $_POST['csrf'];
 $userpass = $_POST['pwd'];
 if (isset($csrf) && $csrf == $_SESSION['csrf'] && isset($_POST['pwd']) && isset($_POST['login'])) {

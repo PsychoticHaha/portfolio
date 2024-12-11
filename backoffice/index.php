@@ -24,8 +24,9 @@ $_SESSION['csrf'] = $id;
   </div>
   <form action="./scripts/login.php" method="POST">
     <?= $_SESSION['message']; ?>
-    <input type="password" id="password" name="pwd" autofocus>
-    <input type="submit" id="login" name="login" value="Login">
+    <input type="text" id="username" name="usr" autofocus>
+    <input type="password" id="password" name="pwd" placeholder="Username">
+    <input type="submit" id="login" name="login" value="Login" placeholder="Password">
     <input type="hidden" value=<?= $id; ?> name="csrf">
     <? //var_dump($_SESSION['count']); ?>
   </form>
