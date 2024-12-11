@@ -6,7 +6,7 @@ $userpass = $_POST['pwd'];
 if (isset($csrf) && $csrf == $_SESSION['csrf'] && isset($_POST['pwd']) && isset($_POST['login'])) {
   $_SESSION['count']++;
   if ($_SESSION['count'] >= 4) {
-    header('Location:./../challenge.php');
+    // header('Location:./../challenge.php');
   } else {
     if (password_verify($userpass, $password)) {
       $_SESSION['count'] = 1;

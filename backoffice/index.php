@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['message'])) $_SESSION['message'] = '';
 if (!isset($_SESSION['count'])) $_SESSION['count'] = 1;
-if($_SESSION['count'] >= 4)header('Location:./challenge.php');
+// if($_SESSION['count'] >= 4)header('Location:./challenge.php');
 $id = uniqid();
 $_SESSION['csrf'] = $id;
 ?>

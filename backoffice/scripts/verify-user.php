@@ -17,10 +17,10 @@ if (isset($hero) && isset($nbr) && isset($person) && isset($_POST['submit'])) {
       $_SESSION['count'] = 1;
       header('Location:./../index.php');
     } else {
-      header('Location:./../challenge.php');
+      // header('Location:./../challenge.php');
     }
   } else {
-    header('Location:./../challenge.php');
+    // header('Location:./../challenge.php');
   }
 }
 
