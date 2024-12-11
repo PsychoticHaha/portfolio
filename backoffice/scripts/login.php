@@ -8,7 +8,7 @@ if (isset($csrf) && $csrf == $_SESSION['csrf'] && isset($_POST['pwd']) && isset(
   if (password_verify($userpass, $password)) {
     $_SESSION['message'] = "<div class='alert success'>Welcome Fanasina !</div>";
     $_SESSION['token'] = generateToken();
-    header('Location:./../dashboard.php');
+    header('Location:./../dashboard');
   } else {
     $_SESSION['count'] += 1;
     $_SESSION['message'] = "<div class='alert error'>Error : Try again !</div>";
