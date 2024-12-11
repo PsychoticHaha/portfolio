@@ -1,18 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 15px;
   background-color: red;
 }
-.alert, .title {
-  width: 300px;
+
+.alert-container {
+  min-height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert,
+.title {
+  width: fit-content;
   height: 30px;
   padding: 10px;
   display: flex;
@@ -21,19 +34,20 @@
   font-weight: 600;
   font-size: 1em;
   font-family: 'Raleway', sans-serif;
-  background-color: white;
-  color: #333;
+  color: white;
+  background-color: #333;
   border-radius: 5px;
-  position: absolute;
-  top: 0;
-  z-index: 666;
+  padding: 25px;
 }
+
 .alert.success {
   background-color: mediumseagreen;
 }
+
 .alert.error {
   background-color: tomato;
 }
+
 .loader {
   position: absolute;
   top: 0;
@@ -46,7 +60,8 @@
   justify-content: center;
   font-family: 'Raleway', sans-serif;
 }
-.loader .dots{
+
+.loader .dots {
   display: flex;
   justify-content: space-around;
   color: transparent;
@@ -54,7 +69,8 @@
   width: 100px;
   height: 50px;
 }
-.loader .dots .dot{
+
+.loader .dots .dot {
   height: 15px;
   width: 15px;
   border-radius: 5px;
@@ -65,7 +81,13 @@
   user-select: none;
   animation: load 500ms infinite alternate-reverse;
 }
+
 @keyframes load {
-  from{transform: translate(0);}
-  to{transform: translateY(-50%);}
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
 }

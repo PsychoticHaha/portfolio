@@ -3,3 +3,20 @@ RewriteEngine On
 # Redirige les URL contenant le paramètre ?i=1
 RewriteCond %{QUERY_STRING} (^|&)i=1(&|$)
 RewriteRule ^(.*)$ /$1? [R=301,L]
+
+# Redirige les URLs avec trailing slash vers la version sans
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Si une requête contient une extension (.php, .html, etc.), redirige vers la version sans
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)\.(php|html|htm)$ /$1 [R=301,L]
+
+# Permet de servir le bon fichier sans afficher l'extension dans l'URL
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]

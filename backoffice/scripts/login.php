@@ -1,22 +1,20 @@
 <?php
 session_start();
-$password = "$2y$10$T4krFdzm8H0ELN8FqJx.AOWO1IsDhTBPVyQXMue3SXoRXbcCOJElC";
+$password = "$2y$10$\T4krFdzm8H0ELN8FqJx.AOWO1IsDhTBPVyQXMue3SXoRXbcCOJElC";
 $csrf = $_POST['csrf'];
 $userpass = $_POST['pwd'];
+
 if (isset($csrf) && $csrf == $_SESSION['csrf'] && isset($_POST['pwd']) && isset($_POST['login'])) {
-  $_SESSION['count']++;
-  if ($_SESSION['count'] >= 4) {
-    // header('Location:./../challenge.php');
+  if (password_verify($userpass, $password)) {
+    $_SESSION['message'] = "<div class='alert success'>Welcome Fanasina !</div>";
+    $_SESSION['token'] = generateToken();
+    header('Location:./../dashboard.php');
   } else {
-    if (password_verify($userpass, $password)) {
-      $_SESSION['count'] = 1;
-      $_SESSION['message'] = "<div class='alert success'>Welcome Fanasina !</div>";
-      $_SESSION['token'] = generateToken();
-      header('Location:./../dashboard.php');
-    } else {
-      $_SESSION['message'] = "<div class='alert error'>Error : Try again !</div>";
-      header('Location:./../');
-    }
+    $_SESSION['count'] += 1;
+    $_SESSION['message'] = "<div class='alert error'>Error : Try again !</div>";
+
+    sleep($_SESSION['count'] ** 2);
+    header('Location:./../');
   }
 } else {
   $_SESSION['message'] = "<div class='alert error'>Error : Internal1 server failure !</div>";
