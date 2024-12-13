@@ -1,359 +1,359 @@
 .contact-me {
-    min-height: min(105vh, 700px);
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    padding: 60px 0;
+  min-height: min(105vh, 700px);
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 60px 0;
 }
 
 .contact-me .section-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
 }
 
 .contact-me .text {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-me .wrapper {
-    display: flex;
-    padding: 20px 0;
+  display: flex;
+  padding: 20px 0;
 }
 
 .contact-me .wrapper .left {
-    padding: 40px 0;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
-    position: relative;
-    overflow: hidden;
+  padding: 40px 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-me .wrapper .left .popup-message {
-    height: 50px;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, .5647058824);
-    color: #000;
-    position: absolute;
-    top: 0;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: .5s ease-out;
-    transform: translateY(-200%)
+  height: 50px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5647058824);
+  color: #000;
+  position: absolute;
+  top: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s ease-out;
+  transform: translateY(-200%);
 }
 
 .contact-me .wrapper .left .popup-message .popup-content {
-    height: 100%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-me .wrapper .left .popup-message .close-popup-btn {
-    height: 100%;
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: max(1.5em, 20px);
-    color: #000;
-    font-weight: 800;
-    background-color: transparent;
-    cursor: pointer;
-    transition: .2s
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: max(1.5em, 20px);
+  color: #000;
+  font-weight: 800;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .contact-me .wrapper .left .popup-message .close-popup-btn:hover {
-    background-color: rgba(204, 204, 204, .6862745098)
+  background-color: rgba(204, 204, 204, 0.6862745098);
 }
 
 .contact-me .wrapper .left .popup-message .loader {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 5px;
-    width: 0;
-    transition: 1s ease-in-out
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  transition: 1s ease-in-out;
 }
 
 .contact-me .wrapper .left .popup-message.success {
-    background-color: #3cb371;
-    border: 1px solid #00acfc;
-    font-weight: 500;
-    transform: translate(0, 500%)
+  background-color: #3cb371;
+  border: 1px solid #00acfc;
+  font-weight: 500;
+  transform: translate(0, 500%);
 }
 
 .contact-me .wrapper .left .popup-message.success .loader {
-    width: 100%;
-    background-color: #00ff73
+  width: 100%;
+  background-color: #00ff73;
 }
 
 .contact-me .wrapper .left .popup-message.error {
-    background-color: #ff4500;
-    border: 1px solid #000;
-    font-weight: 500;
-    transform: translate(0, 500%)
+  background-color: #ff4500;
+  border: 1px solid #000;
+  font-weight: 500;
+  transform: translate(0, 500%);
 }
 
 .contact-me .wrapper .left .popup-message.error .loader {
-    width: 100%;
-    background-color: #fd9c8b
+  width: 100%;
+  background-color: #fd9c8b;
 }
 
 .contact-me .wrapper .left form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: 90%;
-    min-width: 365px;
-    max-width: 500px;
-    padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 90%;
+  min-width: 365px;
+  max-width: 500px;
+  padding-left: 5px;
 }
 
 .contact-me .wrapper .left form .fullname {
-    width: 100%;
-    display: flex;
-    flex-direction: column
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-me .wrapper .left form label {
-    width: 100%
+  width: 100%;
 }
 
 .contact-me .wrapper .left form input {
-    width: 100%;
-    height: 60px;
-    font-size: 1.2em;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-family: Montserrat, sans-serif;
+  width: 100%;
+  height: 60px;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: Montserrat, sans-serif;
 }
 
 .contact-me .wrapper .left form input:focus,
 .contact-me .wrapper .left form textarea:focus,
 .contact-me .wrapper .right .tell-me-why button:focus,
 .contact-me .wrapper .right .tell-me-why textarea:focus {
-    outline: 2px solid #008bfc;
+  outline: 2px solid #008bfc;
 }
 
 .contact-me .wrapper .left form textarea {
-    width: 100%;
-    min-height: 200px;
-    padding: 10px 8px;
-    font-size: 1.24em;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    resize: none;
-    font-family: "Open Sans", sans-serif
+  width: 100%;
+  min-height: 200px;
+  padding: 10px 8px;
+  font-size: 1.24em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .contact-me .wrapper .left form button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 45%;
-    max-width: 150px;
-    height: 55px;
-    padding: 8px;
-    background-color: #007e56;
-    border: none;
-    color: #000;
-    font-weight: 600;
-    font-size: 1.18em;
-    border-radius: 7px;
-    cursor: pointer;
-    border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 45%;
+  max-width: 150px;
+  height: 55px;
+  padding: 8px;
+  background-color: #007e56;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.18em;
+  border-radius: 7px;
+  cursor: pointer;
+  border-radius: 500px;
 }
 
 .contact-me .wrapper .left form button .icon {
-    height: 30px;
-    background-image: url("./../images/svg/ios-send.svg");
-    background-size: 90%;
-    transition: .3s ease-in-out;
+  height: 30px;
+  background-image: url('./../images/svg/ios-send.svg');
+  background-size: 90%;
+  transition: 0.3s ease-in-out;
 }
 
 .contact-me .wrapper .left form button:hover .icon {
-    animation: send-button 1s ease-in-out 1;
+  animation: send-button 1s ease-in-out 1;
 }
 
 @keyframes send-button {
-    50% {
-        transform: translateY(-5px);
-    }
+  50% {
+    transform: translateY(-5px);
+  }
 
-    0% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
 }
 
 .contact-me .wrapper .left form button:focus {
-    outline: 0
+  outline: 0;
 }
 
 .contact-me .wrapper .right {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    position: relative
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  position: relative;
 }
 
 .contact-me .wrapper .right .container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 30px;
-    border-radius: 15px;
-    background-color: #fff;
-    border: 1px solid #222;
-    position: relative
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #222;
+  position: relative;
 }
 
 .contact-me .wrapper .right .container .reactions {
-    min-height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center
+  min-height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .contact-me .wrapper .right .container .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .contact-me .wrapper .right .container .reactions .icon {
-    font-family: "Noto Color Emoji", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: .3s;
-    margin-bottom: 10px;
+  font-family: 'Noto Color Emoji', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 10px;
 }
 
 .contact-me .wrapper .right .container .reactions .icon svg {
-    fill: none;
-    stroke: var(--text-high-contrast);
+  fill: none;
+  stroke: var(--text-high-contrast);
 }
 
 .contact-me .wrapper .right .container .reactions .icon.clicked svg {
-    fill: var(--text-high-contrast);
-    stroke: var(--text-high-contrast);
+  fill: var(--text-high-contrast);
+  stroke: var(--text-high-contrast);
 }
 
 .contact-me .wrapper .right .container .reactions .icon.love.animate {
-    transform: scale(1.6);
+  transform: scale(1.6);
 }
 
 .contact-me .wrapper .right .container .reactions .icon.like.animate {
-    transform-origin: left;
-    transform: translateY(0px) rotate(-20deg);
+  transform-origin: left;
+  transform: translateY(0px) rotate(-20deg);
 }
 
 .contact-me .wrapper .right .container .reactions .icon.dislike.animate {
-    transform: rotate(15deg);
-    transform-origin: right;
+  transform: rotate(15deg);
+  transform-origin: right;
 }
 
 .contact-me .popup-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: #000000cc;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 998;
-    transform: translateX(4000px);
-    transition: .5s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #000000cc;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 998;
+  transform: translateX(4000px);
+  transition: 0.5s ease-out;
 }
 .contact-me .wrapper .right .tell-me-why {
-    width: calc(100% - 30px);
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 35px;
-    border-radius: 15px;
-    background-color: rgba(10, 10, 100, .9803921569);
-    color: #fff;
-    position: relative;
-    overflow: hidden;
+  width: calc(100% - 30px);
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 35px;
+  border-radius: 15px;
+  background-color: rgba(10, 10, 100, 0.9803921569);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-me .wrapper .right .popup-wrapper.show {
-    transform: translate(0);
+  transform: translate(0);
 }
 
 .contact-me .wrapper .right .tell-me-why .close {
-    font-family: "Noto Color Emoji", sans-serif;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 0 0 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, .1843137255);
-    cursor: pointer
+  font-family: 'Noto Color Emoji', sans-serif;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 0 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1843137255);
+  cursor: pointer;
 }
 
 .contact-me .wrapper .right .tell-me-why .close:hover {
-    background-color: rgba(32, 32, 32, .7450980392)
+  background-color: rgba(32, 32, 32, 0.7450980392);
 }
 
 .contact-me .wrapper .right .tell-me-why textarea {
-    resize: none;
-    height: 150px;
-    padding: 15px;
-    font-size: 1.1em;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 500
+  resize: none;
+  height: 150px;
+  padding: 15px;
+  font-size: 1.1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
 }
 
 .contact-me .wrapper .right .tell-me-why button {
-    width: 200px;
-    border-radius: 20px;
-    background: #000;
-    color: white;
-    font-weight: 600;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    font-family: "Noto Color Emoji", sans-serif;
-    cursor: pointer;
+  width: 200px;
+  border-radius: 20px;
+  background: #000;
+  color: white;
+  font-weight: 600;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Noto Color Emoji', sans-serif;
+  cursor: pointer;
 }

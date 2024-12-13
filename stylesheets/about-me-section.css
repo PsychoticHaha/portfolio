@@ -1,91 +1,91 @@
 .about-me-section {
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 35px;
-    position: relative;
-    transition: .2s;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 35px;
+  position: relative;
+  transition: 0.2s;
 }
 
 .about-me-section .section-wrapper.whoami {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
 }
 
 .about-me-section .section-wrapper.whoami .left-content {
-    width: 50%;
-    height: 100%;
+  width: 50%;
+  height: 100%;
 }
 
 .about-me-section .section-wrapper.whoami .right-content {
-    width: 50%;
-    height: 100%;
-    max-width: 500px;
-    background: var(--linear-loading-gradient);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: var(--global-radius);
+  width: 50%;
+  height: 100%;
+  max-width: 500px;
+  background: var(--linear-loading-gradient);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--global-radius);
 
-    @media (min-width: 1200px) {
-        min-width: 500px;
-        min-height: 400px;
-    }
+  @media (min-width: 1200px) {
+    min-width: 500px;
+    min-height: 400px;
+  }
 }
 
 .about-me-section .section-wrapper.whoami .right-content img {
-    width: 100%;
-    object-fit: contain;
-    border-radius: var(--global-radius);
+  width: 100%;
+  object-fit: contain;
+  border-radius: var(--global-radius);
 }
 
 .about-me-section h2 {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .about-me-section .text {
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-    width: 100%;
-    transition: .2s
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  width: 100%;
+  transition: 0.2s;
 }
 
 .about-me-section .text p.full-text {
-    transition: .2s;
-    max-width: 100%;
-    text-align: justify;
-    line-height: 25px;
-    font-weight: 500
+  transition: 0.2s;
+  max-width: 100%;
+  text-align: justify;
+  line-height: 25px;
+  font-weight: 500;
 }
 
 .about-me-section .text .source {
-    font-size: 10px
+  font-size: 10px;
 }
 
 .about-me-section .btn-container .more-less-btn {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    padding: 10px;
-    background-color: rgba(204, 204, 204, .5960784314);
-    border: 1px solid #00acfc;
-    transition: .2s;
-    border-radius: 100px;
-    display: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(204, 204, 204, 0.5960784314);
+  border: 1px solid #00acfc;
+  transition: 0.2s;
+  border-radius: 100px;
+  display: none;
 }
 
 main .about-me-section {
-    height: auto
+  height: auto;
 }
 
 main .about-me-section.less {
-    padding-bottom: none
+  padding-bottom: none;
 }
