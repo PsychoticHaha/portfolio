@@ -7,8 +7,8 @@
                     <img src="./images/no_bg_avatar.webp" data-img="/images/no_bg_avatar.webp" class="profile-picture cursor-set" width="500" alt="Myself" title="Fanasina (R.A.F.)">
                     <script>
                         const myImage = document.querySelector(".profile-picture");
-                        if (myImage.addEventListener("load", hideLoaderX), myImage.complete) {
-                            document.querySelector(".load-overlay-container") && hideLoaderX()
+                        if (myImage.addEventListener("load", hideLoader), myImage.complete) {
+                            document.querySelector(".load-overlay-container") && hideLoader();
                         }
                     </script>
                 </div>

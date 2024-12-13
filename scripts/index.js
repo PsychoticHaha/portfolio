@@ -121,9 +121,6 @@ document.addEventListener("DOMContentLoaded", (loadedEvent) => {
   updateActiveLinks();
   moveCustomCursor(loadedEvent);
 
-  // Else 
-  hideLoader();
-
   const reaction = localStorage.getItem("reaction");
   const likeIcon = document.querySelector(".reactions .icon.like"),
     dislikeIcon = document.querySelector(".reactions .icon.dislike"),
@@ -225,50 +222,6 @@ let hamburger_menu = document.querySelector(".hamburger-menu"),
 function toggleMobileMenu() {
   mobileMenu.classList.toggle("show");
   hamburger_menu.classList.toggle("clicked");
-}
-
-function hideLoader() {
-  let loaderOverlay = document.querySelector(".load-overlay-container");
-  if (loaderOverlay) {
-    let animateCards = document.querySelectorAll(".animate-card");
-    setTimeout(() => {
-      setTimeout(() => {
-        loaderOverlay.classList.add("moveUp");
-        setTimeout(() => {
-          loaderOverlay.style.display = "none";
-          loaderOverlay.remove();
-        }, 1000);
-      }, 4000);
-
-      let lineOverlays = document.querySelectorAll(".line-overlay");
-      lineOverlays.forEach((overlay, index) => {
-        setTimeout(() => {
-          overlay.classList.add("remove");
-          overlay.style.animationDelay = `${index + 1}00ms`;
-
-          if (index === 8) {
-            animateCards.forEach((card, cardIndex) => {
-              setTimeout(() => {
-                card.classList.add("zoom");
-                setTimeout(() => card.remove(), 500);
-              }, 100);
-            });
-          }
-
-          setTimeout(() => overlay.remove(), 2000);
-          setTimeout(() => {
-            if (index === lineOverlays.length - 1) {
-              let animationScript = document.getElementById("animation-loading-script");
-              if (animationScript) {
-                animationScript.remove();
-                loaderOverlay.remove();
-              }
-            }
-          }, 2000);
-        }, 2000);
-      });
-    }, 500);
-  }
 }
 
 hamburger_menu.addEventListener("click", toggleMobileMenu);

@@ -51,13 +51,13 @@ main .hero .mouse-container .mouse::before {
     border-radius: 50%;
     opacity: 1;
     animation: 1.3s infinite wheel;
-    -webkit-animation: 1.3s infinite wheel
+    -webkit-animation: 1.3s infinite wheel;
 }
 
 @keyframes wheel {
     to {
         opacity: 0;
-        top: 27px
+        top: 27px;
     }
 }
 
@@ -158,14 +158,14 @@ main .hero .left .rounded-border span.square-form {
     display: block;
     width: 10px;
     height: 10px;
-    background-color: purple
+    background-color: purple;
         /* #07f */
     ;
     position: absolute;
     bottom: 10px;
     transform: rotate(45deg);
     transition: .3s;
-    z-index: 5
+    z-index: 5;
 }
 
 main .hero .left .rounded-border img.profile-picture {
@@ -188,7 +188,7 @@ main .hero .left .rounded-border:hover span.square-form {
 }
 
 main .hero .left .rounded-border:hover span.square-form::after {
-    content: "I'm in love with the Process ! ";
+    content: "I'm a Process lover ! ";
     background-color: transparent;
     transition: .3s;
     line-height: 20px;

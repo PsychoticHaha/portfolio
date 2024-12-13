@@ -1,13 +1,14 @@
-@import 'variable.css';
-@import 'header.css';
-@import 'hero-section.css';
-@import 'about-me-section.css';
-@import 'why-us-section.css';
-@import 'skills-section.css';
-@import 'works-section.css';
-@import 'contact-section.css';
-@import 'global-dark-mode.css';
-@import 'mobile.css';
+@import './variable.css';
+@import './loading.css';
+@import './header.css';
+@import './hero-section.css';
+@import './about-me-section.css';
+@import './why-us-section.css';
+@import './skills-section.css';
+@import './works-section.css';
+@import './contact-section.css';
+@import './global-dark-mode.css';
+@import './mobile.css';
 
 html {
     scroll-behavior: smooth
@@ -19,7 +20,6 @@ body {
     width: 100vw;
     overflow-x: hidden;
     overflow-y: scroll;
-    transition: .3s ease-out;
     background-attachment: fixed;
     background-image: url("./../images/sands.webp");
     background-repeat: repeat;
@@ -158,39 +158,6 @@ main {
     top: var(--header-height);
 }
 
-.animate-card,
-.header a .logo {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: var(--logo-image);
-}
-
-.load-overlay-container {
-    width: 100vw;
-    height: 110vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    z-index: 798784544;
-    overflow: hidden;
-    background-color: transparent
-}
-
-.load-overlay-container.moveUp {
-    transform: translateY(-110%)
-}
-
-.line-overlay {
-    position: relative;
-    z-index: 798784545;
-    width: 10%;
-    min-height: 100%;
-    background-color: var(--main-bg);
-    transition: .5s ease-in;
-}
-
 .my-skills,
 .my-works,
 .why-us {
@@ -200,58 +167,6 @@ main {
 .line-overlay.remove {
     transition: .5s ease-in;
     animation: 1s forwards remove
-}
-
-.animate-card {
-    display: flex;
-    justify-content: center;
-    width: 50px;
-    height: 80px;
-    position: absolute;
-    z-index: 798784546;
-    transform: scale(1.5);
-    background-color: #024592;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-size: 60%;
-    transition: .1s
-}
-
-.bottom-info {
-    position: fixed
-}
-
-.animate-card.zoom {
-    transition: .1s;
-    width: 5px;
-    height: 5px;
-    color: transparent
-}
-
-.animate-card p.inside {
-    position: absolute;
-    bottom: 5px;
-    font-size: min(9px, 1vw, 1em)
-}
-
-.animate-card p.inside2 {
-    position: absolute;
-    font-size: min(9px, 1vw, 1em);
-    top: 5px
-}
-
-@keyframes remove {
-    from {
-        transform: translate(0)
-    }
-
-    to {
-        transform: translateY(-110%)
-    }
-}
-
-.bottom-info {
-    bottom: 0
 }
 
 .contact-me .text .round,

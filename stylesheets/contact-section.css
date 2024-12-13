@@ -292,7 +292,7 @@
     align-items: center;
     justify-content: center;
     z-index: 998;
-    transform: translate(100vw);
+    transform: translateX(4000px);
     transition: .5s ease-out;
 }
 .contact-me .wrapper .right .tell-me-why {

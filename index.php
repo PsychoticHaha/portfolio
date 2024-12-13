@@ -9,7 +9,7 @@ require_once 'loadEnv.php';
 <?php require_once 'components/head-tag.php'; ?>
 <link rel="stylesheet" href="./stylesheets/style.css">
 
-<body class=dark onload="">
+<body class="dark" onload="">
   <div class="mouse-cursor"aria-hidden=true></div>
   <div class="theme-toggler"></div>
   <?php require_once 'components/loading-layer.php'; ?>

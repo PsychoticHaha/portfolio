@@ -38,6 +38,8 @@ div.header-container {
     width: 80px;
     height: 100%;
     background-image: var(--logo-image);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: 70%;
     position: absolute;
     left: 0;
@@ -247,7 +249,7 @@ header .right .theme-toggle-btn:hover {
     width: 100%;
     background-color: var(--light-bg-accent);
     transition: .3s;
-    transform: translate(-100vw);
+    transform: translate(min(-100vw, -4000px));
 }
 
 .mobile-menu .links-container {
