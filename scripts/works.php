@@ -6,7 +6,7 @@ if (file_exists($jsonFilePath)) {
   if ($data !== null) {
     foreach ($data['works'] as $single_work) {
       $details_link = $single_work['details_link'].''.$single_work['id'];
-echo '<div class="single-work">
+echo '<div class="single-work cursor-set">
         <div class="thumbnail">';
      echo "<img src='' data-img={$single_work['thumbnail_path']} loading='lazy' alt={$single_work['title']} width='250'>";
    echo'</div>

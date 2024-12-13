@@ -7,7 +7,7 @@
     </div>
     <div class=container>
       <div class="left-items items-container">
-        <div class="item item1" data-aos=fade-in>
+        <div class="item cursor-set item1" data-aos=fade-in>
           <h3>
             <div class="icon code"></div>
             Technical Proficiency
@@ -16,7 +16,7 @@
             Crafting seamless code and mastering cutting-edge technologies to bring your digital vision to life.
           </p>
         </div>
-        <div class="item item3" data-aos=fade-left>
+        <div class="item cursor-set item3" data-aos=fade-left>
           <h3>
             <div class="icon brush"></div>
             Design Sense
@@ -26,7 +26,7 @@
             engages.
           </p>
         </div>
-        <div class="item item4">
+        <div class="item cursor-set item4">
           <h3>
             <div class="icon clock"></div>
             Responsiveness
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="right-items items-container">
-        <div class="item item2" data-aos=fade-right>
+        <div class="item cursor-set item2" data-aos=fade-right>
           <h3>
             <div class="icon comments"></div>
             Clear Communication
@@ -48,7 +48,7 @@
             collaboration.
           </p>
         </div>
-        <div class="item item5">
+        <div class="item cursor-set item5">
           <h3>
             <div class="icon lightbulb"></div>
             Proactivity
@@ -58,7 +58,7 @@
             outcomes.
           </p>
         </div>
-        <div class="item item6">
+        <div class="item cursor-set item6">
           <h3>
             <div class="icon shield"></div>
             Professional Ethics

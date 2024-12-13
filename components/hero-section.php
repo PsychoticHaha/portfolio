@@ -4,7 +4,7 @@
             <div class=left>
                 <div class=rounded-border>
                     <span class=square-form></span>
-                    <img src="./images/no_bg_avatar.webp" data-img="/images/no_bg_avatar.webp" class=profile-picture width="500" alt="Myself" title="Fanasina (R.A.F.)">
+                    <img src="./images/no_bg_avatar.webp" data-img="/images/no_bg_avatar.webp" class="profile-picture cursor-set" width="500" alt="Myself" title="Fanasina (R.A.F.)">
                     <script>
                         const myImage = document.querySelector(".profile-picture");
                         if (myImage.addEventListener("load", hideLoaderX), myImage.complete) {
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class=cta>
-                        <a href=#about-me-section class="item resume">
+                        <a href=#about-me-section class="item cursor-set resume">
                             <span class="icon download"></span>
                             <span class=text>More about me</span>
                         </a>
@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="mouse-container">
+    <div class="mouse-container cursor-set">
         <div class="mouse"></div>
     </div>
 </section>

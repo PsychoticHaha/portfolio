@@ -10,13 +10,12 @@ require_once 'loadEnv.php';
 <link rel="stylesheet" href="./stylesheets/style.css">
 
 <body class=dark onload="">
-  <div class=mouse-cursor aria-hidden=true></div>
+  <div class="mouse-cursor"aria-hidden=true></div>
+  <div class="theme-toggler"></div>
   <?php require_once 'components/loading-layer.php'; ?>
   <?php require_once 'components/top-scripts.php'; ?>
   <div class=bottom-info></div>
-  <div class="header-container">
-    <?php require_once 'components/navbar.php'; ?>
-  </div>
+  <?php require_once 'components/navbar.php'; ?>
   <main>
     <?php require_once 'components/hero-section.php' ?>
     <?php require_once 'components/about-section.php' ?>

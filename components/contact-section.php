@@ -13,15 +13,15 @@
           <div class=loader></div>
         </div>
         <form id=contact-form>
-          <label for=fullname class=name>Fullname or Organization name</label>
-          <input id=fullname required aria-required=true placeholder="e.g : Rakoto Doe or RakotoBrand.org" class=name>
-          <label for=email>E-mail</label>
-          <input type=email required aria-required=true autocomplete=off id=email
+          <label for="fullname" class="name">Fullname or Organization name</label>
+          <input id="fullname" required aria-required="true" placeholder="e.g : Rakoto Doe or RakotoBrand.org" class="name cursor-set">
+          <label for="email">E-mail</label>
+          <input class="cursor-set" type="email" required aria-required="true" autocomplete="off" id="email"
             placeholder="e.g : rakoto@example.com">
           <label for=message>Message</label>
-          <textarea id=message required aria-required=true placeholder="Write your message here..."></textarea>
+          <textarea id="message" class=" cursor-set" required aria-required="true" placeholder="Write your message here..."></textarea>
           <div class=g-captcha></div>
-          <button id=send-message-btn>
+          <button id=send-message-btn class="cursor-set">
             <div class="icon send"></div> Send
           </button>
         </form>
@@ -31,19 +31,19 @@
           <h3>Do you find my portfolio great ?</h3>
           <div class=reactions>
             <div class="item">
-              <div class="icon love">
+              <div class="icon cursor-set love">
                 <?php require_once('svg/heart.php') ?>
               </div>
               <div class="nbr">100%</div>
             </div>
             <div class="item">
-              <div class="icon like">
+              <div class="icon cursor-set like">
                 <?php require_once('svg/like.php') ?>
               </div>
               <div class="item">70% - 50%</div>
             </div>
             <div class="item">
-              <div class="icon dislike">
+              <div class="icon cursor-set dislike">
                 <?php require_once('svg/dislike.php') ?>
               </div>
               <div class="item">50% - 0%</div>

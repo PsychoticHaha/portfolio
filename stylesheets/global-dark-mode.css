@@ -1,35 +1,13 @@
-body.dark .mouse-cursor {
+/* body.dark .mouse-cursor {
     mix-blend-mode: lighten;
     background: radial-gradient(#1b3c8a, 10%, #000041, #000041, #0000006e, #020216be)
-}
-
-body.dark {
-    background-color: #020216;
-    background-image: url("./../images/sands.webp");
-    background-size: 50%;
-    background-repeat: repeat;
-    color: #e8e8e8
-}
+} */
 
 body.dark .contact-me .text .round,
 body.dark .my-skills .intro-text .round,
 body.dark .my-works .text .round,
 body.dark .text .round {
     background-color: rgba(238, 255, 0, .8352941176)
-}
-
-body.dark .bottom-info,
-body.dark .why-us .box .scrolling-content,
-body.dark main {
-    background-color: rgba(2, 2, 22, .7450980392)
-}
-
-body.dark header.header {
-    background-color: rgba(2, 6, 17, .8078431373)
-}
-
-body.dark header.header nav.desktop-menu .links a.link {
-    color: #e8e8e8
 }
 
 body.dark header.header .hamburger-menu div {
@@ -44,10 +22,6 @@ body.dark main .hero .mouse::before {
 body.dark main .hero .right .post-text .effect-wrapper {
     border-right: 2px solid #e8e8e8;
     animation: .75s step-end infinite blink_dark
-}
-
-body.dark main .hero .right .cta a.item {
-    color: var(--text-high-contrast);
 }
 
 body.dark main .hero .right .cta a.item.hire:hover div.icon.partner {

@@ -10,7 +10,7 @@ if (file_exists($worksJSONpath)) {
       echo "<ul class='category-items'>";
       foreach ($category['items'] as $item) {
         echo "
-      <li class='lang'>
+      <li class='lang cursor-set'>
         <div class='img-container'>
           <img src='' data-img='{$item['icon_path']}' data-loading='lazy' alt='{$item['name']}' title='{$item['name']}'>
         </div>

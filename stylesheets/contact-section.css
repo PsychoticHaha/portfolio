@@ -287,6 +287,7 @@
     height: 100vh;
     width: 100vw;
     background: #000000cc;
+    backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -295,8 +296,8 @@
     transition: .5s ease-out;
 }
 .contact-me .wrapper .right .tell-me-why {
-    min-width: 300px;
-    width: 100%;
+    width: calc(100% - 30px);
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -304,9 +305,7 @@
     border-radius: 15px;
     background-color: rgba(10, 10, 100, .9803921569);
     color: #fff;
-    position: absolute;
-    top: 20%;
-    z-index: 4545;
+    position: relative;
     overflow: hidden;
 }
 

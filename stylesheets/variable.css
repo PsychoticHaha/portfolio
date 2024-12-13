@@ -2,32 +2,39 @@
     --container-max: 1440px;
     --header-height: 100px;
     --global-radius: 30px;
-
-    --light-bg-accent: #eee;
-    --main-bg: #fdfdfdf1;
+    --blurry-gradient: radial-gradient(transparent 1px, #f1f1f1 1px);
+    --blurry-mask: linear-gradient(#ffffff 80%, rgb(0, 0, 0) 100%);
+    
+    --light-bg-accent: #fdfdfdf1;
+    --main-bg: #fdfdfd;
+    --main-bg-inverted: #020611;
     --logo-image: url("./../images/raf_logo.png");
     --text-high-contrast: #1d1d1d;
     --text-high-contrast-inverted: #f8f7f7;
     --scrollbar-color: #008ab4;
     --linear-loading-gradient: linear-gradient(90deg,
-            #e0e0e0 25%,
-            #f0f0f0 50%,
-            #e0e0e0 75%);
-
-
+    #e0e0e0 25%,
+    #f0f0f0 50%,
+    #e0e0e0 75%);
+    
+    
     --handshake-icon-white: url("./../images/handshake.svg");
     --handshake-icon-black: url("./../images/handshake-black.svg");
     --arrow-down-white: url("./../images/svg/arr-down.svg");
     --arrow-down-black: url("./../images/svg/arr-down-black.svg");
-
+    
     @media(max-width: 700px) {
         --header-height: 60px;
     }
 }
 
 :root.dark {
-    --light-bg-accent: #020611ce;
+    --blurry-gradient: radial-gradient(transparent 1px, #0f1115 1px);
+    --blurry-mask: linear-gradient(rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
+    
+    --light-bg-accent: #020611ed;
     --main-bg: #020216;
+    --main-bg-inverted: #fdfdfdf1;
     --logo-image: url("./../images/raf_logo_white.png");
     --text-high-contrast: #e8e8e8;
     --text-high-contrast-inverted: #1d1d1d;

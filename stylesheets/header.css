@@ -4,17 +4,21 @@ div.header-container {
     height: var(--header-height);
     width: 100%;
     z-index: 100;
-    background: var(--light-bg-accent);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
+    background-image: var(--blurry-gradient);
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+    opacity: 1;
+    /* mask: linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%); */
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #eee;
     width: 100%;
     max-width: 1440px;
     height: 100%;
@@ -24,7 +28,10 @@ div.header-container {
     transition: .3s;
     position: absolute;
     top: 0;
-    border-radius: 500px;
+    border-radius: 15px;
+    padding: 0 15px;
+    background: var(--light-bg-accent);
+    ;
 }
 
 .header a .logo {
@@ -64,7 +71,7 @@ div.header-container {
     bottom: 0
 }
 
-.header .mobile-menu a.active {
+.mobile-menu a.active {
     background-color: #0230bb;
     border-bottom: 5px solid #02bb83
 }
@@ -91,7 +98,7 @@ div.header-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #222;
+    color: var(--text-high-contrast);
     text-decoration: none;
     font-weight: 500;
     font-family: Montserrat, sans-serif;
@@ -230,22 +237,25 @@ header .right .theme-toggle-btn:hover {
     left: 0;
 }
 
-header .mobile-menu {
+.mobile-menu {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 60px;
     z-index: 999;
     height: 100vh;
     width: 100%;
-    background-color: var(--main-bg);
+    background-color: var(--light-bg-accent);
     transition: .3s;
     transform: translate(-100vw);
 }
 
-header .mobile-menu a.link {
-    max-height: 60px;
-    height: 20%;
+.mobile-menu .links-container {
+    background: #000;
+}
+
+.mobile-menu a.link {
+    height: 60px;
     background-color: rgba(255, 255, 255, .8156862745);
     width: 100%;
     display: flex;
@@ -256,4 +266,10 @@ header .mobile-menu a.link {
     font-size: 20px;
     color: #000;
     border-bottom: 1px solid #555
+}
+
+.mobile-menu a.link.active {
+    background-color: #990099c7;
+    color: white;
+
 }

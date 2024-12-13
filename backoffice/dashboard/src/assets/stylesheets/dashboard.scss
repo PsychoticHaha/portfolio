@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  height: 50px;
+  height: 80px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -18,12 +18,14 @@ header {
   gap: 1px;
   background-color: #000b6d;
 }
+
 header .left {
   height: 100%;
   display: flex;
   align-items: center;
   gap: 1px;
 }
+
 header .left .item {
   height: 100%;
   display: flex;
@@ -33,13 +35,16 @@ header .left .item {
   cursor: pointer;
   background-color: #001aff;
 }
+
 header .left .item:hover {
   background-color: #0077ff;
 }
+
 header .logout {
   height: 80%;
   width: 100px;
 }
+
 header .logout form {
   height: 100%;
   width: 100%;
@@ -47,20 +52,22 @@ header .logout form {
   justify-content: center;
   align-items: center;
 }
+
 header .logout form input {
   height: 40px;
   width: 40px;
-  background-color: #fd2600;
+  background-color: #0417c5;
   border: none;
-  border-radius: 16px;
+  border-radius: 50px;
   color: #fff;
   color: transparent;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 24px;
   background-position: center;
-  background-image: url("./../svgs/logout.svg");
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1sb2ctb3V0Ij48cGF0aCBkPSJNOSAyMUg1YTIgMiAwIDAgMS0yLTJWNWEyIDIgMCAwIDEgMi0yaDQiLz48cG9seWxpbmUgcG9pbnRzPSIxNiAxNyAyMSAxMiAxNiA3Ii8+PGxpbmUgeDE9IjIxIiB4Mj0iOSIgeTE9IjEyIiB5Mj0iMTIiLz48L3N2Zz4=");
   cursor: pointer;
 }
+
 header .logout form input:hover {
   background-color: #640f00;
 }
@@ -73,7 +80,10 @@ main {
   background-color: #fff;
   scroll-behavior: smooth;
 }
+
 main .data-container {
   height: 100%;
   width: 100%;
-}/*# sourceMappingURL=dashboard.css.map */
+}
+
+/*# sourceMappingURL=dashboard.css.map */

@@ -9,6 +9,27 @@
 @import 'global-dark-mode.css';
 @import 'mobile.css';
 
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: .3s ease-out;
+    background-attachment: fixed;
+    background-image: url("./../images/sands.webp");
+    background-repeat: repeat;
+    color: var(--text-high-contrast);
+}
+
+body.neutral-bg {
+    background-image: none;
+}
+
 h1,
 h2 {
     font-size: 2em;
@@ -17,6 +38,8 @@ h2 {
 .about-me,
 section {
     padding: 60px 0;
+    z-index: 4;
+    position: relative;
 }
 
 .about-me h2,
@@ -42,11 +65,6 @@ p {
     border-radius: 15px;
     background-color: var(--scrollbar-color);
     border-radius: 10px;
-}
-
-html,
-main {
-    scroll-behavior: smooth
 }
 
 /* Global container limits */
@@ -92,19 +110,52 @@ main .separator.horizontal-line {
 }
 
 body .mouse-cursor {
-    width: 40vw;
-    height: 40vw;
-    min-width: 200px;
-    min-height: 200px;
+    width: min(30vw, 200px);
+    height: min(30vw, 200px);
     border-radius: 50%;
-    background: radial-gradient(circle at center, #000, 10%, #e6e6e6, #000, #000002);
     mix-blend-mode: lighten;
-    position: absolute;
+    position: fixed;
     z-index: 1;
+    background-color: white;
+    /* background-size: 4px 4px;
+    backdrop-filter: blur(5px);
+    mask: linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%);
+    background-image: radial-gradient(circle at center, #000000, 10%, #a3009b, #000, #00ff66); */
+    transition: scale .5s;
+
 
     @media(hover: none) {
         display: none;
     }
+}
+
+body .theme-toggler {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: width 0.5s ease-in, height 0.5s ease-in;
+    background: var(--main-bg-inverted);
+}
+
+body .theme-toggler.progress {
+    width: 8000px;
+    height: 8000px;
+    opacity: 1;
+    transition: width 0.5s ease-in, height 0.5s ease-in;
+    right: 0;
+    left: unset;
+}
+
+main {
+    min-width: 100%;
+    width: 100%;
+    background-color: var(--light-bg-accent);
+    z-index: 2;
+    position: relative;
+    top: var(--header-height);
 }
 
 .animate-card,
@@ -166,8 +217,7 @@ body .mouse-cursor {
     transition: .1s
 }
 
-.bottom-info,
-main {
+.bottom-info {
     position: fixed
 }
 
@@ -200,32 +250,8 @@ main {
     }
 }
 
-body,
-body.dark {
-    transition: .3s ease-out;
-    background-attachment: fixed
-}
-
-body {
-    background-image: url("./../images/sands.webp");
-    background-size: 10%;
-    background-repeat: repeat;
-    overflow: hidden
-}
-
 .bottom-info {
     bottom: 0
-}
-
-main {
-    min-width: 100vw;
-    width: 100vw;
-    overflow: hidden;
-    overflow-y: scroll;
-    height: calc(100vh - var(--header-height));
-    background-color: #fdfdfdf1;
-    top: var(--header-height);
-    z-index: 2
 }
 
 .contact-me .text .round,
@@ -247,12 +273,6 @@ main .hero .right .cta .item .icon {
     width: 30px;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.about-me .btn-container .more-less-btn:hover,
-body.dark section.about-me .btn-container .more-less-btn:hover {
-    background-color: rgba(44, 44, 44, .7725490196);
-    color: #fff
 }
 
 .socials {
