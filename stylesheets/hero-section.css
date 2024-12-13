@@ -188,7 +188,7 @@ main .hero .left .rounded-border:hover span.square-form {
 }
 
 main .hero .left .rounded-border:hover span.square-form::after {
-    content: "I'm in Love with the Process !";
+    content: "I'm in love with the Process ! ";
     background-color: transparent;
     transition: .3s;
     line-height: 20px;
@@ -408,7 +408,7 @@ main .hero .right .cta .item.hire:hover .icon.partner {
 }
 
 main .hero .right .cta .item .icon.download {
-    background-image: var(--arrow-down-white);
+    background-image: var(--arrow-down-black-inverted);
     background-size: 50%
 }
 

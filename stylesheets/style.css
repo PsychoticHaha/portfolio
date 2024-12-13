@@ -133,11 +133,11 @@ body .theme-toggler {
     position: fixed;
     top: 0;
     right: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
+    width: 100vw;
+    height: var(--header-height);
+    opacity: 1;
     transition: width 0.5s ease-in, height 0.5s ease-in;
-    background: var(--main-bg-inverted);
+    background: var(--main-bg);
 }
 
 body .theme-toggler.progress {
@@ -358,6 +358,7 @@ footer .container .footer-section a:hover {
 
 footer .container .footer-section .icon {
     width: 30px;
+    min-width: 30px;
     height: 30px;
     background-repeat: no-repeat;
     background-size: 90%;
