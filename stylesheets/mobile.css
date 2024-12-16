@@ -130,7 +130,7 @@
   main .hero .right .post-text {
     width: 100%;
     align-items: center;
-    margin-left: 11%;
+    padding-left: 11%;
   }
 
   main .hero .right .post-text .line-container {
