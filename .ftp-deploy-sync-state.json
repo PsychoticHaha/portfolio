@@ -1,0 +1,1299 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1734307958059,
+    "data": [
+        {
+            "type": "file",
+            "name": ".htaccess",
+            "size": 730,
+            "hash": "a29be9fbfd25808d977bc415064ff85fc933513410ef1458dfdf6c1af005089e"
+        },
+        {
+            "type": "file",
+            "name": ".prettierrc",
+            "size": 68,
+            "hash": "2e8838210278b048e89152ed94a9d8399b37c01b50d55fd518c66ddd6d9ec48c"
+        },
+        {
+            "type": "file",
+            "name": "403.html",
+            "size": 1221,
+            "hash": "7000b8edd4f8385513603ad3051f8275394ead6b375c69c35c10fc7427dcc214"
+        },
+        {
+            "type": "file",
+            "name": "404.html",
+            "size": 1201,
+            "hash": "4007e113f43c10f0f51fb3544d8f3bd4f32639e9ae01e54a61e2bccefa35c7e4"
+        },
+        {
+            "type": "file",
+            "name": "500.html",
+            "size": 1212,
+            "hash": "acee0c389df754fa9ca3f63a8ee4acd754e726eaed00c1eb27d64bcb292fc4d3"
+        },
+        {
+            "type": "file",
+            "name": "DB.online.txt",
+            "size": 194,
+            "hash": "b3e4ed015224c1a73169db6a1517d1f4b5538448b61f4fc6f5576e5f634b77d4"
+        },
+        {
+            "type": "file",
+            "name": "README",
+            "size": 284,
+            "hash": "869c49d206b859b06c46d5cb2fa6d70a51d249fc7f61bb66408389397962de1e"
+        },
+        {
+            "type": "folder",
+            "name": "assets"
+        },
+        {
+            "type": "folder",
+            "name": "backend"
+        },
+        {
+            "type": "file",
+            "name": "buildCSS.js",
+            "size": 1818,
+            "hash": "d54ecbb8bf3253dc1628f252f5749a0e7064200094f55b3f73e4eb27b6d027fd"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice"
+        },
+        {
+            "type": "file",
+            "name": "changes.txt",
+            "size": 27,
+            "hash": "7ebab6eb87449e6bf07b512faf08909e4ee95aa7bd6e771eed796ad6a43f5db9"
+        },
+        {
+            "type": "folder",
+            "name": "components"
+        },
+        {
+            "type": "folder",
+            "name": "images"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 1377,
+            "hash": "6ba4d616ac2727f55a018fba18ac50c275d0810698d8d1bb0d065bbf5af1c145"
+        },
+        {
+            "type": "file",
+            "name": "loadEnv.php",
+            "size": 646,
+            "hash": "78c503475de1dfbe24aa23096b5abdd86500902284f155ed84df9e0bd38ffc9b"
+        },
+        {
+            "type": "file",
+            "name": "package-lock.json",
+            "size": 52199,
+            "hash": "93731c0702daa45fce7a72945375db4ccce24c0f62714804acf10f7dc99b637b"
+        },
+        {
+            "type": "file",
+            "name": "package.json",
+            "size": 239,
+            "hash": "f4b331c743067c4428882a47662a5ec18bf94bcec67395afd6436a3849335900"
+        },
+        {
+            "type": "folder",
+            "name": "project"
+        },
+        {
+            "type": "folder",
+            "name": "scripts"
+        },
+        {
+            "type": "file",
+            "name": "stylelint.config.js",
+            "size": 461,
+            "hash": "e44066390020d3bf6483399ffb757f57a229ad1984a32918a20800257c661621"
+        },
+        {
+            "type": "folder",
+            "name": "stylesheets"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fonts"
+        },
+        {
+            "type": "file",
+            "name": "backend/get-client-headers.php",
+            "size": 3200,
+            "hash": "874fe3da5a12de892a8070ea3cba6dc83d8179a26f2e49007987b6aa299e45f7"
+        },
+        {
+            "type": "file",
+            "name": "backend/pdo.php",
+            "size": 905,
+            "hash": "3d7eb203f90ffdb2db211baf7ae844323591df0a6b50a7fd660b33db11897c95"
+        },
+        {
+            "type": "file",
+            "name": "backend/save-logs.php",
+            "size": 169,
+            "hash": "73b82b280de3fb1e69dbf0a61382f4a3b03b36142a03ff4dfe9c10b051d62c3e"
+        },
+        {
+            "type": "file",
+            "name": "backend/saveMessage.php",
+            "size": 835,
+            "hash": "aab7a9c4c2d9ddd97b53113982e2932b44da72c8e355974ada8cc196b9b2ee0a"
+        },
+        {
+            "type": "file",
+            "name": "backend/saveReaction.php",
+            "size": 692,
+            "hash": "8b7fef4c33c4d679dd9ae5fd3722bb3b95d2e34f810719cc2c50fc0fc0f2987b"
+        },
+        {
+            "type": "file",
+            "name": "backend/test-home.php",
+            "size": 4241,
+            "hash": "7bb473b64d030cf76d48d54fcad7215cf6f42afd25b801c8b5b01ca2b9bf24f5"
+        },
+        {
+            "type": "file",
+            "name": "backend/test.php",
+            "size": 93,
+            "hash": "777ceb1b917ef59c07f5906accadd218a2cba9665b524c3992f50707375cc193"
+        },
+        {
+            "type": "file",
+            "name": "backend/what-is-browser-header.php",
+            "size": 718,
+            "hash": "19e50c990f9f879ddd7afed30c345d137a2db615bc419266d010ec15d49042c4"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/css"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/backend"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard.php",
+            "size": 1404,
+            "hash": "15c0ad26316d081440d18fc975cf20b43d4197e09e689d64b7e042df1a14647b"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/index.php",
+            "size": 603,
+            "hash": "feda4808517b746689c182faec1977c1f167b080377fc88e7b9a2d079d19be2d"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/login.php",
+            "size": 1659,
+            "hash": "186d04c0803477b16c70d55f1c753c37df86d831d484ecdcb76475bf21bf3a75"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/scripts"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/svgs"
+        },
+        {
+            "type": "file",
+            "name": "components/about-section.php",
+            "size": 1469,
+            "hash": "4b0ae9cc70d9b571b6770b60ef79d6c11c3a66d863c4fa16b7425a9dee3b28a6"
+        },
+        {
+            "type": "file",
+            "name": "components/contact-section.php",
+            "size": 2635,
+            "hash": "19eb8837712ba414670765137574da87731f47a49cf19c12258d61123e2253bf"
+        },
+        {
+            "type": "file",
+            "name": "components/footer.php",
+            "size": 1820,
+            "hash": "6e896877be743eb37959f95f2edf46b5f55b193b1ef243f49f552d9b58ca69cb"
+        },
+        {
+            "type": "file",
+            "name": "components/head-tag.php",
+            "size": 1909,
+            "hash": "75341e4a7c3bb8e0199bb870106b984b2d7481b790e814192c3e9b3b0d485833"
+        },
+        {
+            "type": "file",
+            "name": "components/hero-section.php",
+            "size": 2457,
+            "hash": "cc564dee2a8196c9a8f3ca936b5c5a9ade7027d008424a314fdba68a8f96437e"
+        },
+        {
+            "type": "file",
+            "name": "components/loading-layer.php",
+            "size": 874,
+            "hash": "4143c16450285f2286717fc3c2cb6670f38e30c1cbcf62178273b5cc9cb9891d"
+        },
+        {
+            "type": "file",
+            "name": "components/navbar.php",
+            "size": 5804,
+            "hash": "c4d33aab70e524f0ffae8f3cb6920228dc1e60b9108670f0121a7938cb24be68"
+        },
+        {
+            "type": "file",
+            "name": "components/separator-line.php",
+            "size": 62,
+            "hash": "7734529db016bc9e5a5b1fe0107789ccd468ed7febfb765a04d011e81710d7b1"
+        },
+        {
+            "type": "file",
+            "name": "components/skills-section.php",
+            "size": 473,
+            "hash": "b6ed87e73a5ac870aebcec3c86f4c1a7a9facf1d4b4bf1afb17e6493508c1f62"
+        },
+        {
+            "type": "file",
+            "name": "components/slides.php",
+            "size": 1036,
+            "hash": "2ca8a3a41cd15a3c81fc8043c18dd3d0e89303beaf7ab00e3cd430ee06d775ca"
+        },
+        {
+            "type": "folder",
+            "name": "components/svg"
+        },
+        {
+            "type": "file",
+            "name": "components/top-scripts.php",
+            "size": 528,
+            "hash": "9a89c55e1e63fbba7191f61ba930de9015dd8ef0a1b2e25d60bf8548a20305a2"
+        },
+        {
+            "type": "file",
+            "name": "components/why-us-section.php",
+            "size": 2994,
+            "hash": "df07bb8f5ccfdafad9deb98245c0b06da9b63281c4ad3372d4fa30524caccd8f"
+        },
+        {
+            "type": "file",
+            "name": "components/works-section.php",
+            "size": 398,
+            "hash": "b41aae732328e9f62d7c76c66e7b8a36e081ed8eeb1bfe187594be7ce4e847b0"
+        },
+        {
+            "type": "file",
+            "name": "images/favicon.png",
+            "size": 8560,
+            "hash": "23c59c675f066ad792787370e634faed02264eee955656716e20aa8c4c746e16"
+        },
+        {
+            "type": "file",
+            "name": "images/handshake-black.svg",
+            "size": 930,
+            "hash": "7e73113d638488d626bfd4df301adfe99c4df1ff363f5a1644f81d4ba352f0e9"
+        },
+        {
+            "type": "file",
+            "name": "images/handshake.svg",
+            "size": 915,
+            "hash": "a994c5fb9149ea4d14fe8d0140e99e862425f953f3ab43fca103c59b80a0551e"
+        },
+        {
+            "type": "file",
+            "name": "images/no_bg_avatar.webp",
+            "size": 278427,
+            "hash": "36b82a6ab9d8247f93b0dc09697f7d8f44e539910f12b5785e357be1b6567ac7"
+        },
+        {
+            "type": "file",
+            "name": "images/no_bg_avatar11.webp",
+            "size": 69098,
+            "hash": "b98267d5ddfd60aa3041ba043651361648daab75a5ae1d5aa8f58468640c2469"
+        },
+        {
+            "type": "file",
+            "name": "images/no_bg_avatar_old.webp",
+            "size": 152722,
+            "hash": "e334e8c77cd6740b525e57302f0e01d757d258150411dbbad2eecacc77e79e6a"
+        },
+        {
+            "type": "file",
+            "name": "images/raf_logo.png",
+            "size": 5303,
+            "hash": "2ff8379ab1650e3893281ada00d4ffc41e57a0d584a18c7002d41cfce66c1553"
+        },
+        {
+            "type": "file",
+            "name": "images/raf_logo_white.png",
+            "size": 5865,
+            "hash": "b041d85bbe2b73af4200bcb4c49823a67b7e13b60b0c7c95d63bc905185c8d55"
+        },
+        {
+            "type": "file",
+            "name": "images/sands.webp",
+            "size": 22927,
+            "hash": "7867172cbddd0172eb2fcf5803679ab8fb337eddb8397d43c918788016181409"
+        },
+        {
+            "type": "folder",
+            "name": "images/svg"
+        },
+        {
+            "type": "file",
+            "name": "images/tangerinewave.svg",
+            "size": 708,
+            "hash": "3d41caa3a20dc0bc278ab9d94fc31bb17b05d1fc41a26bb83b4f553996495479"
+        },
+        {
+            "type": "file",
+            "name": "images/wave.png",
+            "size": 7074,
+            "hash": "590906d781cff265dc12bad0edaf9734588d67fc07974eade15574e34a8fa52e"
+        },
+        {
+            "type": "folder",
+            "name": "images/skills"
+        },
+        {
+            "type": "file",
+            "name": "images/who-am-i.webp",
+            "size": 92370,
+            "hash": "7e2645c02459d1343c72eab46618f5ee108d0a4acd0950291ed0db950fb5762c"
+        },
+        {
+            "type": "folder",
+            "name": "images/works"
+        },
+        {
+            "type": "file",
+            "name": "project/index.php",
+            "size": 5991,
+            "hash": "d36accfee7f58e4a5637a0a1d704dbb99ac162fadd866430ec64eb21a18ea5f7"
+        },
+        {
+            "type": "file",
+            "name": "project/project-not-found.php",
+            "size": 1140,
+            "hash": "de1771ea837d8f4d7d9f923533e6c42a7bb20757e70435a951e222b824a49321"
+        },
+        {
+            "type": "file",
+            "name": "project/projectIDhandle.php",
+            "size": 2193,
+            "hash": "126f2b98bd331eed8c024baa57d91f9fc9501dd31b4856b060a8a61bb627780f"
+        },
+        {
+            "type": "folder",
+            "name": "project/scripts"
+        },
+        {
+            "type": "file",
+            "name": "scripts/endpoints.js",
+            "size": 346,
+            "hash": "edfbea324fed7c1f7b6964e54baf3cb07e63aaef3bb2c70e45a1fc28c3b7d3fe"
+        },
+        {
+            "type": "folder",
+            "name": "scripts/JSON"
+        },
+        {
+            "type": "file",
+            "name": "scripts/index.js",
+            "size": 10657,
+            "hash": "3af0175b87a99bd52842f79344609b012ca51f11cddc0296e48e51ed53f4dc11"
+        },
+        {
+            "type": "folder",
+            "name": "scripts/modules"
+        },
+        {
+            "type": "file",
+            "name": "scripts/initialize.js",
+            "size": 223,
+            "hash": "bf2158388646587f355e1ca04a7c75f58c4e9017e545f05154d5e2e60699a746"
+        },
+        {
+            "type": "file",
+            "name": "scripts/skills.php",
+            "size": 926,
+            "hash": "bc179ca6fb01035560842568898db1dac648f3718219cdea77dff33b57b33daf"
+        },
+        {
+            "type": "file",
+            "name": "scripts/works.php",
+            "size": 1469,
+            "hash": "28bb330168e83400b5e4fa0dad1aa2576ed711ac1497b2ef573c8e1b6af48a25"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/about-me-section.css",
+            "size": 1735,
+            "hash": "97fc2c5d35f9319a1d3d911c18c7f08fd2b1807ef92d847a72fca4c895124045"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/contact-section.css",
+            "size": 7436,
+            "hash": "839bce2d1ed9eb62b04fa0c1000f8228f73c4044575c80b673b2759d7af46089"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/global-dark-mode.css",
+            "size": 3819,
+            "hash": "0805d122573d6b8487203602da465496aaa4e0873c336c4be57e130364782e0a"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/header.css",
+            "size": 5124,
+            "hash": "88cb9e85adaf92d31a306e647156f78c99fac4ce022675ba23febd1b5f57a1f1"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/hero-section.css",
+            "size": 8658,
+            "hash": "7a2b252a6c7f154708dc4f725e76fff70e062547a58e9007b845a3966b27f2ba"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/loading.css",
+            "size": 1306,
+            "hash": "8ff933ae241090d3f215b9d0b78dbe95296d063e9c35a469d23c939d4ea97d6e"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/mobile.css",
+            "size": 5359,
+            "hash": "5a9fdc50037724b2a59b2378ed31b565e4870700baf6c1a92a67dface98676a4"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/skills-section.css",
+            "size": 1793,
+            "hash": "f8d82abbc4806c49fce8351047ec660018f6fab75e0a81769e9b7440158e4212"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/style.css",
+            "size": 6175,
+            "hash": "cb93bb303c8ee6626c4a708b4d30a1b639133188a4510936cd6a27a28bfb1571"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/style.min.css",
+            "size": 47761,
+            "hash": "9044ac7dd53567805455b1c2076787c1386d15999b631ae1ce66a67c14fe600f"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/variable.css",
+            "size": 2460,
+            "hash": "3ef6ccb339e7db39c6e0f2a2a53268be08fb9b555731b3a745f1fb97ab14b08b"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/works-section.css",
+            "size": 3412,
+            "hash": "96d454de7713eaaea5f6a524a4b5ada729c376dc5abe56ac78609f9177ba68ab"
+        },
+        {
+            "type": "file",
+            "name": "stylesheets/why-us-section.css",
+            "size": 4643,
+            "hash": "d72086dea70f63bf1d16ce76dcb18de9e5e560bd92f4f434b54a76126f00f91c"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/NotoColorEmoji-Regular.ttf",
+            "size": 4603904,
+            "hash": "4471005946051190f58d4352662b09a8e9cbf957f87ff52c5bf782fa3abe371f"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/css/challenge.css",
+            "size": 771,
+            "hash": "896fada863005c4783acaf4f9e2011a0b0358445c6a32ee981cd2a1fd1fb6e0c"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/css/dashboard.css.map",
+            "size": 795,
+            "hash": "b67cc44578397f40e407ba33986d63da388aa227d3b794f54a233ae8aee7796b"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/css/dashboard.scss",
+            "size": 1623,
+            "hash": "df8179929e8e34d78551d49a7ad48f0a44b4fc8aceae721742007c7241372802"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/css/login.css",
+            "size": 952,
+            "hash": "f90a1c33b340227b294de8212df837072f040b8ec87caf4ec6deb01c680d8fbe"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/backend/allData.php",
+            "size": 1469,
+            "hash": "cb5db85bec95b4c8645ed2de64fef71ba645efc5c6028c2830f1f9411eb221ce"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/backend/data.json",
+            "size": 487,
+            "hash": "b10bc4c87067fc75295a3499ce37769bf999f3fa888bbca77c75221f9e91713a"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/eslint.config.js",
+            "size": 734,
+            "hash": "dc00c7db700d03834d04a172ea709593ae5ef1bc750eb55dfc521a60d9e1baa0"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/README.md",
+            "size": 1607,
+            "hash": "f83e8201f2934fb634577123959d9f332edfc9cb45438c764c9f6fc7ac6d71c3"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/index.html",
+            "size": 366,
+            "hash": "db908a36f7f8ea1b2697b54f5d792edeb9a525ff5b8df5785470641abe531753"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/package.json",
+            "size": 877,
+            "hash": "172ff8ecce54aae84db4af7b23b35a9ceb3f38b06971ee6a8813c6266ed8e734"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/public"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/tsconfig.app.json",
+            "size": 665,
+            "hash": "eda50155c681a84b66b5f417b1bc2c801c52527834eb1cd08b9b784028164371"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/tsconfig.json",
+            "size": 119,
+            "hash": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/tsconfig.node.json",
+            "size": 593,
+            "hash": "d417b0be3b2264c26a4865d3a9ef788e8e7229da62ef2a88ed41a81e04eff668"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/vite.config.ts",
+            "size": 161,
+            "hash": "4d36db3522a7b2dd10e0936e1004373c7ee65f10f7cd7920cd76410459c15a45"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/yarn.lock",
+            "size": 80711,
+            "hash": "adb075f9525fecf99da9b1391785206729584fb6a338af6f857921d2dfb1bc97"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/scripts/load.js",
+            "size": 1630,
+            "hash": "ce2a163a3c134d43f63bb7d64a12b037ecabd5f1dc3f5e7cb7c5fff76713eb63"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/scripts/login.php",
+            "size": 1009,
+            "hash": "550e96318edc56728d348276eefcb1e42ad8790301a1f5bdaaee869745cbb414"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/svgs/logout.svg",
+            "size": 1884,
+            "hash": "2820441b9ec8d542f7e08d0e7bcf3c16eb94edd1cebb27238d3e5e0a962389c8"
+        },
+        {
+            "type": "file",
+            "name": "components/svg/heart.php",
+            "size": 274,
+            "hash": "d47299c414fde75f9fa369981c2ab232d1c09f6381cb943472f3ef3442c61410"
+        },
+        {
+            "type": "file",
+            "name": "components/svg/dislike.php",
+            "size": 676,
+            "hash": "0b28b271aa1bfd2678ca75283994cdabb1dfdde0d2f1ad59570cefc817c7b512"
+        },
+        {
+            "type": "file",
+            "name": "components/svg/like.php",
+            "size": 711,
+            "hash": "275030f5197305a5e380c5b7aacc65b7d03f73fe6a50933e7c7697b04534f6af"
+        },
+        {
+            "type": "file",
+            "name": "components/svg/raf-logo.php",
+            "size": 10198,
+            "hash": "a9af8fd2f8acecb29e396c3edd469cfe6dd11d7428f688faa0cc6980b83bcaa6"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/arr-down.svg",
+            "size": 238,
+            "hash": "971c6f4340ea72495ef624fb7242c7b52c2f1f5124c5c4f74ce22356995ccdc0"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/arr-down-black.svg",
+            "size": 238,
+            "hash": "b0a6cf5f246eddff6cf527b186733df8f9a9190f49e881542c185d7892fe6ca8"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/arrow-up-right.svg",
+            "size": 280,
+            "hash": "a890e8938d78bc50091fecba1b2f296e866978cae83506ca29c81de7bf816973"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/clock-white.svg",
+            "size": 340,
+            "hash": "4321a9ab7460b43f6142c411a0a1f6ecfc93e233433c75853b39c3f7fbe3247b"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/clock.svg",
+            "size": 281,
+            "hash": "2711b84457a4bdb405ddd46b8ba9d9c7af68ba3d40729d875c3025fdf0379e20"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/code-chevron-white.svg",
+            "size": 635,
+            "hash": "eaf472cb391272698d80fcc2a58cc3d06d8981c678f59052742a4598a18dc8fe"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/code-chevron.svg",
+            "size": 667,
+            "hash": "155b30746f1a3b142c9afdb0dbcb7c4dd76df8799417e7dd946d1554296c9b18"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/comments-white.svg",
+            "size": 594,
+            "hash": "9cae5ca03e6dba18a9f5d6d386462e31a55e90c7ead198e2afcac90707c245aa"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/comments.svg",
+            "size": 626,
+            "hash": "7c35769b59d40a38248478704cdb194d403786982b004a44e4f07944b358ef1c"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/debug-console.svg",
+            "size": 931,
+            "hash": "e4e079c1e4a5fd127860b26c551d672e1cdb361962723db49895ae149d5f5f10"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/dislike.svg",
+            "size": 785,
+            "hash": "b2c607bc17449d5a5d7d58c4ea8054b3646bb8d4ad91c553e6bb1f04e714d962"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/facebook-messenger.svg",
+            "size": 554,
+            "hash": "fa5f1bc041552208671e4cb885efa04f605515d950ce4a19b513f72eae738949"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/git.svg",
+            "size": 520,
+            "hash": "a134409268429fb1524620154f8c8a63dc763ec6c82eab303cf8e5e335d5aad3"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/github-white.svg",
+            "size": 1396,
+            "hash": "9c4bbf67c9cfe07d2afc035a79159a5e62927ca9e865ef1e26a5c9d2e4b5f960"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/github.svg",
+            "size": 1384,
+            "hash": "90369a2009661ee0746a5b2e335cf0e75eb41182886f77d84ae30db127d28584"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/gmail.svg",
+            "size": 340,
+            "hash": "e02e87942b5ce253fbcd0deb1b0d643bc8b7db46d73b963940c3586f6cd05bce"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/heart-clicked.svg",
+            "size": 452,
+            "hash": "e1c06d64b470ae7e6ce22a483944c002e8ed133af7744894d4f63578d51059ea"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/heart-white-clicked.svg",
+            "size": 452,
+            "hash": "ff04391daf9827581086fe284d24592eccb8eaae2b11698b167ef4ed532d8e10"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/heart-white.svg",
+            "size": 475,
+            "hash": "d999a22f7117fe2017bd394095753d025472ef036d48585f08eecd8282f8f683"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/heart.svg",
+            "size": 475,
+            "hash": "fc4ccee28deea00a04129816876322ee32c893b86b631fd7d1f03b54f892e52d"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/ios-send.svg",
+            "size": 549,
+            "hash": "4255ca2649b5e741e662a5d96e1ed96055a24d53ac6840b11e8a89585aa6eb13"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/lightbulb-white.svg",
+            "size": 659,
+            "hash": "9401d3ab78412d7ed3c9841a49340369c319050b1c54e103d1f996bbebc9609c"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/lightbulb.svg",
+            "size": 691,
+            "hash": "071737a86d9a3e52e88cfbf2e556998912ebd52be20b448acde82e45c91a58ee"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/like-clicked.svg",
+            "size": 785,
+            "hash": "b2c607bc17449d5a5d7d58c4ea8054b3646bb8d4ad91c553e6bb1f04e714d962"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/like-white-clicked.svg",
+            "size": 782,
+            "hash": "9cd10f3961e764c77185b22a85b427bd7f5e907eef28007273362d2d4b95db3e"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/like-white.svg",
+            "size": 813,
+            "hash": "986d40f572c8c5a0e1b62638bbe5ce5a310297d13eafa9ec6c8d853ec24eb5de"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/like.svg",
+            "size": 813,
+            "hash": "ef9b27e102db5510a24baa75150b600292f9542efae97cb2d122950139e96294"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/line-wave.svg",
+            "size": 304,
+            "hash": "89498ac9783934685a85bc8a5f1f9f7a54848b27f761e6e47f4cfe05cdcf7b9a"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/linkedin.svg",
+            "size": 537,
+            "hash": "c57aac1c9a8980e5ad63603073ded29026722fea95fa8ba50e984b1116626a4c"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/location-on.svg",
+            "size": 255,
+            "hash": "b989d3c8cfe19edd295378071c23de9c787cbc6ee66cc6a83023968837d0a88f"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/logo-skype.svg",
+            "size": 1948,
+            "hash": "41baa15dc36ac7ed840d24e421307310ebd6858f512daa6b5c2545f56605ad3f"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/paint-brush-white.svg",
+            "size": 1003,
+            "hash": "3e33cf5c7659a60a2afc879df6b65c8cac37baf0fe2016383efef6e1ed95fffd"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/paint-brush.svg",
+            "size": 1003,
+            "hash": "9c39913243e43dc8d75d17b8fa8d81822afc25f23c7231dadc42f4ff69976a03"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/phone-pc-link.svg",
+            "size": 409,
+            "hash": "0e071efc8a1a38c70b886ace7104cc0360d784b55c3ae30dd1234a5bb03610ae"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/phone-portrait.svg",
+            "size": 837,
+            "hash": "bb80b225a413f1d2a7e0df7a8acc1a87f04eda0aa295080cee1881933e05c24e"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/phone-square-alt.svg",
+            "size": 540,
+            "hash": "98a2c3cd3194f746eeaa21d53297130b190ef39a66c8a2f88d6b984001e8c890"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/raf_logo.svg",
+            "size": 10239,
+            "hash": "a75f88428129cb805eb9cb640d981b9959a6735cb903a30c8ad2d7a28cc1d78f"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/raf_logo_white.svg",
+            "size": 10239,
+            "hash": "d1c836beac61183cf6a0371c40e903fa93a48b57283e3cd1e44d168b02abba8f"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/reddit-square.svg",
+            "size": 1037,
+            "hash": "07d8f1ba66f3acf9058d57c04877b006dc3a13c892342cc747890101649febcd"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/rocket.svg",
+            "size": 1262,
+            "hash": "07039af58ab078f36685c2268fb2de356ee76712d3467be2958970860655f327"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/searchengin.svg",
+            "size": 757,
+            "hash": "ebedd958a3ead7ee52d842a1c703edb8ff939e202f5474537e6c31da6153a498"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/settings.svg",
+            "size": 773,
+            "hash": "d0872fb94037822164c8cea43a2ebeafdd1b664ff0fdc9387f0e1e1a7ee74628"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/shield-check-white.svg",
+            "size": 893,
+            "hash": "c17e33668cb43109a271c5769147a8e8786e662d63b982ef5cff34dcc8f03f0d"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/shield-check.svg",
+            "size": 926,
+            "hash": "eae5fd14bc882d9bbcaee3b9cb36be3940fcf6aa715ae313dbdc9f43bdf71bf5"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/structure.svg",
+            "size": 811,
+            "hash": "968862d208e5410133dee76f81b9318166f61053d4bb389319435e2a5d66d236"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/timelineLong.svg",
+            "size": 280,
+            "hash": "5124cb3370935e1a1de61f5450d110cf12c1444ccbe54931fb817908050613c4"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/timelineShort.svg",
+            "size": 221,
+            "hash": "a5d91f1adf63f5868204fbca0e1c763d293325a901f9cb5fc03e548401923ae6"
+        },
+        {
+            "type": "file",
+            "name": "images/svg/users.svg",
+            "size": 724,
+            "hash": "08e5e7e9025474d3a27bb6cf6ba4821751047b662c5b2d1a140b5af4dd1e7066"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/adobexd.svg",
+            "size": 2260,
+            "hash": "c3c3f2dcd57ba88ff962457106112384b92996de7ba170afbb74e2fe9a68982c"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/axure9.svg",
+            "size": 2282,
+            "hash": "7cc3d876cdffc9b910e61bf90bbd93cd2d4419aa80e89627a4e816b09485b5e4"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/composer.svg",
+            "size": 97096,
+            "hash": "29aeea71ce209c3e279cc0d8175305c123fbdd2101cb716426e7e136e6993fbb"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/css.svg",
+            "size": 1137,
+            "hash": "9a2d55c8e9d62f6788fedb18e65aebf0cadd4ac9040625aa25904ff4d62dbdde"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/docker.svg",
+            "size": 1036,
+            "hash": "e5104c7da3e4f7db62126550f0b12136fb9f73e5a1c7f0253604ce09f4719842"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/figma.svg",
+            "size": 834,
+            "hash": "c843606a7799755e934e553572053f0a6805a2421605a5baf199597df541d968"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/git.svg",
+            "size": 520,
+            "hash": "a134409268429fb1524620154f8c8a63dc763ec6c82eab303cf8e5e335d5aad3"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/github.svg",
+            "size": 1384,
+            "hash": "90369a2009661ee0746a5b2e335cf0e75eb41182886f77d84ae30db127d28584"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/html.svg",
+            "size": 1017,
+            "hash": "831b0a8ab1ca3ac0032d6f3ca57026725f16a9f360e898130c7289fa61dc161f"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/insomnia.svg",
+            "size": 1784,
+            "hash": "6d5a908508dd67a661891ebde899ee354c21b67b7c4f3b5f11894a23db16a96e"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/javascript.svg",
+            "size": 570,
+            "hash": "3a49da2b12e7963e95e7c66963133d72cd63dbbfcd0ee61f58bf8462f9b35e18"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/jquery.svg",
+            "size": 25281,
+            "hash": "75a1d239dbda844a692e95681ec3c07f573ff5b6f08dece7cf07413d325424eb"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/krita.svg",
+            "size": 5395,
+            "hash": "4f2cf3322ff707033f313b68b46288f8a729ca3b84f2f5ec39adf7569eba23f9"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/laravel.svg",
+            "size": 2006,
+            "hash": "43b95d10608d7ddc28d221f67805d78c06846b0651004964a81eab40104b9377"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/mongodb.svg",
+            "size": 1922,
+            "hash": "62a08b833ae4e5a9304fe4fd6d6b0e346f8d7feda00f2ce40cd5d73f532ab500"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/mysql.svg",
+            "size": 2454,
+            "hash": "249d6350616442b1f6173689292b599816ace854e559f740f31ebfb660821710"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/nextjs.svg",
+            "size": 2287,
+            "hash": "59920e3781c8323178bc7ac34d3dfdfaba044fa8572c2e5d341a72d76ecd7263"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/npm.svg",
+            "size": 235,
+            "hash": "7b2efbec840bb51936039e058b16e9247898952fe2f99386b2e4007d9fd49324"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/php.svg",
+            "size": 921,
+            "hash": "1f1d633a808959a1547f1827dc4f1069a6e32d5f3981d087efa0b4592e4a8485"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/postman.svg",
+            "size": 1510,
+            "hash": "a53d571549d85c16b8c3d023902750f68089b8a85d84fe874d1dd0b36de25396"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/reactjs.svg",
+            "size": 2108,
+            "hash": "535b1b8579129cd44597e7888d2e5bb6141995f7b4717b7abaa907ce1f8866db"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/sass.svg",
+            "size": 3167,
+            "hash": "9b08e317de8f398bdff23250bd8184e0437cbfedb17ba904681f253023de31b6"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/sqlite.svg",
+            "size": 1673,
+            "hash": "2b4cd8b8912ce200586df811d8b9b8ea2d9b7da0a4f58bb253d7afa419f21df0"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/vite.svg",
+            "size": 1464,
+            "hash": "77d57f933421a86b78c9f135bd9715198fe3e5a14eaf569166e7d77cb94b10e0"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/vscode.svg",
+            "size": 866,
+            "hash": "4536dc37bf1ebced6702ac44e8dfaf634723d478eec5478cd0e758970f890773"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/wordpress.svg",
+            "size": 1521,
+            "hash": "a0bbefd626f1e76f9245ec6c6101b679ba27412b71b32fc43eccda9db40f394b"
+        },
+        {
+            "type": "file",
+            "name": "images/skills/yarn.svg",
+            "size": 690,
+            "hash": "90155833bf12330615bdee3365a8201fb007652a0ac2a5c36b465c1bc13e9662"
+        },
+        {
+            "type": "file",
+            "name": "images/works/2016_chrono.webp",
+            "size": 14868,
+            "hash": "19fb713d82c456819f5cf78545cc7a4d48d27f084f7380470a0007851c7bf355"
+        },
+        {
+            "type": "file",
+            "name": "images/works/App_UI.webp",
+            "size": 25728,
+            "hash": "959e5cb894bd2d195d239d71ac6722aac2ee4ba012f8c917d01f4e1e25bac3ae"
+        },
+        {
+            "type": "file",
+            "name": "images/works/espoir.webp",
+            "size": 63766,
+            "hash": "80039e8bb6d995755be447c4da573649de4cdeb52cf788e304b3fed428de2253"
+        },
+        {
+            "type": "file",
+            "name": "images/works/espoir2.webp",
+            "size": 55692,
+            "hash": "b5975efd58af1a8c55bb76a51662dc308028f09adb89db61ce0d81626e95325d"
+        },
+        {
+            "type": "file",
+            "name": "images/works/file_shares.webp",
+            "size": 15838,
+            "hash": "31c5e6c481581e0e23b9e28ca12a9f3dc3aac3234e0d188aec801abf10c00671"
+        },
+        {
+            "type": "file",
+            "name": "images/works/mgChat.webp",
+            "size": 37086,
+            "hash": "ff61ccd950a364d6cf1b5d7f4b6bc381fa1ab8c38c7a73f798e44207456946a8"
+        },
+        {
+            "type": "file",
+            "name": "images/works/notes_v1.webp",
+            "size": 13172,
+            "hash": "7434d88a99ed1fddd697ab7a265614e8ff8cfa32ab90c9c08248b0ef708b9a20"
+        },
+        {
+            "type": "file",
+            "name": "images/works/pharmacy_design.webp",
+            "size": 50434,
+            "hash": "8be04d9c7d86017c1264b4c47efcbd8de8b847467a90481324781dbf02c13c5a"
+        },
+        {
+            "type": "file",
+            "name": "images/works/portfolio-v1.png",
+            "size": 749187,
+            "hash": "85eb1bd484132de48b353311c61bed689a8ae7d2cd8503d01d82bb1dcd7e173d"
+        },
+        {
+            "type": "file",
+            "name": "images/works/shopping_app.webp",
+            "size": 58618,
+            "hash": "a2beadd79b33e06ec5ea7894644f6252766045229fbdb2616ce2a87d4a96dd59"
+        },
+        {
+            "type": "file",
+            "name": "project/scripts/theme.js",
+            "size": 1019,
+            "hash": "71b23b6751d6801a6e011e95b85ed1a3def6951663f3f7eb6bfc2baafa01a79a"
+        },
+        {
+            "type": "file",
+            "name": "scripts/JSON/skills.json",
+            "size": 3342,
+            "hash": "7f6db4ffaf7e543fea5b1e53525de8ee5769945f02f4f9fe99a06412fe0aaee7"
+        },
+        {
+            "type": "file",
+            "name": "scripts/JSON/works.json",
+            "size": 3879,
+            "hash": "bf849a242fac2be898263be4cabc6a7de837dcf76345268739410e0ced324e01"
+        },
+        {
+            "type": "file",
+            "name": "scripts/modules/isotope.js",
+            "size": 35445,
+            "hash": "081ae9baaacc857c1c2cb51de6dbd0e1eb811c2761ef01a50df373f2f6eefe22"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/public/vite.svg",
+            "size": 1497,
+            "hash": "4a748afd443918bb16591c834c401dae33e87861ab5dbad0811c3a3b4a9214fb"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/App.tsx",
+            "size": 311,
+            "hash": "82b093c24dcb47823d284a5f8f200d6cfff35106770eea174b5868620625631a"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/assets"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/components"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/vite-env.d.ts",
+            "size": 38,
+            "hash": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/main.tsx",
+            "size": 209,
+            "hash": "baca4d80e64c2bc0650ed2e4c7f28823988732274899e53a977b2134ed000602"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/assets/react.svg",
+            "size": 4126,
+            "hash": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/assets/stylesheets"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/components/atoms"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/components/organisms"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/assets/stylesheets/common.scss",
+            "size": 1715,
+            "hash": "4a817b9ebf1f4d9851ca7a8b8d1447fa4579405d2c3fa104d241c112581d9466"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/assets/stylesheets/dashboard.scss",
+            "size": 1948,
+            "hash": "66c897103ec3de236e77688d3b44f313901be12be90089cd72c6512b121c1ee4"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/components/atoms/LogoutBtn"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/components/atoms/MenuTabs"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/components/atoms/TabsContent"
+        },
+        {
+            "type": "folder",
+            "name": "backoffice/dashboard/src/components/organisms/DashboardLayout"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/components/atoms/LogoutBtn/LogoutBtn.tsx",
+            "size": 329,
+            "hash": "600ab05c64328da208c3632f27486a196b131b36a425ad0760a45770d45b3d3b"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/components/atoms/MenuTabs/MenuTabs.tsx",
+            "size": 196,
+            "hash": "7700d0317c770025eb6772d79edc42c61d2645f6085df437e72a0252267e56e4"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/components/atoms/TabsContent/TabsContent.tsx",
+            "size": 595,
+            "hash": "fee632223984c7429a9147649ab0374e14f325f716be81f7b062c2b696a3a05c"
+        },
+        {
+            "type": "file",
+            "name": "backoffice/dashboard/src/components/organisms/DashboardLayout/DashboardLayout.tsx",
+            "size": 602,
+            "hash": "4451305c3fc58bb5f262e3fde9e69b706b2df59ef761b2ce0bf108cd91894a93"
+        }
+    ]
+}
