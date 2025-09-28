@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", (loadedEvent) => {
     "an Expert Front-End Developer",
     "an UI/UX Designer",
     "a Professional Web Integrator",
-    "a React.js/Next.js Developer"
+    "a React.js/NextJs Developer",
+    "a WordPress Developer"
   ];
 
   let currentTextIndex = 0;
