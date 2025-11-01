@@ -1,0 +1,23 @@
+@import "tailwindcss" theme(static);
+@source "../views/";
+@source "../../app/";
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+  }
+
+  .container {
+    @apply mx-auto w-full px-6 sm:px-10;
+  }
+}
+
+@layer components {
+  .text-muted-foreground {
+    @apply text-neutral-500;
+  }
+}

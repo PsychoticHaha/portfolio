@@ -1,0 +1,48 @@
+{
+  "name": "psychotix/theme",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "Psychotix portfolio theme built on Roots Sage, Tailwind CSS, and Vite.",
+  "homepage": "https://psychotix.dev",
+  "authors": [
+    {
+      "name": "Fanasina Ramalandimanana",
+      "email": "hope.fanasina2@gmail.com",
+      "homepage": "https://psychotix.dev"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/sage/issues",
+    "forum": "https://discourse.roots.io/"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "php": ">=8.2",
+    "roots/acorn": "^5.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.20"
+  },
+  "suggest": {
+    "log1x/sage-directives": "A collection of useful Blade directives for WordPress and Sage (^1.0)."
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ]
+  }
+}
