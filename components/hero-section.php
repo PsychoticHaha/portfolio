@@ -41,6 +41,20 @@
                             <span class=text>More about me</span>
                         </a>
                     </div>
+<!--                     <div class="hero-socials" aria-label="Social media links">
+                        <a class="cursor-set" href="https://www.linkedin.com/in/fanasina-ramalandimanana-75110a236/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <span class="icon linkedin"></span>
+                            <span class="label">LinkedIn</span>
+                        </a>
+                        <a class="cursor-set" href="https://github.com/PsychoticHaha" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <span class="icon github"></span>
+                            <span class="label">GitHub</span>
+                        </a>
+                        <a class="cursor-set" href="mailto:hope.fanasina2@gmail.com" aria-label="Email">
+                            <span class="icon gmail"></span>
+                            <span class="label">Gmail</span>
+                        </a>
+                    </div> -->
                 </div>
             </div>
         </div>

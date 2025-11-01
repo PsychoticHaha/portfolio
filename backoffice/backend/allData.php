@@ -1,57 +1,65 @@
 <?php
 session_start();
-$receivedToken = $_POST['token'];
-$storedToken = $_SESSION['token'];
+
 header('Content-Type: application/json');
-echo json_encode(($receivedToken));
 
-if (verifyToken($receivedToken, $storedToken)) {
-  require_once('/backend/pdo.php');
-  $queryMsg = 'SELECT * FROM messages';
-  $queryReactions = 'SELECT * FROM reactions';
-  $queryUsage = 'SELECT * FROM usage';
-
-  function fetchTableData($pdo, $query, $title)
-  {
-    $stmt = $pdo->query($query);
-    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    return [
-      'title' => $title,
-      'data' => $data,
-    ];
-  }
-
-  $messages = fetchTableData($pdo, $queryMsg, 'messages');
-  $reactions = fetchTableData($pdo, $queryReactions, 'reactions');
-  $usage = fetchTableData($pdo, $queryUsage, 'usage');
-
-  $result = [$messages, $reactions, $usage];
-  $jsonResult = json_encode($result, JSON_PRETTY_PRINT);
-
-  header('Content-Type: application/json');
-  echo $jsonResult;
-} else {
-  // invalid Token, deny access
-  // header('HTTP/1.1 403 Forbidden');
-  header('Content-Type: application/json');
-  echo json_encode('Token Error');
-  exit();
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Method not allowed.',
+    ]);
+    exit;
 }
 
+$receivedToken = $_POST['token'] ?? '';
+$storedToken = $_SESSION['token'] ?? '';
+
+if (!verifyToken($receivedToken, $storedToken)) {
+    http_response_code(403);
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Invalid or expired token.',
+    ]);
+    exit;
+}
+
+require_once __DIR__ . '/../../backend/pdo.php';
+
+$queries = [
+    'messages' => 'SELECT * FROM messages ORDER BY date DESC',
+    'reactions' => 'SELECT * FROM reactions ORDER BY date DESC',
+    'usage' => 'SELECT * FROM usage ORDER BY date DESC',
+];
+
+$payload = [];
+
+foreach ($queries as $key => $sql) {
+    try {
+        $stmt = $pdo->query($sql);
+        $payload[$key] = $stmt ? $stmt->fetchAll(PDO::FETCH_ASSOC) : [];
+    } catch (PDOException $exception) {
+        $payload[$key] = [];
+    }
+}
+
+echo json_encode([
+    'status' => 'ok',
+    'data' => $payload,
+]);
 
 function verifyToken($receivedToken, $storedToken)
 {
-  if ($receivedToken === $storedToken && !isTokenExpired($receivedToken)) {
-    return true;
-  }
-  return false;
+    if (!$receivedToken || !$storedToken) {
+        return false;
+    }
+
+    return hash_equals($storedToken, $receivedToken) && !isTokenExpired($receivedToken);
 }
 
 function isTokenExpired($token)
 {
-  $parts = explode('.', $token);
-  $expirationTime = end($parts);
-  // return (int) $expirationTime < time();
-  return intval($expirationTime) < time();
+    $parts = explode('.', $token);
+    $expirationTime = (int) end($parts);
+    return $expirationTime < time();
 }

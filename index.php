@@ -33,7 +33,6 @@ require_once 'loadEnv.php';
   </main>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./scripts/index.js" type="module"></script>
-  <script src="./scripts/modules/isotope.js" type="module"></script>
 </body>
 
 </html>

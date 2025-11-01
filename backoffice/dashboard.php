@@ -23,7 +23,7 @@ session_start();
     <div class="logout">
       <form action="logout.php" method="POST">
         <input type="submit" name="logout" value=".">
-        <input type="hidden" value=<?= $_SESSION['token'] ?>>
+        <input type="hidden" name="token" value="<?= htmlspecialchars($_SESSION['token'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
       </form>
     </div>
   </header>
@@ -36,14 +36,12 @@ session_start();
           <th>Message</th>
           <th>Date</th>
         </tr>
-        <tr id="1">
-          <td>fanasina.ramalandimanana@gmail.com</td>
-          <td>Hello, I'm tryna to contact you for some...</td>
-          <td>21-12-2023 13:46</td>
-        </tr>
       </table>
     </div>
-    <div style="height:1000vh; width:50px;background:red;"></div>
+    <aside class="message-details" id="message-details">
+      <h2>Select a message</h2>
+      <p>Choose a message from the table to read the full content.</p>
+    </aside>
   </main>
   <script src="./scripts/load.js"></script>
 </body>

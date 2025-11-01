@@ -1,3 +1,7 @@
+<?php
+$projectDetails = require __DIR__ . '/projectIDhandle.php';
+$projectNotFound = isset($projectDetails['error']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +12,9 @@
   <link rel="stylesheet" href="/stylesheets/mouse-cursor.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
   <link rel="stylesheet" href="/stylesheets/dark_mode.css">
-  <link rel="stylesheet" href="/stylesheets/project.css">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-  <title>RAF | Project</title>
+  <title>RAF | <?= $projectNotFound ? 'Project Not Found' : htmlspecialchars($projectDetails['title'], ENT_QUOTES, 'UTF-8'); ?></title>
 </head>
 
 <body class="dark">
@@ -61,16 +64,20 @@
     </div>
   </header>
   <main class="container">
-    <?php require_once '/scripts/projectIDhandle.php'; ?>
-    <h1>
-      <?= $_SESSION['name'] ?>
-    </h1>
-    <?= $_SESSION['about'] ?>
+    <?php if ($projectNotFound): ?>
+      <?php require __DIR__ . '/project-not-found.php'; ?>
+    <?php else: ?>
+      <h1><?= htmlspecialchars($projectDetails['title'], ENT_QUOTES, 'UTF-8'); ?></h1>
+      <?php if (!empty($projectDetails['about'])): ?>
+        <?= $projectDetails['about']; ?>
+      <?php else: ?>
+        <p>More information about this project will be available soon.</p>
+      <?php endif; ?>
+    <?php endif; ?>
   </main>
 
   <script src="/scripts/mouse.js"></script>
   <script src="./scripts/projects/theme.js"></script>
 </body>
-<?php ?>
 
 </html>

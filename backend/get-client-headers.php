@@ -1,8 +1,15 @@
 <?php
+require_once __DIR__ . '/../loadEnv.php';
 
 // URL de l'API "WhatIsMyBrowser"
 $url = "https://api.whatismybrowser.com/api/v3/detect";
-$api_key = $_ENV['WHAT_IS_MY_BROWSER_API_KEY'];
+$api_key = getenv('WHAT_IS_MY_BROWSER_API_KEY');
+
+if (!$api_key) {
+    http_response_code(500);
+    echo json_encode(['status' => 'error', 'message' => 'API key missing.']);
+    exit;
+}
 
 // Définir les headers pour activer les Client Hints
 header("accept-ch: Sec-Ch-Ua,Sec-Ch-Ua-Full-Version,Sec-Ch-Ua-Platform,Sec-Ch-Ua-Platform-Version,Sec-Ch-Ua-Arch,Sec-Ch-Bitness,Sec-Ch-Ua-Model,Sec-Ch-Ua-Mobile,Device-Memory,Dpr,Viewport-Width,Downlink,Ect,Rtt,Save-Data,Sec-Ch-Prefers-Color-Scheme,Sec-Ch-Prefers-Reduced-Motion,Sec-Ch-Prefers-Contrast,Sec-Ch-Prefers-Reduced-Data,Sec-Ch-Forced-Colors");
@@ -58,7 +65,9 @@ $result_json['metadata'] = [
 ];
 
 // Endpoint personnel pour stocker les données
-$personal_endpoint = "/backend/save-logs.php";
+$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$personal_endpoint = sprintf('%s://%s/backend/save-logs.php', $scheme, $host);
 
 // Envoyer la réponse JSON vers le backend personnel
 $ch = curl_init();
@@ -77,6 +86,5 @@ if ($response === false) {
     error_log("Données envoyées avec succès au backend personnel : " . $response);
 }
 
-// Aucune sortie vers le client
-// http_response_code(204); // Réponse HTTP vide (No Content)
+http_response_code(204);
 ?>

@@ -1,36 +1,21 @@
 <?php
-// DSN PRODUCTION
-$dsn = 'mysql:host=sql105.infinityfree.com;dbname=if0_36018860_portfolio';
-$username = 'if0_36018860';
-$password = 'xaOIRfTFiy';
+require_once __DIR__ . '/../loadEnv.php';
 
-//PDO  Options connection
-$options = array(
+$dbHost = getenv('DB_HOST') ?: 'localhost';
+$dbName = getenv('DB_NAME') ?: 'portfolio';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPass = getenv('DB_PASS') ?: '';
+
+$dsn = sprintf('mysql:host=%s;dbname=%s;charset=utf8mb4', $dbHost, $dbName);
+
+$options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_EMULATE_PREPARES => false,
-);
+];
 
-// Connection attempt
 try {
-    $pdo = new PDO($dsn, $username, $password, $options);
+    $pdo = new PDO($dsn, $dbUser, $dbPass, $options);
 } catch (PDOException $e) {
+    http_response_code(500);
     die('Erreur de connexion : ' . $e->getMessage());
 }
-
-// DSN
-// $dsn = 'mysql:host=localhost;dbname=portfolio';
-// $username = 'root';
-// $password = '';
-
-// //PDO  Options connection
-// $options = array(
-//     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-//     PDO::ATTR_EMULATE_PREPARES => false,
-// );
-
-// // Connection attempt
-// try {
-//     $pdo = new PDO($dsn, $username, $password, $options);
-// } catch (PDOException $e) {
-//     die('Erreur de connexion : ' . $e->getMessage());
-// }

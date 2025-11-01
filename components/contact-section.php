@@ -7,7 +7,7 @@
     </div>
     <div class=wrapper>
       <div class=left>
-        <div class=popup-message>
+        <div class=popup-message aria-live="polite">
           <p class=popup-content id=popup-content>This is a test popup message</p>
           <div class=close-popup-btn>&times;</div>
           <div class=loader></div>
@@ -20,8 +20,13 @@
             placeholder="e.g : rakoto@example.com">
           <label for=message>Message</label>
           <textarea id="message" class=" cursor-set" required aria-required="true" placeholder="Write your message here..."></textarea>
-          <div class=g-captcha></div>
-          <button id=send-message-btn class="cursor-set">
+          <div class=g-captcha>
+            <label for="captcha-answer">
+              Prove you are human: <span id="captcha-question"></span>
+            </label>
+            <input id="captcha-answer" name="captcha-answer" class="cursor-set" type="number" inputmode="numeric" required aria-required="true" autocomplete="off" placeholder="Your answer">
+          </div>
+          <button id=send-message-btn class="cursor-set" type="submit">
             <div class="icon send"></div> Send
           </button>
         </form>
@@ -31,22 +36,22 @@
           <h3>Do you find my portfolio great ?</h3>
           <div class=reactions>
             <div class="item">
-              <div class="icon cursor-set love">
+              <div class="icon cursor-set love" data-reaction="love">
                 <?php require_once('svg/heart.php') ?>
               </div>
-              <div class="nbr">100%</div>
+              <div class="nbr" data-reaction-count="love">--%</div>
             </div>
             <div class="item">
-              <div class="icon cursor-set like">
+              <div class="icon cursor-set like" data-reaction="like">
                 <?php require_once('svg/like.php') ?>
               </div>
-              <div class="item">70% - 50%</div>
+              <div class="nbr" data-reaction-count="like">--%</div>
             </div>
             <div class="item">
-              <div class="icon cursor-set dislike">
+              <div class="icon cursor-set dislike" data-reaction="dislike">
                 <?php require_once('svg/dislike.php') ?>
               </div>
-              <div class="item">50% - 0%</div>
+              <div class="nbr" data-reaction-count="dislike">--%</div>
             </div>
           </div>
         </div>
@@ -55,7 +60,7 @@
             <div class=close>❌</div>
             <h3>Can you tell me why, please ?</h3>
             <textarea id=feedback-message placeholder="e.g : It's very hard to for me to read texts inside."></textarea>
-            <button>Send feedback <span class=angry-emoji> 😇</span></button>
+            <button type="button" id="send-feedback-btn">Send feedback <span class=angry-emoji> 😇</span></button>
           </div>
         </div>
       </div>

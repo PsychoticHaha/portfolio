@@ -5,29 +5,41 @@ if (file_exists($jsonFilePath)) {
   $data = json_decode($jsonContent, true);
   if ($data !== null) {
     foreach ($data['works'] as $single_work) {
-      $details_link = $single_work['details_link'].''.$single_work['id'];
-echo '<div class="single-work cursor-set">
+      $detailsBase = $single_work['details_link'] ?? '/project/';
+      $workId = $single_work['id'] ?? '';
+      $details_link = rtrim($detailsBase, '/') . '/' . $workId;
+
+      $thumbnailPath = htmlspecialchars($single_work['thumbnail_path'] ?? '', ENT_QUOTES, 'UTF-8');
+      $title = htmlspecialchars($single_work['title'] ?? 'Untitled project', ENT_QUOTES, 'UTF-8');
+      $description = htmlspecialchars($single_work['description'] ?? '', ENT_QUOTES, 'UTF-8');
+      $githubLink = htmlspecialchars($single_work['github_link'] ?? '#', ENT_QUOTES, 'UTF-8');
+      $deployLink = htmlspecialchars($single_work['deployed_link'] ?? '#', ENT_QUOTES, 'UTF-8');
+      $detailsHref = htmlspecialchars($details_link, ENT_QUOTES, 'UTF-8');
+
+      echo '<div class="single-work cursor-set">
         <div class="thumbnail">';
-     echo "<img src='' data-img={$single_work['thumbnail_path']} loading='lazy' alt={$single_work['title']} width='250'>";
-   echo'</div>
+      echo "<img src='' data-img=\"{$thumbnailPath}\" loading='lazy' alt=\"{$title}\" width='250'>";
+      echo '</div>
         <div class="bottom">
           <h3 class="title">';
-            echo $single_work['title'];
-         echo '</h3>
+      echo $title;
+      echo '</h3>
         <div class="description">';
-          echo $single_work['description'];
-        echo '</div>
+      echo $description;
+      echo '</div>
         <div class="techno-list">';
-          foreach ($single_work['techno'] as $single_techno) {
+      $technologies = is_array($single_work['techno'] ?? null) ? $single_work['techno'] : [];
+      foreach ($technologies as $single_techno) {
+        $techno = htmlspecialchars($single_techno, ENT_QUOTES, 'UTF-8');
         echo '<div class="single-techno" translate="no">';
-            echo $single_techno;    
+        echo $techno;
         echo '</div>';
-          }
-  echo "</div>";
-  echo "<div class='links'>
-          <a href={$details_link} title='About this project' target='_blank'>About</a>
-          <a href={$single_work['github_link']} title='See on Github' class='github-link'>Code</a>
-          <a href={$single_work['deployed_link']} title='See project' class='deployed-link'></a>
+      }
+      echo "</div>";
+      echo "<div class='links'>
+          <a href=\"{$detailsHref}\" title='About this project' target='_blank' rel='noopener noreferrer'>About</a>
+          <a href=\"{$githubLink}\" title='See on Github' class='github-link' target='_blank' rel='noopener noreferrer'>Code</a>
+          <a href=\"{$deployLink}\" title='See project' class='deployed-link' target='_blank' rel='noopener noreferrer'></a>
         </div>
       </div>
       </div>";

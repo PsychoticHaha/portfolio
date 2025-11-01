@@ -1,3 +1,5 @@
+import { messageEndpoint, reactionBackendPoint, feedbackEndpoint } from './endpoints.js';
+
 const ROOT_EL = document.querySelector(':root');
 const themeToggler = document.querySelector('.theme-toggler');
 let themeBtn = document.querySelector("header.header .right .theme-toggle-btn"),
@@ -122,75 +124,10 @@ document.addEventListener("DOMContentLoaded", (loadedEvent) => {
   updateActiveLinks();
   moveCustomCursor(loadedEvent);
 
-  const reaction = localStorage.getItem("reaction");
-  const likeIcon = document.querySelector(".reactions .icon.like"),
-    dislikeIcon = document.querySelector(".reactions .icon.dislike"),
-    loveIcon = document.querySelector(".reactions .icon.love");
-  const feedbackForm = document.querySelector(".popup-wrapper");
-
-  if (reaction) {
-    switch (reaction) {
-      case "like":
-        likeIcon.classList.add("clicked");
-        break;
-      case "love":
-        loveIcon.classList.add("clicked");
-        break;
-      case "dislike":
-        dislikeIcon.classList.add("dislike");
-        break;
-      default:
-        break;
-    }
-  }
-
-  const reactionBtns = document.querySelectorAll(".reactions .icon");
-
-  reactionBtns.forEach(btn => {
-    btn.addEventListener("click", () => handleReactionClick(btn));
-  });
-
-  function handleReactionClick(btnEl) {
-    if (btnEl === dislikeIcon && !dislikeIcon.classList.contains('clicked')) {
-      feedbackForm.classList.add('show');
-    }
-
-    btnEl.classList.add('clicked', 'animate');
-    setTimeout(() => {
-      btnEl.classList.remove('animate');
-    }, 500);
-
-    reactionBtns.forEach(btn => {
-      if (btn !== btnEl) {
-        btn.classList.remove('clicked');
-      }
-    });
-    localStorage.setItem('reaction', btnEl.classList[1]);
-    const url = new URL(window.location.href);
-    console.log('URL', url);
-
-  }
-
-  feedbackForm.querySelector('.close').addEventListener('click', (event) => {
-    event.stopPropagation();
-    feedbackForm.classList.remove('show');
-  });
-
-  let themeToggleBtn = document.querySelector(".theme-toggle-btn"),
-    theme = localStorage.getItem("theme"),
-    body = document.body;
-
-  if (theme === "dark") {
-    body.classList.add("dark");
-    themeToggler.classList.add("dark");
-    ROOT_EL.classList.add("dark");
-  } else {
-    body.classList.remove("dark");
-    themeToggler.classList.remove("dark");
-    themeToggler.classList.add('light');
-    ROOT_EL.classList.remove("dark");
-  }
-  themeToggleBtn.firstElementChild.classList.toggle("dark", theme !== "dark");
+  const feedbackControls = setupFeedbackForm();
+  setupReactions(feedbackControls);
+  setupContactForm();
+  initialiseThemeState();
 
   let workLinksContainers = document.querySelectorAll(".my-works .works-container .links");
   workLinksContainers.forEach(container => {
@@ -273,58 +210,348 @@ function perfomLazyLoading(selector) {
   });
 }
 
-let contactForm = document.getElementById("contact-form");
-let sendBtn = document.getElementById("send-message-btn");
-let fullnameInput = document.getElementById("fullname");
-let emailInput = document.getElementById("email");
-let messageInput = document.getElementById("message");
-let popupDiv = document.querySelector(".popup-message");
-let closePopupBtn = document.querySelector(".close-popup-btn");
+const popupDiv = document.querySelector('.popup-message');
+const popupContent = popupDiv ? popupDiv.querySelector('#popup-content') : null;
+const closePopupBtn = document.querySelector('.close-popup-btn');
+let popupTimeoutHandle = null;
 
-function checkMessageAndEmail() {
-  let message = messageInput.value.trim();
-  let email = emailInput.value;
-  return message && email && message.length >= 6;
+if (closePopupBtn) {
+  closePopupBtn.addEventListener('click', closePopup);
 }
 
-function showPopup(type) {
+function showPopup(type, message = '') {
+  if (!popupDiv) return;
+
+  popupDiv.classList.remove('success', 'error');
+  if (message && popupContent) {
+    popupContent.textContent = message;
+  }
+
   popupDiv.classList.add(type);
-  setTimeout(() => popupDiv.classList.remove(type), 2500);
+
+  if (popupTimeoutHandle) {
+    clearTimeout(popupTimeoutHandle);
+  }
+
+  popupTimeoutHandle = setTimeout(() => {
+    closePopup();
+  }, 2500);
 }
 
 function closePopup() {
-  popupDiv.classList.remove("success", "error");
+  if (!popupDiv) return;
+  if (popupTimeoutHandle) {
+    clearTimeout(popupTimeoutHandle);
+    popupTimeoutHandle = null;
+  }
+  popupDiv.classList.remove('success', 'error');
 }
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  let formData = new FormData();
-  formData.append("fullname", fullnameInput.value);
-  formData.append("email", emailInput.value);
-  formData.append("message", messageInput.value.trim());
+function initialiseThemeState() {
+  const body = document.body;
+  const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+  const theme = localStorage.getItem('theme');
 
-  if (checkMessageAndEmail()) {
-    fetch(e, { method: "POST", body: formData })
-      .then(response => response.json())
-      .then(data => {
-        if (data === "sent") {
-          popupDiv.firstElementChild.textContent = "Thanks for your message!";
-          showPopup("success");
-          fullnameInput.value = "";
-          emailInput.value = "";
-          messageInput.value = "";
-        } else {
-          popupDiv.firstElementChild.textContent = "Sorry, cannot perform the task.";
-          showPopup("error");
-        }
-      });
-  } else {
-    popupDiv.firstElementChild.textContent = "Please fill the content!";
-    showPopup("error");
+  if (!themeToggleBtn) {
+    return;
   }
-});
 
-closePopupBtn.addEventListener("click", closePopup);
+  if (theme === 'dark') {
+    body.classList.add('dark');
+    themeToggler.classList.add('dark');
+    ROOT_EL.classList.add('dark');
+  } else {
+    body.classList.remove('dark');
+    themeToggler.classList.remove('dark');
+    themeToggler.classList.add('light');
+    ROOT_EL.classList.remove('dark');
+  }
+
+  const iconWrapper = themeToggleBtn.firstElementChild;
+  if (iconWrapper) {
+    iconWrapper.classList.toggle('dark', theme !== 'dark');
+  }
+}
+
+function setupContactForm() {
+  const contactForm = document.getElementById('contact-form');
+  const sendBtn = document.getElementById('send-message-btn');
+  const fullnameInput = document.getElementById('fullname');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  const captchaQuestion = document.getElementById('captcha-question');
+  const captchaAnswerInput = document.getElementById('captcha-answer');
+
+  if (!contactForm || !sendBtn || !fullnameInput || !emailInput || !messageInput || !captchaQuestion || !captchaAnswerInput) {
+    return;
+  }
+
+  let captchaSolution = null;
+
+  const generateCaptcha = () => {
+    const first = Math.floor(Math.random() * 9) + 1;
+    const second = Math.floor(Math.random() * 9) + 1;
+    captchaSolution = first + second;
+    captchaQuestion.textContent = `${first} + ${second} = ?`;
+    captchaAnswerInput.value = '';
+  };
+
+  const resetForm = () => {
+    contactForm.reset();
+    generateCaptcha();
+  };
+
+  const isCaptchaValid = () => Number.parseInt(captchaAnswerInput.value, 10) === captchaSolution;
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const fullname = fullnameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!fullname || !email || !isEmail || message.length < 6) {
+      showPopup('error', 'Please provide a valid email and a message with at least 6 characters.');
+      return;
+    }
+
+    if (!isCaptchaValid()) {
+      showPopup('error', 'Captcha answer is incorrect. Please try again.');
+      captchaAnswerInput.focus();
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('fullname', fullname);
+    formData.append('email', email);
+    formData.append('message', message);
+
+    sendBtn.disabled = true;
+    sendBtn.classList.add('loading');
+
+    try {
+      const response = await fetch(messageEndpoint, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const payload = await response.json();
+
+      if (payload === 'sent' || (payload && payload.status === 'sent')) {
+        showPopup('success', 'Thanks for your message!');
+        resetForm();
+      } else {
+        throw new Error('Unexpected response');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      showPopup('error', 'Sorry, I could not send your message. Please try again later.');
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.classList.remove('loading');
+    }
+  });
+
+  generateCaptcha();
+}
+
+function setupFeedbackForm() {
+  const wrapper = document.querySelector('.popup-wrapper');
+  const closeBtn = wrapper ? wrapper.querySelector('.close') : null;
+  const textarea = wrapper ? wrapper.querySelector('#feedback-message') : null;
+  const submitBtn = document.getElementById('send-feedback-btn');
+
+  const close = () => {
+    if (wrapper) {
+      wrapper.classList.remove('show');
+    }
+  };
+
+  const open = () => {
+    if (wrapper) {
+      wrapper.classList.add('show');
+      if (textarea) {
+        textarea.focus();
+      }
+    }
+  };
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      close();
+    });
+  }
+
+  if (wrapper) {
+    wrapper.addEventListener('click', (event) => {
+      if (event.target === wrapper) {
+        close();
+      }
+    });
+  }
+
+  if (submitBtn && textarea) {
+    submitBtn.addEventListener('click', async () => {
+      const feedbackMessage = textarea.value.trim();
+
+      if (feedbackMessage.length < 3) {
+        showPopup('error', 'Please tell me a little bit more so I can improve.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+
+      try {
+        const formData = new FormData();
+        formData.append('message', feedbackMessage);
+
+        const response = await fetch(feedbackEndpoint, {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const payload = await response.json();
+        if (payload && payload.status === 'saved') {
+          showPopup('success', 'Thanks for the feedback!');
+          textarea.value = '';
+          close();
+        } else {
+          throw new Error('Unexpected response');
+        }
+      } catch (error) {
+        console.error('Feedback error:', error);
+        showPopup('error', 'Unable to save your feedback right now.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+      }
+    });
+  }
+
+  return { open, close };
+}
+
+function setupReactions(feedbackControls = { open: () => {}, close: () => {} }) {
+  const reactionButtons = document.querySelectorAll('.reactions .icon');
+  if (!reactionButtons.length) {
+    return;
+  }
+
+  const reactionCounters = Array.from(document.querySelectorAll('[data-reaction-count]')).reduce((acc, element) => {
+    const reactionType = element.getAttribute('data-reaction-count');
+    if (reactionType) {
+      acc[reactionType] = element;
+    }
+    return acc;
+  }, {});
+
+  const setActiveReaction = (type) => {
+    reactionButtons.forEach((button) => {
+      button.classList.toggle('clicked', button.dataset.reaction === type);
+    });
+  };
+
+  const storedReaction = localStorage.getItem('reaction');
+  if (storedReaction) {
+    setActiveReaction(storedReaction);
+  }
+
+  const renderStats = (stats) => {
+    if (!stats) {
+      return;
+    }
+
+    const total = typeof stats.total === 'number' ? stats.total : 0;
+
+    ['love', 'like', 'dislike'].forEach((type) => {
+      const counter = reactionCounters[type];
+      if (!counter) return;
+      const values = stats[type];
+      if (total === 0) {
+        counter.textContent = '--%';
+        return;
+      }
+
+      if (values && typeof values.percentage === 'number') {
+        counter.textContent = `${values.percentage}%`;
+      } else {
+        counter.textContent = '0%';
+      }
+    });
+  };
+
+  const fetchStats = async () => {
+    try {
+      const response = await fetch(`${reactionBackendPoint}?stats=1`);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const payload = await response.json();
+      renderStats(payload.stats || payload);
+    } catch (error) {
+      console.error('Failed to load reaction stats:', error);
+    }
+  };
+
+  reactionButtons.forEach((button) => {
+    button.addEventListener('click', async () => {
+      const reactionType = button.dataset.reaction;
+      if (!reactionType) {
+        return;
+      }
+
+      if (reactionType === localStorage.getItem('reaction')) {
+        return;
+      }
+
+      if (reactionType === 'dislike') {
+        feedbackControls.open();
+      }
+
+      button.classList.add('animate');
+      setTimeout(() => button.classList.remove('animate'), 500);
+
+      try {
+        const formData = new FormData();
+        formData.append('reaction', reactionType);
+        formData.append('date', new Date().toISOString());
+
+        const response = await fetch(reactionBackendPoint, {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const payload = await response.json();
+        const stats = payload.stats || payload;
+
+        setActiveReaction(reactionType);
+        localStorage.setItem('reaction', reactionType);
+        renderStats(stats);
+      } catch (error) {
+        console.error('Reaction error:', error);
+        showPopup('error', 'Unable to save your reaction.');
+      }
+    });
+  });
+
+  fetchStats();
+}
 
 const swiper = new Swiper('.swiper-container', {
   slidesPerView: 'auto',
@@ -339,5 +566,3 @@ const swiper = new Swiper('.swiper-container', {
   pauseOnMouseEnter: true,
   speed: 2500,
 });
-
-

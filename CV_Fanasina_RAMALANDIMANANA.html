@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+        :root {
+            --primary-color: #2c7a7b; /* Teal */
+            --dark-color: #333333;
+            --secondary-text-color: #555555;
+            --background-color: #f8f9fa; /* Lighter gray */
+            --container-background: #ffffff;
+            --header-gradient-start: #2c7a7b;
+            --header-gradient-end: #1a5f6a;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+            color: var(--dark-color);
+            background-color: var(--background-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .cv-container {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 40px auto;
+            background-color: var(--container-background);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+            border-radius: 10px;
+            padding-bottom: 40px;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+            color: white;
+            padding: 50px 60px 30px 60px;
+            text-align: left;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header h2 {
+            margin: 0 0 25px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13pt;
+            font-weight: 400;
+            color: #e0f2f1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 10pt;
+            margin-top: 20px;
+            color: #e0f2f1;
+            justify-content: flex-start;
+        }
+
+        .contact-info > div {
+            margin: 5px 20px 5px 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #a7ffeb;
+        }
+        
+        .main-content {
+            display: flex;
+            padding: 40px 60px;
+        }
+
+        .left-column {
+            flex: 3;
+            padding-right: 40px;
+        }
+
+        .right-column {
+            flex: 2;
+            padding-left: 40px;
+            border-left: 1px solid #e8e8e8;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            font-size: 16pt;
+            font-weight: 600;
+        }
+        
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-top: 25px;
+            font-size: 13pt;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .experience-item h4 {
+            margin: 0 0 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12pt;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .experience-item p {
+            margin: 0;
+            font-size: 10pt;
+            color: var(--secondary-text-color);
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+            margin: 10px 0 0 0;
+            color: var(--secondary-text-color);
+        }
+        
+        .experience-item ul li {
+            margin-bottom: 8px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-list li {
+            background-color: #e0f2f1;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 10pt;
+            font-weight: bold;
+            border: 1px solid #b2dfdb;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+        .education-item strong {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 11pt;
+        }
+
+        @media print {
+            body {
+                background-color: white !important;
+            }
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+<body>
+    <div class="cv-container">
+        <header>
+            <h1>RAMALANDIMANANA Antso Fanasina</h1>
+            <h2>DÉVELOPPEUR POLYVALENT | EXPERT FULL-STACK JS</h2>
+            <div class="contact-info">
+                <div>Tél : <strong>+261 34 49 70 553</strong></div>
+                <div>Email : <strong>hope.fanasina2@gmail.com</strong></div>
+                <div>Localisation : <strong>Antananarivo, Madagascar</strong></div>
+            </div>
+            <div class="contact-info">
+                <div><a href="https://www.linkedin.com/in/fanasina-ramalandimanana-48a743144/" target="_blank">LinkedIn</a></div>
+                <div><a href="https://github.com/PsychoticHaha" target="_blank">GitHub</a></div>
+                <div><a href="http://fanasina.free.nf" target="_blank">Portfolio</a></div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="left-column">
+                
+                <h3>PROFIL PROFESSIONNEL</h3>
+                <p>Développeur Full-Stack & CMS spécialisé dans la création de solutions web <strong>sur-mesure, performantes et évolutives</strong>.</p>
+                <p>Je relève les <strong>challenges techniques complexes</strong> et utilise mon expertise approfondie en <strong>React/Next.js et l'écosystème JS/PHP</strong> pour concevoir des plateformes qui augmentent significativement la <strong>portée et la présence en ligne</strong> de mes clients à l'échelle mondiale. Mon approche combine rigueur technique (performance, sécurité) et maîtrise des technologies de pointe (IA, DevOps).</p>
+
+                <h3>EXPÉRIENCES PROFESSIONNELLES</h3>
+
+                <div class="experience-item">
+                    <h4>FULLDIGITS SARLU | Développeur Front-End et CMS (Temps plein)</h4>
+                    <p>Antananarivo, Madagascar | Depuis Juin 2024</p>
+                    <ul>
+                        <li>Conception et réalisation d'applications web complexes en Full-Stack JavaScript (<strong>Next.js</strong>), garantissant une architecture modulaire et une expérience utilisateur optimale.</li>
+                        <li><strong>Customisation et développement de solutions sur-mesure</strong> pour divers sites clients sous <strong>WordPress</strong>.</li>
+                        <li><strong>Optimisation significative de la performance (SEO) et de l'accessibilité (WCAG)</strong> des plateformes existantes, augmentant le score PageSpeed moyen de <strong>+25%</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4>PIXELZ FIANARANTSOA | Développeur Laravel et Vue.js (Temps partiel)</h4>
+                    <p>Fianarantsoa, Madagascar | 2023 – 2024</p>
+                    <ul>
+                        <li>Développement et maintenance d'un outil de gestion interne, <strong>réduisant le temps de traitement des données de 40%</strong> grâce à l'implémentation d'une interface Vue.js réactive.</li>
+                        <li>Création de plusieurs <strong>API RESTful</strong> robustes et sécurisées via <strong>Laravel</strong>, permettant l'échange de données avec des applications tierces.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4>FREELANCE DEVELOPER | Consultant & Développeur Indépendant</h4>
+                    <p>Remote | 2022 – 2023</p>
+                    <ul>
+                        <li>Conception et déploiement de <strong>logiciels de gestion informatisée sur mesure</strong> (utilisant <strong>VBA</strong> avec base de données MS Access ou SQL Server) pour des PME et des institutions éducatives.</li>
+                        <li>Mise en œuvre de stratégies d'optimisation <strong>SEO</strong> pour des sites clients, entraînant une <strong>hausse moyenne du trafic organique de 15%</strong> sur six mois.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h4>FIHARY SOFT FIANARANTSOA | Formateur en Programmation Web</h4>
+                    <p>Fianarantsoa, Madagascar | 2023 – 2024</p>
+                    <ul>
+                        <li>Animation de formations intensives couvrant les fondamentaux du web : <strong>HTML, CSS, JavaScript, PHP, SQL, et HTTP</strong>.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="right-column">
+                
+                <h3>COMPÉTENCES TECHNIQUES</h3>
+                
+                <h4>Frameworks & Langages Clés</h4>
+                <ul class="skill-list">
+                    <li>Next.js</li>
+                    <li>React</li>
+                    <li>Vue.js 2 & 3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>TypeScript</li>
+                    <li>Node.js</li>
+                    <li>PHP</li>
+                    <li>Laravel</li>
+                    <li>Tailwind CSS</li>
+                    <li>SASS</li>
+                    <li>SQL / MongoDB</li>
+                </ul>
+
+                <h4>CMS & Systèmes</h4>
+                <ul class="skill-list">
+                    <li>WordPress (Expertise)</li>
+                    <li>Shopify</li>
+                    <li>Strapi (Notions)</li>
+                    <li>VBA / MS Access</li>
+                </ul>
+
+                <h4>DevOps & Outils</h4>
+                <ul class="skill-list">
+                    <li>Git (Avancé)</li>
+                    <li>Docker</li>
+                    <li>CI/CD (Bitbucket, GH Actions)</li>
+                    <li>Vercel / Netlify</li>
+                    <li>Jira / Trello / Monday</li>
+                    <li>OS Linux (Fedora)</li>
+                </ul>
+                
+                <h4>Expertise IA & Prompting</h4>
+                <ul class="skill-list">
+                    <li>Gemini, Copilot, Codex</li>
+                    <li>Ingénierie de Prompt (RAG, MCP)</li>
+                </ul>
+
+
+                <h3>FORMATION</h3>
+                <div class="education-item">
+                    <strong>Master II en Sciences de l'Éducation</strong>
+                    <p>ENS - Université de Fianarantsoa | 2020</p>
+                </div>
+                
+                <div class="education-item">
+                    <strong>Formation en Programmation Web (Autodidacte & Ciblée)</strong>
+                    <p>Depuis 2016</p>
+                    <p>Formations courtes chez Fihary Soft (2020) et Univers Informatique (2016).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
