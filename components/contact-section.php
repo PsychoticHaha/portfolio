@@ -1,3 +1,7 @@
+<?php
+$recaptchaSiteKey = $_ENV['RECAPTCHA_SITEKEY'] ?? getenv('RECAPTCHA_SITEKEY') ?? '';
+?>
+
 <section class=contact-me id=contact-section>
   <div class="section-wrapper">
     <h2>Write something to me here</h2>
@@ -12,7 +16,7 @@
           <div class=close-popup-btn>&times;</div>
           <div class=loader></div>
         </div>
-        <form id=contact-form>
+        <form id=contact-form <?= $recaptchaSiteKey ? 'data-recaptcha-sitekey="' . htmlspecialchars($recaptchaSiteKey, ENT_QUOTES, 'UTF-8') . '"' : ''; ?>>
           <label for="fullname" class="name">Fullname or Organization name</label>
           <input id="fullname" required aria-required="true" placeholder="e.g : Rakoto Doe or RakotoBrand.org" class="name cursor-set">
           <label for="email">E-mail</label>
@@ -20,12 +24,14 @@
             placeholder="e.g : rakoto@example.com">
           <label for=message>Message</label>
           <textarea id="message" class=" cursor-set" required aria-required="true" placeholder="Write your message here..."></textarea>
-          <div class=g-captcha>
-            <label for="captcha-answer">
-              Prove you are human: <span id="captcha-question"></span>
-            </label>
-            <input id="captcha-answer" name="captcha-answer" class="cursor-set" type="number" inputmode="numeric" required aria-required="true" autocomplete="off" placeholder="Your answer">
-          </div>
+          <input type="hidden" name="g-recaptcha-response" id="recaptcha-token">
+          <?php if ($recaptchaSiteKey) : ?>
+            <div class="recaptcha-container" aria-live="polite"></div>
+          <?php else : ?>
+            <p class="recaptcha-missing" role="status">
+              Google reCAPTCHA is not configured yet.
+            </p>
+          <?php endif; ?>
           <button id=send-message-btn class="cursor-set" type="submit">
             <div class="icon send"></div> Send
           </button>
@@ -67,3 +73,6 @@
     </div>
   </div>
 </section>
+<?php if ($recaptchaSiteKey) : ?>
+  <script src="https://www.google.com/recaptcha/api.js?render=<?= htmlspecialchars($recaptchaSiteKey, ENT_QUOTES, 'UTF-8'); ?>" async defer></script>
+<?php endif; ?>

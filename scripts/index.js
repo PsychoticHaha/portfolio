@@ -279,29 +279,58 @@ function setupContactForm() {
   const fullnameInput = document.getElementById('fullname');
   const emailInput = document.getElementById('email');
   const messageInput = document.getElementById('message');
-  const captchaQuestion = document.getElementById('captcha-question');
-  const captchaAnswerInput = document.getElementById('captcha-answer');
 
-  if (!contactForm || !sendBtn || !fullnameInput || !emailInput || !messageInput || !captchaQuestion || !captchaAnswerInput) {
+  if (!contactForm || !sendBtn || !fullnameInput || !emailInput || !messageInput) {
     return;
   }
 
-  let captchaSolution = null;
-
-  const generateCaptcha = () => {
-    const first = Math.floor(Math.random() * 9) + 1;
-    const second = Math.floor(Math.random() * 9) + 1;
-    captchaSolution = first + second;
-    captchaQuestion.textContent = `${first} + ${second} = ?`;
-    captchaAnswerInput.value = '';
-  };
+  const siteKey = contactForm.dataset.recaptchaSitekey || '';
 
   const resetForm = () => {
     contactForm.reset();
-    generateCaptcha();
+    const tokenInput = document.getElementById('recaptcha-token');
+    if (tokenInput) {
+      tokenInput.value = '';
+    }
   };
 
-  const isCaptchaValid = () => Number.parseInt(captchaAnswerInput.value, 10) === captchaSolution;
+  const requestRecaptchaToken = () => new Promise((resolve, reject) => {
+    if (!siteKey) {
+      resolve(null);
+      return;
+    }
+
+    const ensureRecaptcha = () => new Promise((innerResolve, innerReject) => {
+      if (typeof grecaptcha !== 'undefined') {
+        innerResolve();
+        return;
+      }
+
+      const maxAttempts = 20;
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts += 1;
+
+        if (typeof grecaptcha !== 'undefined') {
+          clearInterval(interval);
+          innerResolve();
+        } else if (attempts >= maxAttempts) {
+          clearInterval(interval);
+          innerReject(new Error('Verification service is unavailable. Please reload the page.'));
+        }
+      }, 250);
+    });
+
+    ensureRecaptcha()
+      .then(() => {
+        grecaptcha.ready(() => {
+          grecaptcha.execute(siteKey, { action: 'contact_form' })
+            .then((token) => resolve(token))
+            .catch(() => reject(new Error('Verification failed. Please try again.')));
+        });
+      })
+      .catch((error) => reject(error));
+  });
 
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -317,21 +346,26 @@ function setupContactForm() {
       return;
     }
 
-    if (!isCaptchaValid()) {
-      showPopup('error', 'Captcha answer is incorrect. Please try again.');
-      captchaAnswerInput.focus();
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('fullname', fullname);
-    formData.append('email', email);
-    formData.append('message', message);
-
     sendBtn.disabled = true;
     sendBtn.classList.add('loading');
 
     try {
+      const token = await requestRecaptchaToken();
+
+      const formData = new FormData();
+      formData.append('fullname', fullname);
+      formData.append('email', email);
+      formData.append('message', message);
+
+      if (token) {
+        formData.append('g-recaptcha-response', token);
+        formData.append('recaptcha_action', 'contact_form');
+        const hiddenToken = document.getElementById('recaptcha-token');
+        if (hiddenToken) {
+          hiddenToken.value = token;
+        }
+      }
+
       const response = await fetch(messageEndpoint, {
         method: 'POST',
         body: formData,
@@ -341,24 +375,29 @@ function setupContactForm() {
         throw new Error(`HTTP ${response.status}`);
       }
 
-      const payload = await response.json();
+      let payload = null;
+
+      try {
+        payload = await response.json();
+      } catch (parseError) {
+        throw new Error('Unexpected response from the server.');
+      }
 
       if (payload === 'sent' || (payload && payload.status === 'sent')) {
         showPopup('success', 'Thanks for your message!');
         resetForm();
       } else {
-        throw new Error('Unexpected response');
+        const messageText = payload && payload.message ? payload.message : 'Sorry, I could not send your message. Please try again later.';
+        throw new Error(messageText);
       }
     } catch (error) {
       console.error('Contact form error:', error);
-      showPopup('error', 'Sorry, I could not send your message. Please try again later.');
+      showPopup('error', error.message || 'Sorry, I could not send your message. Please try again later.');
     } finally {
       sendBtn.disabled = false;
       sendBtn.classList.remove('loading');
     }
   });
-
-  generateCaptcha();
 }
 
 function setupFeedbackForm() {

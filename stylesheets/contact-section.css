@@ -178,6 +178,22 @@
   border-radius: 500px;
 }
 
+.contact-me .wrapper .left form .recaptcha-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.contact-me .wrapper .left form .recaptcha-missing {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: rgba(255, 168, 0, 0.12);
+  color: #8a5c00;
+  font-size: 0.95em;
+}
+
 .contact-me .wrapper .left form button .icon {
   height: 30px;
   background-image: url('./../images/svg/ios-send.svg');
