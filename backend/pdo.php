@@ -4,9 +4,9 @@ require_once __DIR__ . '/../loadEnv.php';
 $dbHost = getenv('DB_HOST') ?: 'localhost';
 $dbName = getenv('DB_NAME') ?: 'portfolio';
 $dbUser = getenv('DB_USER') ?: 'root';
-$dbPass = getenv('DB_PASS') ?: '';
+$dbPass = getenv('DB_PASS') ?: 'portfolio_pass';
 
-$dsn = sprintf('mysql:host=%s;dbname=%s;charset=utf8mb4', $dbHost, $dbName);
+$dsn = sprintf('mysql:host=%s;port:3306;dbname=%s;charset=utf8mb4', $dbHost, $dbName);
 
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

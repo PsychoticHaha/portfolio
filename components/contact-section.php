@@ -1,5 +1,5 @@
 <?php
-$recaptchaSiteKey = $_ENV['RECAPTCHA_SITEKEY'] ?? getenv('RECAPTCHA_SITEKEY') ?? '';
+$recaptchaSiteKey = defined('RECAPTCHA_SITEKEY') ? RECAPTCHA_SITEKEY : (getenv('RECAPTCHA_SITEKEY') ?? '');
 ?>
 
 <section class=contact-me id=contact-section>

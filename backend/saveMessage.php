@@ -31,7 +31,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   exit;
 }
 
-$secretKey = $_ENV['RECAPTCHA_SECRET_KEY'] ?? getenv('RECAPTCHA_SECRET_KEY') ?? '';
+$secretKey = defined('RECAPTCHA_SECRET_KEY') ? RECAPTCHA_SECRET_KEY : (getenv('RECAPTCHA_SECRET_KEY') ?? '');
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 $recaptchaAction = $_POST['recaptcha_action'] ?? '';
 

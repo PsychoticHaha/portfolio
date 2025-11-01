@@ -33,12 +33,12 @@ require_once dirname(__DIR__) . '/backend/pdo.php';
 $status = [
     'connected' => false,
     'message' => 'Connection not attempted.',
-    'host' => getenv('DB_HOST') ?: ($_ENV['DB_HOST'] ?? '—'),
-    'database' => getenv('DB_NAME') ?: ($_ENV['DB_NAME'] ?? '—'),
+    'host' => defined('DB_HOST') ? DB_HOST : (getenv('DB_HOST') ?: '—'),
+    'database' => defined('DB_NAME') ? DB_NAME : (getenv('DB_NAME') ?: '—'),
 ];
 
 try {
-    $statement = $pdo->query('SHOW TABLES');
+    $statement = $pdo->query('SHOW DATABASES');
     $row = $statement ? $statement->fetch(PDO::FETCH_ASSOC) : null;
 
     if ($row !== null) {

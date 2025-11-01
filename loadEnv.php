@@ -17,9 +17,13 @@ function loadEnv($filePath = null) {
         $key = trim($key);
         $value = trim($value);
 
-        // Set environment variable
+        // Set environment variable for legacy consumers
         putenv("$key=$value");
-        $_ENV[$key] = $value;
+
+        // Define a constant for runtime access if not already defined
+        if (!defined($key)) {
+            define($key, $value);
+        }
     }
 }
 
