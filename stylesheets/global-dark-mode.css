@@ -13,10 +13,6 @@ body.dark main .hero .mouse::before {
   background-color: #e4e4e4;
 }
 
-body.dark main .hero .right .post-text .effect-wrapper {
-  border-right: 2px solid #e8e8e8;
-}
-
 body.dark section.about-me .btn-container .more-less-btn {
   -webkit-user-select: none;
   -moz-user-select: none;
