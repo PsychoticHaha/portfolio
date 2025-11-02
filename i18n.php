@@ -165,6 +165,7 @@ $translations = [
             'feedbackThanks' => 'Thanks for the feedback!',
             'feedbackError' => 'Unable to save your feedback right now.',
             'reactionError' => 'Unable to save your reaction.',
+            'closeNotification' => 'Close notification',
         ],
     ],
     'fr' => [
@@ -317,6 +318,7 @@ $translations = [
             'feedbackThanks' => 'Merci pour votre retour !',
             'feedbackError' => "Impossible d’enregistrer votre feedback pour le moment.",
             'reactionError' => 'Impossible de sauvegarder votre réaction.',
+            'closeNotification' => 'Fermer la notification',
         ],
     ],
 ];
@@ -384,4 +386,3 @@ function getClientTranslations(): array
         ],
     ];
 }
-

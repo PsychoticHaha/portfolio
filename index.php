@@ -12,6 +12,7 @@ require_once 'i18n.php';
 <body class="dark" onload="">
   <div class="mouse-cursor" aria-hidden=true></div>
   <div class="theme-toggler"></div>
+  <div class="global-notifications" aria-live="polite" aria-atomic="true"></div>
   <?php require_once 'components/loading-layer.php'; ?>
   <?php require_once 'components/top-scripts.php'; ?>
   <div class=bottom-info></div>

@@ -17,7 +17,8 @@ const defaultMessages = {
   feedbackPrompt: 'Please tell me a little bit more so I can improve.',
   feedbackThanks: 'Thanks for the feedback!',
   feedbackError: 'Unable to save your feedback right now.',
-  reactionError: 'Unable to save your reaction.'
+  reactionError: 'Unable to save your reaction.',
+  closeNotification: 'Close notification'
 };
 
 export const heroRoles = Array.isArray(appTranslations.heroRoles) && appTranslations.heroRoles.length

@@ -11,11 +11,6 @@ $recaptchaSiteKey = defined('RECAPTCHA_SITEKEY') ? RECAPTCHA_SITEKEY : (getenv('
     </div>
     <div class=wrapper>
       <div class=left>
-        <div class=popup-message aria-live="polite">
-          <p class=popup-content id=popup-content><?= htmlspecialchars(t('js.formInvalid'), ENT_QUOTES, 'UTF-8'); ?></p>
-          <div class=close-popup-btn>&times;</div>
-          <div class=loader></div>
-        </div>
         <form id=contact-form <?= $recaptchaSiteKey ? 'data-recaptcha-sitekey="' . htmlspecialchars($recaptchaSiteKey, ENT_QUOTES, 'UTF-8') . '"' : ''; ?>>
           <label for="fullname" class="name"><?= htmlspecialchars(t('contact.form.fullnameLabel'), ENT_QUOTES, 'UTF-8'); ?></label>
           <input id="fullname" required aria-required="true" placeholder="<?= htmlspecialchars(t('contact.form.fullnamePlaceholder'), ENT_QUOTES, 'UTF-8'); ?>" class="name cursor-set">
