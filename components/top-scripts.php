@@ -4,15 +4,17 @@ document.body.style.overflow = "hidden";
 function hideLoader() {
   let loaderOverlay = document.querySelector(".load-overlay-container");
   if (loaderOverlay) {
-    const lines = loaderOverlay.querySelectorAll('.line-overlay');
+    const curtain = loaderOverlay.querySelector('.curtain');
 
-    lines.forEach((line, index) => {
-        index % 2 === 0 ? line.style.transform = 'translateY(-100vh)' : line.style.transform = 'translateY(100vh)';
-    })
+    if (curtain) {
+      requestAnimationFrame(() => {
+        curtain.classList.add('open');
+      });
+    }
 
     setTimeout(() => {
-        loaderOverlay.remove();
-    }, 1000);
+      loaderOverlay.remove();
+    }, 900);
   }
 
   document.body.removeAttribute('style');
