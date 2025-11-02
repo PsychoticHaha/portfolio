@@ -1,39 +1,40 @@
 <section class=why-us id=why-us-section>
+  <?php $whyItems = t('why.items');
+  $whyItems = is_array($whyItems) ? $whyItems : [];
+  ?>
   <div class="section-wrapper">
-    <h2>Why Choose to Work with Fanasina ?</h2>
+    <h2><?= htmlspecialchars(t('why.title'), ENT_QUOTES, 'UTF-8'); ?></h2>
     <div class=text>
       <div class=round></div>
-      <p>There are six main reasons :</p>
+      <p><?= htmlspecialchars(t('why.intro'), ENT_QUOTES, 'UTF-8'); ?></p>
     </div>
     <div class=container>
       <div class="left-items items-container">
         <div class="item cursor-set item1" data-aos=fade-in>
           <h3>
             <div class="icon code"></div>
-            Technical Proficiency
+            <?= htmlspecialchars($whyItems[0]['title'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </h3>
           <p class=text>
-            Crafting seamless code and mastering cutting-edge technologies to bring your digital vision to life.
+            <?= htmlspecialchars($whyItems[0]['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </p>
         </div>
         <div class="item cursor-set item3" data-aos=fade-left>
           <h3>
             <div class="icon brush"></div>
-            Design Sense
+            <?= htmlspecialchars($whyItems[2]['title'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </h3>
           <p class=text>
-            Infusing creativity into every pixel, ensuring visually stunning and user-centric design that captivates and
-            engages.
+            <?= htmlspecialchars($whyItems[2]['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </p>
         </div>
         <div class="item cursor-set item4">
           <h3>
             <div class="icon clock"></div>
-            Responsiveness
+            <?= htmlspecialchars($whyItems[3]['title'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </h3>
           <p class=text>
-            Swiftly adapting to client needs, maintaining open channels for real-time feedback, and ensuring project
-            agility.
+            <?= htmlspecialchars($whyItems[3]['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </p>
         </div>
       </div>
@@ -41,31 +42,28 @@
         <div class="item cursor-set item2" data-aos=fade-right>
           <h3>
             <div class="icon comments"></div>
-            Clear Communication
+            <?= htmlspecialchars($whyItems[1]['title'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </h3>
           <p class=text>
-            Articulating complex technical concepts with clarity, ensuring a shared understanding for successful project
-            collaboration.
+            <?= htmlspecialchars($whyItems[1]['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </p>
         </div>
         <div class="item cursor-set item5">
           <h3>
             <div class="icon lightbulb"></div>
-            Proactivity
+            <?= htmlspecialchars($whyItems[4]['title'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </h3>
           <p class=text>
-            Anticipating challenges, providing solutions before they arise, and taking initiative to enhance project
-            outcomes.
+            <?= htmlspecialchars($whyItems[4]['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </p>
         </div>
         <div class="item cursor-set item6">
           <h3>
             <div class="icon shield"></div>
-            Professional Ethics
+            <?= htmlspecialchars($whyItems[5]['title'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </h3>
           <p class=text>
-            Adhering to the highest standards of integrity, confidentiality, and transparency in every aspect of project
-            execution.
+            <?= htmlspecialchars($whyItems[5]['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
           </p>
         </div>
       </div>
@@ -75,7 +73,7 @@
     <div class="section-wrapper">
       <div class=text>
         <div class=round></div>
-        <p> Other reasons that are also interesting : </p>
+        <p> <?= htmlspecialchars(t('why.otherReasonsTitle'), ENT_QUOTES, 'UTF-8'); ?> </p>
       </div>
     </div>
     <div class="scrolling-content swiper-container">

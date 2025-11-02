@@ -5,8 +5,11 @@ if (file_exists($worksJSONpath)) {
   $datas = json_decode($worksList, true);
   if ($datas !== null) {
     foreach ($datas['categories'] as $category) {
+      $categoryKey = $category['key'] ?? null;
+      $fallbackName = $category['name'] ?? '';
+      $categoryLabel = $categoryKey ? t('skills.categories.' . $categoryKey, $fallbackName) : $fallbackName;
       echo "<div class='category'>";
-      echo "<h3 class='techno-category'>{$category['name']}</h3>";
+      echo "<h3 class='techno-category'>" . htmlspecialchars($categoryLabel, ENT_QUOTES, 'UTF-8') . "</h3>";
       echo "<ul class='category-items'>";
       foreach ($category['items'] as $item) {
         echo "

@@ -3,8 +3,14 @@
     {
       "id": "1",
       "title": "Files Shares",
+      "title_translations": {
+        "fr": "Partage de fichiers"
+      },
       "thumbnail_path": "/images/works/file_shares.webp",
       "description": "Files Shares is a local project for local file sharing.",
+      "description_translations": {
+        "fr": "Files Shares est un projet local de partage de fichiers."
+      },
       "techno": [
         "PHP",
         "Javascript",
@@ -19,8 +25,14 @@
     {
       "id": "2",
       "title": "Lycée Privé Mon Espoir",
+      "title_translations": {
+        "fr": "Lycée Privé Mon Espoir"
+      },
       "thumbnail_path": "/images/works/espoir.webp",
       "description": "A school full managing platform.",
+      "description_translations": {
+        "fr": "Une plateforme complète de gestion scolaire."
+      },
       "techno": [
         "ReactJS",
         "Laravel",
@@ -35,8 +47,14 @@
     {
       "id": "3",
       "title": "Chronometer",
+      "title_translations": {
+        "fr": "Chronomètre"
+      },
       "thumbnail_path": "/images/works/2016_chrono.webp",
       "description": "A simple Chronometer Fabulous Design.",
+      "description_translations": {
+        "fr": "Un chronomètre simple avec un design soigné."
+      },
       "techno": [
         "ReactJS",
         "Laravel",
@@ -51,8 +69,14 @@
     {
       "id": "4",
       "title": "OS App UI Design",
+      "title_translations": {
+        "fr": "Design UI d'application OS"
+      },
       "thumbnail_path": "/images/works/App_UI.webp",
       "description": "A beautiful UI front-end design for an OS App.",
+      "description_translations": {
+        "fr": "Un superbe design d'interface pour une application OS."
+      },
       "techno": [
         "Javascript",
         "HTML",
@@ -66,8 +90,14 @@
     {
       "id": "5",
       "title": "MG Chat",
+      "title_translations": {
+        "fr": "MG Chat"
+      },
       "thumbnail_path": "/images/works/mgChat.webp",
       "description": "A chat platform project.",
+      "description_translations": {
+        "fr": "Un projet de plateforme de messagerie."
+      },
       "techno": [
         "ReactJS",
         "Laravel",
@@ -82,8 +112,14 @@
     {
       "id": "6",
       "title": "Notes App v1",
+      "title_translations": {
+        "fr": "Application de notes v1"
+      },
       "thumbnail_path": "/images/works/notes_v1.webp",
       "description": "A notes App for the Web to take Notes everywhere.",
+      "description_translations": {
+        "fr": "Une application web de prise de notes pour noter partout."
+      },
       "techno": [
         "Javascript",
         "HTML",
@@ -98,8 +134,14 @@
     {
       "id": "6",
       "title": "Portfolio Website v1",
+      "title_translations": {
+        "fr": "Portfolio v1"
+      },
       "thumbnail_path": "/images/works/portfolio-v1.png",
       "description": "The first version of my Portfolio Website.",
+      "description_translations": {
+        "fr": "La première version de mon site portfolio."
+      },
       "techno": [
         "Javascript",
         "PHP",
@@ -113,8 +155,14 @@
     {
       "id": "7",
       "title": "Pharmacy Management Design",
+      "title_translations": {
+        "fr": "Design de gestion de pharmacie"
+      },
       "thumbnail_path": "/images/works/pharmacy_design.webp",
       "description": "A medecin store full managing platform.",
+      "description_translations": {
+        "fr": "Une plateforme complète de gestion de pharmacie."
+      },
       "techno": [
         "Axure RP"
       ],
@@ -126,8 +174,14 @@
     {
       "id": "8",
       "title": "Camera Shop Web App",
+      "title_translations": {
+        "fr": "Application web boutique de caméras"
+      },
       "thumbnail_path": "/images/works/shopping_app.webp",
       "description": "A camera store online shop.",
+      "description_translations": {
+        "fr": "Une boutique en ligne dédiée aux appareils photo."
+      },
       "techno": [
         "ReactJS",
         "Sass"

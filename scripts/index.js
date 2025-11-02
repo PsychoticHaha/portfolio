@@ -5,6 +5,35 @@ const themeToggler = document.querySelector('.theme-toggler');
 let themeBtn = document.querySelector("header.header .right .theme-toggle-btn"),
   nav_links = document.querySelectorAll("nav.desktop-menu .links .link");
 
+const appTranslations = window.APP_I18N || {};
+const defaultHeroRoles = [
+  'an Expert Front-End Developer',
+  'a UI/UX Designer',
+  'a Professional Web Integrator',
+  'a React.js / Next.js Developer',
+  'a WordPress Developer'
+];
+const heroRoles = Array.isArray(appTranslations.heroRoles) && appTranslations.heroRoles.length
+  ? appTranslations.heroRoles
+  : defaultHeroRoles;
+
+const defaultMessages = {
+  formInvalid: 'Please provide a valid email and a message with at least 6 characters.',
+  thanksMessage: 'Thanks for your message!',
+  formError: 'Sorry, I could not send your message. Please try again later.',
+  verificationUnavailable: 'Verification service is unavailable. Please reload the page.',
+  verificationFailed: 'Verification failed. Please try again.',
+  feedbackPrompt: 'Please tell me a little bit more so I can improve.',
+  feedbackThanks: 'Thanks for the feedback!',
+  feedbackError: 'Unable to save your feedback right now.',
+  reactionError: 'Unable to save your reaction.'
+};
+
+const messages = {
+  ...defaultMessages,
+  ...(appTranslations.messages && typeof appTranslations.messages === 'object' ? appTranslations.messages : {})
+};
+
 function animateIcon() {
   let icons = document.querySelectorAll("header.header .right .theme-toggle-btn .svg");
   icons.forEach(icon => {
@@ -45,17 +74,15 @@ document.addEventListener("DOMContentLoaded", (loadedEvent) => {
   themeBtn.addEventListener("click", toggleTheme);
 
   // HERO TEXT ANIMATION
-  let texts = [
-    "an Expert Front-End Developer",
-    "an UI/UX Designer",
-    "a Professional Web Integrator",
-    "a React.js/NextJs Developer",
-    "a WordPress Developer"
-  ];
+  const texts = Array.isArray(heroRoles) && heroRoles.length ? heroRoles : defaultHeroRoles;
 
   let currentTextIndex = 0;
 
   function typeText(text, index) {
+    if (!descParagraph) {
+      return;
+    }
+
     if (index < text.length) {
       descParagraph.innerHTML += text.charAt(index);
       setTimeout(() => typeText(text, index + 1), 50);
@@ -65,6 +92,9 @@ document.addEventListener("DOMContentLoaded", (loadedEvent) => {
   }
 
   function deleteText(text, index) {
+    if (!descParagraph) {
+      return;
+    }
     if (index >= 0) {
       descParagraph.innerHTML = text.substring(0, index);
       setTimeout(() => deleteText(text, index - 1), 50);
@@ -74,7 +104,10 @@ document.addEventListener("DOMContentLoaded", (loadedEvent) => {
     }
   }
 
-  typeText(texts[currentTextIndex], 0);
+  if (descParagraph && texts.length) {
+    descParagraph.innerHTML = '';
+    typeText(texts[currentTextIndex], 0);
+  }
 
 
   // Section navbar animation (active class)
@@ -316,7 +349,7 @@ function setupContactForm() {
           innerResolve();
         } else if (attempts >= maxAttempts) {
           clearInterval(interval);
-          innerReject(new Error('Verification service is unavailable. Please reload the page.'));
+          innerReject(new Error(messages.verificationUnavailable));
         }
       }, 250);
     });
@@ -326,7 +359,7 @@ function setupContactForm() {
         grecaptcha.ready(() => {
           grecaptcha.execute(siteKey, { action: 'contact_form' })
             .then((token) => resolve(token))
-            .catch(() => reject(new Error('Verification failed. Please try again.')));
+            .catch(() => reject(new Error(messages.verificationFailed)));
         });
       })
       .catch((error) => reject(error));
@@ -342,7 +375,7 @@ function setupContactForm() {
     const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     if (!fullname || !email || !isEmail || message.length < 6) {
-      showPopup('error', 'Please provide a valid email and a message with at least 6 characters.');
+      showPopup('error', messages.formInvalid);
       return;
     }
 
@@ -384,15 +417,15 @@ function setupContactForm() {
       }
 
       if (payload === 'sent' || (payload && payload.status === 'sent')) {
-        showPopup('success', 'Thanks for your message!');
+        showPopup('success', messages.thanksMessage);
         resetForm();
       } else {
-        const messageText = payload && payload.message ? payload.message : 'Sorry, I could not send your message. Please try again later.';
+        const messageText = payload && payload.message ? payload.message : messages.formError;
         throw new Error(messageText);
       }
     } catch (error) {
       console.error('Contact form error:', error);
-      showPopup('error', error.message || 'Sorry, I could not send your message. Please try again later.');
+      showPopup('error', error.message || messages.formError);
     } finally {
       sendBtn.disabled = false;
       sendBtn.classList.remove('loading');
@@ -441,7 +474,7 @@ function setupFeedbackForm() {
       const feedbackMessage = textarea.value.trim();
 
       if (feedbackMessage.length < 3) {
-        showPopup('error', 'Please tell me a little bit more so I can improve.');
+        showPopup('error', messages.feedbackPrompt);
         return;
       }
 
@@ -463,7 +496,7 @@ function setupFeedbackForm() {
 
         const payload = await response.json();
         if (payload && payload.status === 'saved') {
-          showPopup('success', 'Thanks for the feedback!');
+          showPopup('success', messages.feedbackThanks);
           textarea.value = '';
           close();
         } else {
@@ -471,7 +504,7 @@ function setupFeedbackForm() {
         }
       } catch (error) {
         console.error('Feedback error:', error);
-        showPopup('error', 'Unable to save your feedback right now.');
+        showPopup('error', messages.feedbackError);
       } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('loading');
@@ -584,7 +617,7 @@ function setupReactions(feedbackControls = { open: () => {}, close: () => {} }) 
         renderStats(stats);
       } catch (error) {
         console.error('Reaction error:', error);
-        showPopup('error', 'Unable to save your reaction.');
+        showPopup('error', messages.reactionError);
       }
     });
   });

@@ -1,16 +1,16 @@
-<?php 
+<?php
 require_once 'loadEnv.php';
+require_once 'i18n.php';
 // require 'backend/test-home.php';
-// require 'backend/get-client-headers.php'; 
+// require 'backend/get-client-headers.php';
 ?>
 
 <!doctype html>
-<html lang=fr>
+<html lang="<?= htmlspecialchars($currentLanguage, ENT_QUOTES, 'UTF-8'); ?>">
 <?php require_once 'components/head-tag.php'; ?>
-<link rel="stylesheet" href="./stylesheets/style.css">
 
 <body class="dark" onload="">
-  <div class="mouse-cursor"aria-hidden=true></div>
+  <div class="mouse-cursor" aria-hidden=true></div>
   <div class="theme-toggler"></div>
   <?php require_once 'components/loading-layer.php'; ?>
   <?php require_once 'components/top-scripts.php'; ?>
@@ -26,7 +26,7 @@ require_once 'loadEnv.php';
     <div class=socials>
       <div class=text>
         <div class=round></div>
-        <p>Or contact me at one of the social networks below</p>
+        <p><?= htmlspecialchars(t('socials.prompt'), ENT_QUOTES, 'UTF-8'); ?></p>
       </div>
     </div>
     <?php require_once 'components/footer.php' ?>

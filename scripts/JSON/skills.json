@@ -1,6 +1,7 @@
 {
   "categories": [
     {
+      "key": "markup",
       "name": "Markup Languages and Preprocessors",
       "items": [
         {
@@ -18,6 +19,7 @@
       ]
     },
     {
+      "key": "programming",
       "name": "Programming Languages",
       "items": [
         {
@@ -31,6 +33,7 @@
       ]
     },
     {
+      "key": "dbms",
       "name": "Database Management Systems (DBMS)",
       "items": [
         {
@@ -48,6 +51,7 @@
       ]
     },
     {
+      "key": "cms",
       "name": "Content Managing System (CMS)",
       "items": [
         {
@@ -57,6 +61,7 @@
       ]
     },
     {
+      "key": "frameworks",
       "name": "Frameworks and libraries",
       "items": [
         {
@@ -82,6 +87,7 @@
       ]
     },
     {
+      "key": "tools",
       "name": "Development Tools",
       "items": [
         {
@@ -111,6 +117,7 @@
       ]
     },
     {
+      "key": "design",
       "name": "Design Tools",
       "items": [
         {
@@ -132,6 +139,7 @@
       ]
     },
     {
+      "key": "packages",
       "name": "Package Managers",
       "items": [
         {

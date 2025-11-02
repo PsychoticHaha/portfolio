@@ -1,3 +1,6 @@
+<?php
+global $availableLanguages, $currentLanguage;
+?>
 <div class="header-container">
   <header class="header">
     <a href="#home" class="logo-link" tabindex="-999" aria-hidden='true'>
@@ -5,17 +8,24 @@
     </a>
     <nav class="desktop-menu">
       <div class="links">
-        <a href="#home" class="link">Home</a>
-        <a href="#about-me-section" data-scroll="#why-us-section" class="link">About</a>
-        <a href="#skills-section" class="link">Skills</a>
-        <a href="#works-section" class="link">Works</a>
-        <a href="#contact-section" class="link">Contact</a>
+        <a href="#home" class="link"><?= htmlspecialchars(t('nav.home'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#about-me-section" data-scroll="#why-us-section" class="link"><?= htmlspecialchars(t('nav.about'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#skills-section" class="link"><?= htmlspecialchars(t('nav.skills'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#works-section" class="link"><?= htmlspecialchars(t('nav.works'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#contact-section" class="link"><?= htmlspecialchars(t('nav.contact'), ENT_QUOTES, 'UTF-8'); ?></a>
       </div>
     </nav>
     <div class="right">
-      <div class="theme-toggle-btn" title="Switch between light mode and dark mode">
+      <div class="language-switcher" role="group" aria-label="<?= htmlspecialchars(t('language.label'), ENT_QUOTES, 'UTF-8'); ?>">
+        <?php foreach ($availableLanguages as $code => $label) : ?>
+          <a href="<?= htmlspecialchars(buildLanguageUrl($code), ENT_QUOTES, 'UTF-8'); ?>" class="lang-option<?= $currentLanguage === $code ? ' active' : ''; ?>" lang="<?= htmlspecialchars($code, ENT_QUOTES, 'UTF-8'); ?>">
+            <?= htmlspecialchars(t('language.' . $code), ENT_QUOTES, 'UTF-8'); ?>
+          </a>
+        <?php endforeach; ?>
+      </div>
+      <div class="theme-toggle-btn" title="<?= htmlspecialchars(t('nav.themeToggleTitle'), ENT_QUOTES, 'UTF-8'); ?>">
         <div class="icons-container">
-          <div class="light" title="Dark mode is on">
+          <div class="light" title="<?= htmlspecialchars(t('nav.darkModeOn'), ENT_QUOTES, 'UTF-8'); ?>">
             <svg class="svg moon" width="80%" height="80%" viewBox="0 0 24 24" fill="#e8e8e8" xmlns="http://www.w3.org/2000/svg" stroke="#e8e8e8" stroke-width="0.00024000000000000003">
               <g id="SVGRepo_bgCrrier" stroke-width="0"></g>
               <g id="SVRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -26,7 +36,7 @@
               </g>
             </svg>
           </div>
-          <div class="dark" title="Light mode is on">
+          <div class="dark" title="<?= htmlspecialchars(t('nav.lightModeOn'), ENT_QUOTES, 'UTF-8'); ?>">
             <svg class="svg sun" width="80%" height="80%" viewBox="0 0 24 24" fill="#e8e8e8" xmlns="http://www.w3.org/2000/svg" stroke="#e8e8e8" stroke-width="0.00024000000000000003">
               <g id="SVGepo_bgCarrier" stroke-width="0"></g>
               <g id="SVGRepo_tracerCrrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -54,10 +64,10 @@
 </div>
 <div class="mobile-menu">
   <div class="links-container">
-    <a href="#home" class="link">Home</a>
-    <a href="#about-me-section" class="link">About</a>
-    <a href="#skills-section" class="link">Skills</a>
-    <a href="#works-section" class="link">Works</a>
-    <a href="#contact-section" class="link">Contact</a>
+    <a href="#home" class="link"><?= htmlspecialchars(t('nav.home'), ENT_QUOTES, 'UTF-8'); ?></a>
+    <a href="#about-me-section" class="link"><?= htmlspecialchars(t('nav.about'), ENT_QUOTES, 'UTF-8'); ?></a>
+    <a href="#skills-section" class="link"><?= htmlspecialchars(t('nav.skills'), ENT_QUOTES, 'UTF-8'); ?></a>
+    <a href="#works-section" class="link"><?= htmlspecialchars(t('nav.works'), ENT_QUOTES, 'UTF-8'); ?></a>
+    <a href="#contact-section" class="link"><?= htmlspecialchars(t('nav.contact'), ENT_QUOTES, 'UTF-8'); ?></a>
   </div>
 </div>
