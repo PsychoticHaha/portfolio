@@ -201,6 +201,17 @@
     background-color: rgba(140, 0, 255, 0.6509803922);
   }
 
+  main .my-skills .skills-container div.category ul.category-items li {
+    min-width: 96px;
+    height: 100px;
+    padding: 10px;
+  }
+
+  main .my-skills .skills-container div.category ul.category-items li .img-container {
+    width: 56px;
+    height: 56px;
+  }
+
   .my-works .works-container .links {
     transform: translate(0) !important;
   }
