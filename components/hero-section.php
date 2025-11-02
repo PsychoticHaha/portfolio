@@ -28,15 +28,13 @@
                             <span class=line></span>
                             <span><?= htmlspecialchars(t('hero.linePrefix'), ENT_QUOTES, 'UTF-8'); ?></span>
                         </div>
-                        <div class=effect-wrapper>
-                            <p id=text class=js-changing-paragraph translate=no>
-                            </p>
-                            <div class=default-value style=display:none><?= htmlspecialchars(t('hero.defaultRole'), ENT_QUOTES, 'UTF-8'); ?></div>
-                            <p></p>
+                        <div class="effect-wrapper">
+                            <span class="js-changing-paragraph" translate=no></span>
+                            <span class="hero-typing-cursor" aria-hidden="true">|</span>
                         </div>
                     </div>
                     <div class=cta>
-                        <a href=#about-me-section class="item cursor-set resume">
+                        <a href="#about-me-section" class="item cursor-set resume">
                             <span class="icon download"></span>
                             <span class=text><?= htmlspecialchars(t('hero.cta'), ENT_QUOTES, 'UTF-8'); ?></span>
                         </a>

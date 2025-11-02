@@ -1,47 +1,59 @@
+const TYPING_INTERVAL = 70;
+const ERASING_INTERVAL = 40;
+const BETWEEN_WORD_DELAY = 1600;
+const BETWEEN_ERASE_DELAY = 400;
+
 export function initHeroTextAnimation(texts) {
-  const target = document.querySelector('.js-changing-paragraph');
+  const textContainer = document.querySelector('.js-changing-paragraph');
+  const cursor = document.querySelector('.hero-typing-cursor');
   const scrollCursorIcon = document.querySelector('.mouse-container .mouse');
   const aboutSectionBtn = document.querySelector('a.item.resume');
 
   if (scrollCursorIcon && aboutSectionBtn) {
-    scrollCursorIcon.addEventListener('click', () => {
-      aboutSectionBtn.click();
-    });
+    scrollCursorIcon.addEventListener('click', () => aboutSectionBtn.click());
   }
 
-  if (!target || !Array.isArray(texts) || !texts.length) {
+  if (!textContainer || !cursor || !Array.isArray(texts) || !texts.length) {
     return;
   }
 
-  let currentTextIndex = 0;
+  let currentIndex = 0;
+  let typingTimeout = null;
+  let erasingTimeout = null;
 
-  function typeText(text, index) {
-    if (!target) {
+  const setText = (value) => {
+    textContainer.textContent = value;
+  };
+
+  const type = (text, index = 0) => {
+    if (index <= text.length) {
+      setText(text.slice(0, index));
+      typingTimeout = setTimeout(() => type(text, index + 1), TYPING_INTERVAL);
       return;
     }
 
-    if (index < text.length) {
-      target.innerHTML += text.charAt(index);
-      setTimeout(() => typeText(text, index + 1), 50);
-    } else {
-      setTimeout(() => deleteText(text, index), 1000);
-    }
-  }
+    erasingTimeout = setTimeout(() => erase(text, text.length - 1), BETWEEN_WORD_DELAY);
+  };
 
-  function deleteText(text, index) {
-    if (!target) {
-      return;
-    }
-
+  const erase = (text, index) => {
     if (index >= 0) {
-      target.innerHTML = text.substring(0, index);
-      setTimeout(() => deleteText(text, index - 1), 50);
-    } else {
-      currentTextIndex = (currentTextIndex + 1) % texts.length;
-      setTimeout(() => typeText(texts[currentTextIndex], 0), 500);
+      setText(text.slice(0, index));
+      erasingTimeout = setTimeout(() => erase(text, index - 1), ERASING_INTERVAL);
+      return;
     }
-  }
 
-  target.innerHTML = '';
-  typeText(texts[currentTextIndex], 0);
+    currentIndex = (currentIndex + 1) % texts.length;
+    typingTimeout = setTimeout(() => type(texts[currentIndex]), BETWEEN_ERASE_DELAY);
+  };
+
+  const cleanup = () => {
+    clearTimeout(typingTimeout);
+    clearTimeout(erasingTimeout);
+  };
+
+  window.addEventListener('beforeunload', cleanup);
+
+  setText('');
+  cursor.classList.add('visible');
+  type(texts[currentIndex]);
 }

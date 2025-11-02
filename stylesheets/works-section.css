@@ -45,12 +45,16 @@
   transition: 0.2s;
   border: 1px solid #ccc;
 
-  @media (max-width: 700px) {
-    width: 100%;
+}
+
+@media (max-width: 768px) {
+  .my-works .works-container {
+    justify-content: center;
   }
 
-  @media (max-width: 1024px) and (min-width: 700px) {
-    width: 45%;
+  .my-works .works-container .single-work {
+    width: 100%;
+    min-width: unset;
   }
 }
 

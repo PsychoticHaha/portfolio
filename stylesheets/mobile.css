@@ -1,4 +1,4 @@
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .mouse-cursor,
     header nav.desktop-menu .links,
     header.header nav.desktop-menu,
@@ -62,7 +62,7 @@
   }
 
   main .hero .left {
-    height: 300px;
+    min-height: 0;
     display: flex;
     align-self: center;
     align-items: center;
@@ -80,8 +80,7 @@
   }
 
   main .hero .left .rounded-border {
-    width: 250px;
-    height: 250px;
+    width: clamp(220px, 70vw, 320px);
   }
 
   main .hero .left .rounded-border:hover span.square-form::after {
@@ -139,7 +138,7 @@
 
   main .hero .right .post-text .effect-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
   }
 
@@ -247,7 +246,7 @@
 
   .contact-me .wrapper .right .container {
     width: 95%;
-    padding: 10px 5px !important;
+    /* padding: 10px 5px !important; */
   }
 
   .contact-me .wrapper .right .container h3 {

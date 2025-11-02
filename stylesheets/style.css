@@ -76,7 +76,7 @@ p {
     max-width: calc(100% - 60px);
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     max-width: calc(100% - 30px);
   }
 }
@@ -327,7 +327,7 @@ footer .container .footer-section.middle {
   }
 }
 
-@media screen and (min-width: 700px) and (max-width: 1019px) {
+@media screen and (max-width: 768px) {
   main .right .post-text .effect-wrapper p#text {
     height: 30px;
     display: flex;

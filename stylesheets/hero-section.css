@@ -22,6 +22,16 @@ main .hero .section-wrapper .content-container {
   width: 100%;
 }
 
+main .hero .section-wrapper .content-container .left {
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+main .hero .section-wrapper .content-container .right {
+  flex: 1;
+  padding-left: 15px;
+}
+
 main .hero .mouse-container {
   width: 100%;
   display: flex;
@@ -61,15 +71,19 @@ main .hero .mouse-container .mouse::before {
   }
 }
 
+main .hero .left {
+  display: flex;
+  justify-content: center;
+}
+
 main .hero .left .rounded-border {
-  width: fit-content;
-  height: -moz-fit-content;
-  height: 100%;
+  width: clamp(240px, 35vw, 420px);
+  aspect-ratio: 1 / 1;
   border: 1px solid rgba(255, 255, 255, 0.4784313725);
   border-radius: 30px;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   background-color: #010b25;
   overflow: hidden;
   position: relative;
@@ -77,45 +91,15 @@ main .hero .left .rounded-border {
   background: var(--linear-loading-gradient);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
+}
 
-  @media (min-width: 1200px) {
-    min-width: 512px;
-    min-height: 512px;
+@media (min-width: 1200px) {
+  main .hero .left .rounded-border {
+    width: 480px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
-  main section.hero .left {
-    flex-shrink: 1;
-    width: 45%;
-  }
-
-  main section.hero .left .rounded-border {
-    min-width: unset;
-    min-height: unset;
-  }
-
-  body main section.hero .left .rounded-border img.profile-picture {
-    width: 100%;
-    height: auto;
-  }
-
-  main section.hero .right {
-    flex-grow: 1;
-    padding-left: 15px;
-  }
-
-  main section.hero .right .intro-text h1 span.small {
-    display: block;
-  }
-
-  main section.hero .right .post-text {
-    font-size: 25px;
-    align-items: center;
-  }
-}
-
-@media (max-width: 880px) and (min-width: 700px) {
+@media (max-width: 768px) {
   main section#home.hero {
     min-height: 1000px;
   }
@@ -132,10 +116,21 @@ main .hero .left .rounded-border {
 
   main section#home.hero .section-wrapper .content-container .left {
     width: 75%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   main section#home.hero .section-wrapper .content-container .right {
     width: 75%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0;
+  }
+
+  main section#home.hero .section-wrapper .content-container .left .rounded-border {
+    width: clamp(220px, 70vw, 360px);
   }
 
   main section.hero .right .post-text {
@@ -168,10 +163,11 @@ main .hero .left .rounded-border span.square-form {
 }
 
 main .hero .left .rounded-border img.profile-picture {
-  width: auto;
+  width: 100%;
   z-index: 0;
   transition: 0.1s ease-in-out;
   height: 100%;
+  object-fit: cover;
 }
 
 main .hero .left .rounded-border:hover span.square-form {
@@ -297,35 +293,67 @@ main .hero .right .intro-text h1 img:hover {
 
 main .hero .right .post-text {
   display: flex;
-  align-items: end;
+  align-items: center;
+  gap: 10px;
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  min-height: 34px;
-  font-size: 30px;
+  min-height: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.4rem, 3vw, 1.875rem);
   font-family: 'Open Sans', Helvetica, Roboto, Arial, sans-serif;
+  flex-wrap: nowrap;
+}
+
+main .hero .right .post-text .line-container {
+  flex-shrink: 0;
 }
 
 main .hero .right .post-text .effect-wrapper {
-  display: flex;
-  gap: 5px;
+  display: inline-flex;
+  gap: 6px;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 30px;
+  min-height: clamp(1.6rem, 3.5vw, 2.1rem);
   border: none;
-  border-right: 2px solid #020216;
-  animation: 0.75s step-end infinite blink;
-  margin-left: 5px;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  align-items: center;
 }
 
-@keyframes blink {
-  from,
-  to {
-    border-color: transparent;
+.post-text .effect-wrapper .js-changing-paragraph {
+  display: inline;
+}
+
+.hero-typing-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  opacity: 0;
+  animation: blink-cursor 1s steps(2, start) infinite;
+  font-weight: 600;
+}
+
+.hero-typing-cursor.visible {
+  opacity: 1;
+}
+
+main .hero .right .post-text .effect-wrapper p,
+main .hero .right .post-text p {
+  font-size: inherit;
+  line-height: 1.2;
+  margin: 0;
+}
+
+@keyframes blink-cursor {
+  0%,
+  49% {
+    opacity: 1;
   }
 
-  50% {
-    border-color: #333;
+  50%,
+  100% {
+    opacity: 0;
   }
 }
 
@@ -354,6 +382,44 @@ main .hero .right .intro-text p#text {
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  main .hero .right .post-text {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    min-height: clamp(1.4rem, 4.5vw, 2rem);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main .hero .right .post-text .line-container {
+    justify-content: center;
+  }
+
+  main .hero .right .post-text .effect-wrapper {
+    min-height: clamp(1.3rem, 4vw, 1.8rem);
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+    padding-right: 4px;
+  }
+
+  main .hero .right .line-container span.line {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  main .hero .right .post-text {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  main .hero .right .post-text .effect-wrapper {
+    padding-bottom: 4px;
+  }
+}
+
 main .hero .right .cta {
   display: flex;
   justify-content: space-between;
@@ -370,7 +436,7 @@ main .hero .right .cta .item {
   gap: 5px;
   min-width: 45%;
   padding: 7px 10px;
-  height: 70px;
+  height: 50px;
   cursor: pointer;
   border-radius: 500px;
   transition: 0.3s ease-in-out;
