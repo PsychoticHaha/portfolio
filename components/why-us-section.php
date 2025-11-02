@@ -1,4 +1,4 @@
-<section class=why-us id=why-us-section>
+<section class=why-us id=why-us-section data-aos="fade-left">
   <?php $whyItems = t('why.items');
   $whyItems = is_array($whyItems) ? $whyItems : [];
   ?>

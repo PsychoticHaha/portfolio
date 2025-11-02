@@ -1,4 +1,4 @@
-<section class=hero id=home>
+<section class=hero id=home data-aos="fade-up" data-aos-delay="100">
     <div class="section-wrapper">
         <div class="content-container">
             <div class=left>

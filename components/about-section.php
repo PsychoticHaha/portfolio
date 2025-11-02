@@ -1,4 +1,4 @@
-<section class="about-me-section" id=about-me-section>
+<section class="about-me-section" id=about-me-section data-aos="fade-right">
   <div class="section-wrapper whoami">
     <div class="left-content">
       <h2 class="whois"><?= htmlspecialchars(t('about.title'), ENT_QUOTES, 'UTF-8'); ?></h2>

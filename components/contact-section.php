@@ -2,7 +2,7 @@
 $recaptchaSiteKey = defined('RECAPTCHA_SITEKEY') ? RECAPTCHA_SITEKEY : (getenv('RECAPTCHA_SITEKEY') ?? '');
 ?>
 
-<section class=contact-me id=contact-section>
+<section class=contact-me id=contact-section data-aos="fade-up" data-aos-offset="200">
   <div class="section-wrapper">
     <h2><?= htmlspecialchars(t('contact.title'), ENT_QUOTES, 'UTF-8'); ?></h2>
     <div class=text>

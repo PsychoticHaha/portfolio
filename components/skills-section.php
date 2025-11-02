@@ -1,4 +1,4 @@
-<section id=skills-section class=my-skills>
+<section id=skills-section class=my-skills data-aos="zoom-in">
     <div class="section-wrapper">
         <h2><?= htmlspecialchars(t('skills.title'), ENT_QUOTES, 'UTF-8'); ?></h2>
         <div class=intro-text>

@@ -1,4 +1,4 @@
-<section id=works-section class=my-works>
+<section id=works-section class=my-works data-aos="fade-up">
     <div class="section-wrapper">
         <h2><?= htmlspecialchars(t('works.title'), ENT_QUOTES, 'UTF-8'); ?></h2>
         <div class=text>

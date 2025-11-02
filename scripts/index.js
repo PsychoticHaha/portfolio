@@ -48,4 +48,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   initSwiper();
+
+  if (window.AOS && typeof window.AOS.init === 'function') {
+    window.AOS.init({
+      duration: 800,
+      once: false,
+      offset: 120,
+      easing: 'ease-out-cubic'
+    });
+  }
 });
