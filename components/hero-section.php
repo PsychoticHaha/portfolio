@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class=cta>
-                        <a href="#about-me-section" class="item cursor-set resume">
+                        <a href="#" data-scroll-target="#about-me-section" class="item cursor-set resume">
                             <span class="icon download"></span>
                             <span class=text><?= htmlspecialchars(t('hero.cta'), ENT_QUOTES, 'UTF-8'); ?></span>
                         </a>

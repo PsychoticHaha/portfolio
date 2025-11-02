@@ -1,13 +1,27 @@
 export function initNavigation({ performLazyLoading }) {
-  const desktopLinks = document.querySelectorAll('nav.desktop-menu .links .link');
+  const desktopLinks = document.querySelectorAll('nav.desktop-menu .links [data-scroll-target]');
   desktopLinks.forEach((link) => {
     const rawHtml = link.innerHTML;
     link.innerHTML = `<span class="link-text">${rawHtml}</span><span class="border-span"></span>`;
   });
 
   const sections = document.querySelectorAll('section');
-  const menuLinks = document.querySelectorAll('header nav a');
-  const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu [data-scroll-target]');
+  const allScrollLinks = document.querySelectorAll('[data-scroll-target]');
+
+  allScrollLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetSelector = link.getAttribute('data-scroll-target');
+      if (!targetSelector) {
+        return;
+      }
+      const target = document.querySelector(targetSelector);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 
   function isSectionVisible(section) {
     const rect = section.getBoundingClientRect();
@@ -15,7 +29,7 @@ export function initNavigation({ performLazyLoading }) {
   }
 
   function updateActiveLinks() {
-    menuLinks.forEach((link) => link.classList.remove('active'));
+    desktopLinks.forEach((link) => link.classList.remove('active'));
     mobileMenuLinks.forEach((link) => link.classList.remove('active'));
 
     sections.forEach((section) => {
@@ -24,11 +38,14 @@ export function initNavigation({ performLazyLoading }) {
       }
 
       const id = section.id !== 'why-us-section' ? section.id : 'about-me-section';
-      const desktopTarget = document.querySelector(`header nav a[href="#${id}"]`);
-      const mobileTarget = document.querySelector(`.mobile-menu a[href="#${id}"]`);
 
-      desktopTarget?.classList.add('active');
-      mobileTarget?.classList.add('active');
+      desktopLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('data-scroll-target') === `#${id}`);
+      });
+
+      mobileMenuLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('data-scroll-target') === `#${id}`);
+      });
 
       if (typeof performLazyLoading === 'function') {
         performLazyLoading(`#${id}`);
@@ -52,7 +69,7 @@ function initMobileMenu() {
     return;
   }
 
-  const links = mobileMenu.querySelectorAll('a');
+  const links = mobileMenu.querySelectorAll('[data-scroll-target]');
 
   const toggleMobileMenu = () => {
     mobileMenu.classList.toggle('show');

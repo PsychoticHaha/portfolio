@@ -3,17 +3,16 @@ global $availableLanguages, $currentLanguage;
 ?>
 <div class="header-container">
   <header class="header">
-    <a href="#home" class="logo-link" tabindex="-999" aria-hidden='true'>
+    <a href="#" data-scroll-target="#home" class="logo-link" tabindex="-999" aria-hidden='true'>
       <div class="logo"></div>
     </a>
     <nav class="desktop-menu">
       <div class="links">
-        <a href="#home" class="link"><?= htmlspecialchars(t('nav.home'), ENT_QUOTES, 'UTF-8'); ?></a>
-        <a href="#about-me-section" data-scroll="#why-us-section"
-          class="link"><?= htmlspecialchars(t('nav.about'), ENT_QUOTES, 'UTF-8'); ?></a>
-        <a href="#skills-section" class="link"><?= htmlspecialchars(t('nav.skills'), ENT_QUOTES, 'UTF-8'); ?></a>
-        <a href="#works-section" class="link"><?= htmlspecialchars(t('nav.works'), ENT_QUOTES, 'UTF-8'); ?></a>
-        <a href="#contact-section" class="link"><?= htmlspecialchars(t('nav.contact'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#" data-scroll-target="#home" class="link"><?= htmlspecialchars(t('nav.home'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#" data-scroll-target="#about-me-section" class="link"><?= htmlspecialchars(t('nav.about'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#" data-scroll-target="#skills-section" class="link"><?= htmlspecialchars(t('nav.skills'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#" data-scroll-target="#works-section" class="link"><?= htmlspecialchars(t('nav.works'), ENT_QUOTES, 'UTF-8'); ?></a>
+        <a href="#" data-scroll-target="#contact-section" class="link"><?= htmlspecialchars(t('nav.contact'), ENT_QUOTES, 'UTF-8'); ?></a>
       </div>
     </nav>
     <div class="right">
@@ -107,32 +106,32 @@ global $availableLanguages, $currentLanguage;
       <?php endforeach; ?>
     </div>
     <nav class="links-container" aria-label="Main navigation">
-      <a href="#home" class="link">
+      <a href="#" data-scroll-target="#home" class="link">
         <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-5h-4v5H5a1 1 0 0 1-1-1v-9.5Z" />
         </svg>
         <span class="label"><?= htmlspecialchars(t('nav.home'), ENT_QUOTES, 'UTF-8'); ?></span>
       </a>
-      <a href="#about-me-section" class="link">
+      <a href="#" data-scroll-target="#about-me-section" class="link">
         <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-8 8a8 8 0 0 1 16 0Z" />
         </svg>
         <span class="label"><?= htmlspecialchars(t('nav.about'), ENT_QUOTES, 'UTF-8'); ?></span>
       </a>
-      <a href="#skills-section" class="link">
+      <a href="#" data-scroll-target="#skills-section" class="link">
         <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M4 4h6v6H4Zm0 10h6v6H4Zm10-10h6v6h-6Zm0 10h6v6h-6Z" />
         </svg>
         <span class="label"><?= htmlspecialchars(t('nav.skills'), ENT_QUOTES, 'UTF-8'); ?></span>
       </a>
-      <a href="#works-section" class="link">
+      <a href="#" data-scroll-target="#works-section" class="link">
         <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M9 3h6a2 2 0 0 1 2 2v1h3a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1h3V5a2 2 0 0 1 2-2Zm6 3V5H9v1h6Z" />
         </svg>
         <span class="label"><?= htmlspecialchars(t('nav.works'), ENT_QUOTES, 'UTF-8'); ?></span>
       </a>
-      <a href="#contact-section" class="link">
+      <a href="#" data-scroll-target="#contact-section" class="link">
         <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M20 4H4a2 2 0 0 0-2 2v.511l10 6.25 10-6.25V6a2 2 0 0 0-2-2Zm0 4.489-9 5.624a1 1 0 0 1-1 0L1.999 8.489V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2Z" />

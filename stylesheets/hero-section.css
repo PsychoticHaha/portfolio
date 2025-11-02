@@ -338,7 +338,7 @@ main .hero .right .post-text .effect-wrapper {
   opacity: 1;
 }
 
-main .hero .right .post-text .effect-wrapper p,
+main .hero .right .post-text .effect-wrapper .js-changing-paragraph,
 main .hero .right .post-text p {
   font-size: inherit;
   line-height: 1.2;
