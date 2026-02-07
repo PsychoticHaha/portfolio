@@ -1,8 +1,13 @@
 div.header-container {
   position: fixed;
   top: 0;
+  left: 0;
   height: var(--header-height);
-  width: 100%;
+  width: 100vw;
+  width: 100dvw;
+  right: 0;
+  max-width: 100vw;
+  max-width: 100dvw;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -20,14 +25,14 @@ div.header-container {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--container-max);
   height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   transition: 0.3s;
-  position: absolute;
-  top: 0;
+  position: relative;
+  margin: 0 auto;
   border-radius: 15px;
   padding: 0 15px;
   background: var(--light-bg-accent);
@@ -275,14 +280,20 @@ header .right .theme-toggle-btn:hover {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 60px;
+  top: var(--header-height);
+  left: 0;
   z-index: 999;
-  height: 100vh;
-  width: 100%;
+  height: calc(100vh - var(--header-height));
+  width: 100vw;
+  width: 100dvw;
   background: rgba(7, 1, 25, 0.95);
   backdrop-filter: blur(12px);
-  transition: 0.3s;
-  transform: translate(min(-100vw, -4000px));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  will-change: transform;
 }
 
 .mobile-menu .mobile-menu-inner {
@@ -393,7 +404,7 @@ header .right .theme-toggle-btn:hover {
   flex: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
   header .right .language-switcher.desktop-only {
     display: none;
   }

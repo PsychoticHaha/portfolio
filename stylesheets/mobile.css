@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), (hover: none) and (pointer: coarse) {
   .mouse-cursor,
     header nav.desktop-menu .links,
     header.header nav.desktop-menu,
@@ -26,6 +26,9 @@
   .mobile-menu.show {
     transform: translate(0);
     display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .contact-me,
@@ -45,6 +48,7 @@
 
   header.header {
     justify-content: space-between;
+    max-width: 100%;
   }
 
   main .mouse-container .mouse {
