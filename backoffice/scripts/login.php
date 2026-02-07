@@ -1,7 +1,7 @@
 <?php
 session_start();
-$username = "raf-dashboard-2026";
-$password = "$2y$12$ILmD8/gQMFQmYRZ7RHOlBuHg46JIkB88wT7W9SSyrm3/tnQraeEhm";
+$username = 'raf-dashboard';
+$password = '$2y$12$ILmD8/gQMFQmYRZ7RHOlBuHg46JIkB88wT7W9SSyrm3/tnQraeEhm';
 $csrf = $_POST['csrf'];
 $submittedUser = $_POST['username'] ?? '';
 $userpass = $_POST['pwd'];
