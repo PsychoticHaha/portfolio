@@ -61,6 +61,16 @@ session_start();
             <input type="checkbox" id="reactions-select-all">
             Select all
           </label>
+          <div class="filter-group">
+            <label for="reactions-filter">Filter:</label>
+            <select id="reactions-filter">
+              <option value="all">All</option>
+              <option value="love">Love</option>
+              <option value="like">Like</option>
+              <option value="dislike">Dislike</option>
+              <option value="unknown">Unknown</option>
+            </select>
+          </div>
           <span class="selection-count" id="reactions-selection-count">0 selected</span>
           <button type="button" class="danger-btn" id="reactions-delete-selected" disabled>Delete selected</button>
         </div>

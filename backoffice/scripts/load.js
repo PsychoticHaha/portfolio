@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       sessionStorage.setItem('data', JSON.stringify(response.data));
       renderMessages(response.data.messages || []);
-      renderReactions(response.data.reactions || []);
+      setReactions(response.data.reactions || []);
       renderUsage(response.data.usage || []);
 
       document.querySelectorAll('.data-container .loader').forEach((loader) => {
@@ -45,15 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+let allReactions = [];
+let currentReactionFilter = 'all';
 let selectedReactionIds = new Set();
 let reactionsBusy = false;
 
 function initialiseReactionControls() {
   const selectAll = document.getElementById('reactions-select-all');
   const deleteSelected = document.getElementById('reactions-delete-selected');
+  const filterSelect = document.getElementById('reactions-filter');
 
   if (selectAll) {
     selectAll.addEventListener('change', () => toggleSelectAll(selectAll.checked));
+  }
+
+  if (filterSelect) {
+    filterSelect.value = currentReactionFilter;
+    filterSelect.addEventListener('change', () => setReactionFilter(filterSelect.value));
   }
 
   if (deleteSelected) {
@@ -64,6 +72,39 @@ function initialiseReactionControls() {
   }
 
   updateReactionsSelectionUI();
+}
+
+function setReactions(reactions) {
+  allReactions = Array.isArray(reactions) ? reactions : [];
+  applyReactionFilter();
+}
+
+function setReactionFilter(value) {
+  currentReactionFilter = value || 'all';
+  selectedReactionIds = new Set();
+  applyReactionFilter();
+}
+
+function applyReactionFilter() {
+  const filtered = filterReactions(allReactions, currentReactionFilter);
+  renderReactions(filtered);
+}
+
+function filterReactions(reactions, filter) {
+  if (!Array.isArray(reactions) || filter === 'all') {
+    return reactions;
+  }
+
+  const normalizedFilter = String(filter).toLowerCase();
+  const known = ['love', 'like', 'dislike'];
+
+  return reactions.filter((reaction) => {
+    const value = String(reaction.reaction || '').toLowerCase();
+    if (normalizedFilter === 'unknown') {
+      return !known.includes(value);
+    }
+    return value === normalizedFilter;
+  });
 }
 
 function renderMessages(messages) {
@@ -340,7 +381,7 @@ function removeReactionsFromStore(ids) {
   parsed.reactions = reactions.filter((reaction) => !toRemove.has(String(reaction.id)));
   sessionStorage.setItem('data', JSON.stringify(parsed));
 
-  renderReactions(parsed.reactions);
+  setReactions(parsed.reactions);
 }
 
 function renderReactionStats(reactions) {

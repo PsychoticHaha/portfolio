@@ -162,6 +162,26 @@ main {
   flex-wrap: wrap;
 }
 
+.filter-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+
+  select {
+    background-color: rgba(1, 18, 60, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #e8e8e8;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+
+  select:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+  }
+}
+
 .select-all {
   display: inline-flex;
   align-items: center;
