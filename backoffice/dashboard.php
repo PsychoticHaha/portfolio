@@ -56,13 +56,23 @@ session_start();
     </section>
     <section class="panel" data-panel="reactions" id="panel-reactions" role="tabpanel" aria-labelledby="tab-reactions" aria-hidden="true">
       <div class="data-container">
+        <div class="table-actions" id="reactions-actions">
+          <label class="select-all">
+            <input type="checkbox" id="reactions-select-all">
+            Select all
+          </label>
+          <span class="selection-count" id="reactions-selection-count">0 selected</span>
+          <button type="button" class="danger-btn" id="reactions-delete-selected" disabled>Delete selected</button>
+        </div>
         <div class="stats-grid" id="reaction-stats"></div>
         <table id="reaction-container" class="data-table">
           <thead>
             <tr>
+              <th></th>
               <th>ID</th>
               <th>Reaction</th>
               <th>Date</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody></tbody>

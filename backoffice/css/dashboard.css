@@ -148,6 +148,60 @@ main {
   border-bottom: none;
 }
 
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.select-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.selection-count {
+  color: rgba(232, 232, 232, 0.7);
+  font-size: 0.9rem;
+}
+
+.danger-btn,
+.row-delete {
+  background-color: #c0392b;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  font-size: 0.9rem;
+}
+
+.row-delete {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.danger-btn:hover,
+.row-delete:hover {
+  background-color: #e74c3c;
+}
+
+.danger-btn:disabled,
+.row-delete:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+  width: 36px;
+}
+
 .message-details {
   flex: 2;
   background-color: #020822;

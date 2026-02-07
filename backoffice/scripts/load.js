@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initialiseTabs(tabButtons, panels);
+  initialiseReactionControls();
 
   document.querySelectorAll('.data-container').forEach((container) => {
     container.insertAdjacentHTML('afterbegin', loaderTemplate());
   });
 
-  const token = tokenField.value;
   const payload = new FormData();
-  payload.append('token', token);
+  payload.append('token', tokenField.value);
 
   fetch('./backend/allData.php', {
     method: 'POST',
@@ -44,6 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 });
+
+let selectedReactionIds = new Set();
+let reactionsBusy = false;
+
+function initialiseReactionControls() {
+  const selectAll = document.getElementById('reactions-select-all');
+  const deleteSelected = document.getElementById('reactions-delete-selected');
+
+  if (selectAll) {
+    selectAll.addEventListener('change', () => toggleSelectAll(selectAll.checked));
+  }
+
+  if (deleteSelected) {
+    deleteSelected.addEventListener('click', () => {
+      const ids = Array.from(selectedReactionIds);
+      deleteReactions(ids);
+    });
+  }
+
+  updateReactionsSelectionUI();
+}
 
 function renderMessages(messages) {
   const messageTable = document.getElementById('message-container');
@@ -142,12 +163,15 @@ function renderReactions(reactions) {
     return;
   }
 
+  selectedReactionIds = new Set();
+
   if (!Array.isArray(reactions) || reactions.length === 0) {
     tbody.innerHTML = '';
     if (emptyState) {
       emptyState.hidden = false;
     }
     renderReactionStats([]);
+    updateReactionsSelectionUI();
     return;
   }
 
@@ -157,16 +181,166 @@ function renderReactions(reactions) {
 
   const rows = reactions.map((reaction) => {
     const date = formatDate(reaction.date);
+    const id = reaction.id ?? '';
     return `
       <tr>
-        <td>${escapeHtml(reaction.id ?? '—')}</td>
+        <td>
+          <input type="checkbox" class="row-select" data-reaction-id="${escapeHtml(id)}" aria-label="Select reaction ${escapeHtml(id)}">
+        </td>
+        <td>${escapeHtml(id || '—')}</td>
         <td>${escapeHtml(reaction.reaction || '—')}</td>
         <td>${escapeHtml(date)}</td>
+        <td>
+          <button type="button" class="row-delete" data-reaction-id="${escapeHtml(id)}">Delete</button>
+        </td>
       </tr>`;
   }).join('');
 
   tbody.innerHTML = rows;
   renderReactionStats(reactions);
+
+  tbody.querySelectorAll('.row-select').forEach((checkbox) => {
+    checkbox.addEventListener('change', () => toggleReactionSelection(checkbox));
+  });
+
+  tbody.querySelectorAll('.row-delete').forEach((button) => {
+    button.addEventListener('click', () => deleteReactions([button.dataset.reactionId]));
+  });
+
+  updateReactionsSelectionUI();
+  setReactionsBusy(reactionsBusy);
+}
+
+function toggleReactionSelection(checkbox) {
+  const id = checkbox.dataset.reactionId;
+  if (!id) {
+    return;
+  }
+
+  if (checkbox.checked) {
+    selectedReactionIds.add(String(id));
+  } else {
+    selectedReactionIds.delete(String(id));
+  }
+
+  updateReactionsSelectionUI();
+}
+
+function toggleSelectAll(checked) {
+  document.querySelectorAll('#reaction-container .row-select').forEach((checkbox) => {
+    checkbox.checked = checked;
+    const id = checkbox.dataset.reactionId;
+    if (!id) {
+      return;
+    }
+    if (checked) {
+      selectedReactionIds.add(String(id));
+    } else {
+      selectedReactionIds.delete(String(id));
+    }
+  });
+
+  updateReactionsSelectionUI();
+}
+
+function updateReactionsSelectionUI() {
+  const countEl = document.getElementById('reactions-selection-count');
+  const deleteSelected = document.getElementById('reactions-delete-selected');
+  const selectAll = document.getElementById('reactions-select-all');
+  const totalRows = document.querySelectorAll('#reaction-container .row-select').length;
+  const selectedCount = selectedReactionIds.size;
+
+  if (countEl) {
+    countEl.textContent = `${selectedCount} selected`;
+  }
+
+  if (deleteSelected) {
+    deleteSelected.disabled = selectedCount === 0 || reactionsBusy;
+  }
+
+  if (selectAll) {
+    if (totalRows === 0) {
+      selectAll.checked = false;
+      selectAll.indeterminate = false;
+      selectAll.disabled = true;
+    } else {
+      selectAll.disabled = reactionsBusy;
+      selectAll.checked = selectedCount === totalRows;
+      selectAll.indeterminate = selectedCount > 0 && selectedCount < totalRows;
+    }
+  }
+}
+
+function deleteReactions(ids) {
+  if (!Array.isArray(ids) || ids.length === 0) {
+    return;
+  }
+
+  const message = ids.length === 1
+    ? 'Delete this reaction? This cannot be undone.'
+    : `Delete ${ids.length} reactions? This cannot be undone.`;
+
+  if (!window.confirm(message)) {
+    return;
+  }
+
+  const tokenField = document.querySelector('input[name="token"]');
+  if (!tokenField) {
+    return;
+  }
+
+  setReactionsBusy(true);
+
+  const payload = new FormData();
+  payload.append('token', tokenField.value);
+  payload.append('ids', JSON.stringify(ids));
+
+  fetch('./backend/deleteReactions.php', {
+    method: 'POST',
+    body: payload,
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      if (response.status !== 'ok') {
+        throw new Error(response.message || 'Unable to delete reactions.');
+      }
+
+      removeReactionsFromStore(ids);
+    })
+    .catch((error) => {
+      console.error('Delete reactions error:', error);
+      alert(error.message || 'Unable to delete reactions.');
+    })
+    .finally(() => {
+      setReactionsBusy(false);
+    });
+}
+
+function setReactionsBusy(isBusy) {
+  reactionsBusy = isBusy;
+  document.querySelectorAll('#reaction-container .row-select').forEach((checkbox) => {
+    checkbox.disabled = isBusy;
+  });
+  document.querySelectorAll('#reaction-container .row-delete').forEach((button) => {
+    button.disabled = isBusy;
+  });
+  updateReactionsSelectionUI();
+}
+
+function removeReactionsFromStore(ids) {
+  const storedData = sessionStorage.getItem('data');
+  if (!storedData) {
+    return;
+  }
+
+  const parsed = JSON.parse(storedData);
+  const toRemove = new Set(ids.map((id) => String(id)));
+  const reactions = Array.isArray(parsed.reactions) ? parsed.reactions : [];
+
+  parsed.reactions = reactions.filter((reaction) => !toRemove.has(String(reaction.id)));
+  sessionStorage.setItem('data', JSON.stringify(parsed));
+
+  renderReactions(parsed.reactions);
 }
 
 function renderReactionStats(reactions) {
