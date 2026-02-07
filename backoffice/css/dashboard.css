@@ -32,13 +32,25 @@ header .left .item {
   align-items: center;
   justify-content: center;
   padding: 0 10px;
+  border: none;
   cursor: pointer;
   background-color: #001aff;
   transition: background-color 0.2s ease-in-out;
+  color: #e8e8e8;
+  font-size: 0.95rem;
 }
 
 header .left .item:hover {
   background-color: #0077ff;
+}
+
+header .left .item.active {
+  background-color: #0096ff;
+}
+
+header .left .item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -2px;
 }
 
 header .logout {
@@ -77,11 +89,25 @@ main {
   position: relative;
   width: 100%;
   height: calc(100% - 50px);
-  display: flex;
-  gap: 20px;
   padding: 25px;
   box-sizing: border-box;
   background-color: #00063b;
+  overflow: hidden;
+}
+
+.panel {
+  display: none;
+  gap: 20px;
+  height: 100%;
+}
+
+.panel.active {
+  display: flex;
+}
+
+.panel[data-panel="reactions"],
+.panel[data-panel="usage"] {
+  flex-direction: column;
 }
 
 .data-container {
@@ -92,33 +118,33 @@ main {
   overflow: auto;
 }
 
-#message-container {
+.data-table {
   width: 100%;
   border-collapse: collapse;
   color: #f5f5f5;
 }
 
-#message-container th,
-#message-container td {
+.data-table th,
+.data-table td {
   padding: 12px 10px;
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#message-container tr[data-message-id] {
+.data-table tr.clickable {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
 
-#message-container tr[data-message-id]:hover {
+.data-table tr.clickable:hover {
   background-color: rgba(0, 122, 255, 0.18);
 }
 
-#message-container tr.selected {
+.data-table tr.selected {
   background-color: rgba(0, 122, 255, 0.3);
 }
 
-#message-container tr:last-child td {
+.data-table tr:last-child td {
   border-bottom: none;
 }
 
@@ -139,6 +165,47 @@ main {
   margin-top: 20px;
   line-height: 1.6;
   white-space: pre-wrap;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background-color: rgba(0, 122, 255, 0.2);
+  border: 1px solid rgba(0, 122, 255, 0.4);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(232, 232, 232, 0.85);
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.stat-sub {
+  font-size: 0.85rem;
+  color: rgba(232, 232, 232, 0.7);
+}
+
+.empty-state {
+  margin-top: 20px;
+  color: rgba(232, 232, 232, 0.7);
+  text-align: center;
+  font-style: italic;
 }
 
 .loader {
@@ -176,9 +243,13 @@ main {
 
 @media (max-width: 1024px) {
   main {
-    flex-direction: column;
     height: auto;
     overflow-y: auto;
+  }
+
+  .panel.active {
+    flex-direction: column;
+    height: auto;
   }
 
   .data-container,

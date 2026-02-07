@@ -1,14 +1,16 @@
 <?php
 session_start();
-$password = "$2y$10$/kM7bphgMWj95lh7QYYX8.RQsAOb7wgs6S/g3wid4.9OWO49ofKei";
+$username = "raf-dashboard-2026";
+$password = "$2y$12$ILmD8/gQMFQmYRZ7RHOlBuHg46JIkB88wT7W9SSyrm3/tnQraeEhm";
 $csrf = $_POST['csrf'];
+$submittedUser = $_POST['username'] ?? '';
 $userpass = $_POST['pwd'];
 
 if (isset($csrf) && $csrf == $_SESSION['csrf'] && isset($_POST['pwd']) && isset($_POST['login'])) {
-  if (password_verify($userpass, $password)) {
+  if ($submittedUser === $username && password_verify($userpass, $password)) {
     $_SESSION['message'] = "<div class='alert success'>Welcome Fanasina !</div>";
     $_SESSION['token'] = generateToken();
-    header('Location:./../dashboard');
+    header('Location:./../dashboard.php');
   } else {
     $_SESSION['count'] += 1;
     $_SESSION['message'] = "<div class='alert error'>Error : Try again !</div>";

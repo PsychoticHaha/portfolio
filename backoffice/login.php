@@ -27,7 +27,7 @@ $_SESSION['csrf'] = $id;
     <div class="alert-container">
       <?= $_SESSION['message']; ?>
     </div>
-    <input type="text" id="username" placeholder="Username" autofocus>
+    <input type="text" id="username" name="username" placeholder="Username" autocomplete="username" autofocus>
     <input type="password" id="password" name="pwd" placeholder="Password">
     <div class="container">
       <input type="checkbox" id="checkbox" onclick="togglePwd()">

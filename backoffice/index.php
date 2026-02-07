@@ -1,7 +1,7 @@
 <?php
 // Identifiants pour l'authentification
-$username = 'raf-admin';
-$password = 'secret';
+$username = 'raf-admin-2026';
+$password = 'khGmNXD_Ds!NPrC#oC3m';
 
 // Vérification de la présence des identifiants dans la requête
 if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) || 
